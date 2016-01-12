@@ -1,11 +1,9 @@
 #search{
-    border-style:outset;
     background-color:#78F1FF;
     padding:10px;
     margin-bottom:5px;
 }
 #search2{
-    border-style:outset;
     background-color:#FFD991;
     padding:10px;
     margin-bottom:5px;
@@ -14,15 +12,8 @@ body{
 width:100%; 
 height:768px; 
 margin:0; 
-background-image: url(1436892332-2510699959_n.jpg); 
+background-image: url(img/1436892332-2510699959_n.jpg); 
 padding:0;
 background-size:100% 100%;
 background-repeat : no-repeat;
-}
-#header {
-    border-style:groove ;
-    background-color:#FCD675;
-    color:black ;
-    text-align:center;
-    padding:2px;
 }
