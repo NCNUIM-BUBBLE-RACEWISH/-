@@ -1,0 +1,62 @@
+#wrap {
+    width:900px;
+    margin:0 auto;
+    overflow:hidden;
+} 
+#dorm {
+    border-style:solid;
+    width:100px;
+    height:200px;
+    padding-top:80px;
+    top:95px; 
+} 
+#gym{
+    z-index:1; 
+    padding:0px; 
+    border-style:solid;
+    background-color:white;
+    width:480px;
+    height:150px;   
+}
+#table{
+    z-index:2; 
+    border-style:solid;
+    width:80px;
+    height:80px;   
+}
+#swim{
+    z-index:2; 
+    position: absolute; 
+    border-style:solid;
+    width:200px;
+    height:50px;
+    top:95px; 
+    left:230px;
+}
+#playground{
+    padding-top:80px;
+    top:95px;
+
+    width: 200px;
+    height: 100px;
+    background: red;
+    -moz-border-radius: 100px / 50px;
+    -webkit-border-radius: 100px / 50px;
+    border-radius: 100px / 50px;
+}
+#pic{ 
+    border-style:solid;
+    width:80px;
+    height:80px; 
+}
+#sideColumn {
+    background-color:green;
+    width:300px;float:left;
+} 
+#mainColumn {
+    background-color:blue;
+    float:left;width:600px;
+}
+h1{
+    color:gray;
+}

@@ -3,37 +3,47 @@
     <meta charset="UTF-8" />
     <title>首頁</title>
     <charset UTF-8>
-    <link href ="css/bootstrap.min.css" rel="stylesheet">
-    <script src="js/bootstrap.min.js"></script>
+    <link href ="../css/bootstrap.min.css" rel="stylesheet">
+    <script src="../js/bootstrap.min.js"></script>
+<style>
+body {
+    background-image:url("../img/背.png");
+    background-attachment : fixed;
+    background-repeat : no-repeat;
+    background-position:20% 40%;
+    background-size:cover;
+}
+h1{
+  color:#D13109;
+  font-family: "Yu Gothic ", simhei;
+  font-weight: bold;
+}
+</style>
 </head>
 <body>
     <div class="container">
-        <!--返回登入-->
-        <div class="col-lg-4"></div>
         <!--內容-->
-        <div class="col-lg-4">
-            <div>
-              <font color="blue"><h1 class="text-center">賽程系統</h1></font><br/>
-            </div>
-            <form action="" method="" class="form-horizontal" role="form">
+        <div class="col-lg-4 col-lg-offset-4">
+            <h1 class="text-center">賽程系統</h1>
+            <form action="" method="" class="form-horizontal">
+            <br>
               <div class="form-group">
                 <label class="col-lg-5 control-label">系所</label>
-                <div class="form-group col-lg-7">
-                    <div class="col-lg-7">
-                    <select class="selectpicker" name="YourDepartment" >
+                <div class="col-lg-4">
+                    <select class="selectpicker show-tick form-control " name="YourDepartment" >
                 　       <option value="">資管</option>
                 　       <option value="">國企</option>
                 　       <option value="">財金</option>
                 　       <option value="">經濟</option>
                 　       <option value="">觀餐</option>
                     </select>
-                    </div>
                 </div>
               </div>
+
               <div class="form-group">
-                    <label class="col-lg-5 control-label">球類</label>
-                    <div class="col-lg-7">
-                        <select name="Balltype">
+                <label class="col-lg-5 control-label">球類</label>
+                <div class="col-lg-4">
+                        <select class="selectpicker show-tick form-control " name="Balltype">
                         　   <option value="">排球</option>
                         　   <option value="">籃球</option>
                             <option value="">羽球</option>
