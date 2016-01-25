@@ -8,12 +8,11 @@
     padding:10px;
     margin-bottom:5px;
 }
-body{
-width:100%; 
-height:768px; 
-margin:0; 
-background-image: url(img/1436892332-2510699959_n.jpg); 
-padding:0;
-background-size:100% 100%;
-background-repeat : no-repeat;
+#ground{
+        width: 600px;
+        height: 450px;
+}
+#tabletime{
+        border-collapse:separate;
+        border-spacing:25px 40px;
 }
