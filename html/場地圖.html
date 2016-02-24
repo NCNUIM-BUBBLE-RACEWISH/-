@@ -3,78 +3,55 @@
 <head>
     <meta charset="UTF-8" />
     <title>場地圖</title>
-    <link href ="../css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <script src="../js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../css/try.css"> 
-<style>
-body {
-    background-image:url("");
-    background-attachment : fixed;
-    background-repeat : no-repeat;
-    background-position:20% 40%;
-    background-size:cover;
-}
-h1{
-  color:#D13109;
-  font-family: "Yu Gothic ", simhei;
-  font-weight: bold;
-}
-</style>
+    <link rel="stylesheet" type="text/css" href="../css/場地圖.css"> 
+    <style>
+    /*大標題*/
+    h1{
+        color:#D13109;
+        font-family: "Yu Gothic ", simhei;
+        font-weight: bold;
+    }
+    </style>     
 </head>
-<body> 
-    <div class="container">
-        <div class="col-lg-5">
-            <a href="首頁.html"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 返回登入</a>
-        </div>
-        <div class="col-lg-7">
-            <font color="blue"><h1>場地圖</h1></font>
-            <br/>
-        </div>
+<body>
+    <!--返回-->
+    <div id="return">
+        <a href="首頁.html"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 返回登入</a>
     </div>
-    <div class="container">
-        <div class="col-lg-2 col-lg-offset-1" id="dorm">
-            男生宿舍
-        </div> 
-        <div class="col-lg-5 col-lg-offset-1" id="gym">
-            <input type="button" value="桌球室" id="table">
-            <!--   or↓
-            <input type="button" value="桌球室" id="table">
-            <button id="table">桌球室</button>
-            -->
-            <input value="　　Swimming　　Pool" id="swim">
-        </div> 
-    <div class="col-lg-2 col-lg-offset-1" id="playground">
-            <br>
-            操 
-            <br>
-            <br>
-            場
-            <br>
-            <br>
-            。
+    <!--大標題-->
+    <font color="blue"><h1><center>場地圖</center></h1></font>
+    <!--內容-->
+    <div id="content">
+        <div id="left-dorm">男生宿舍</div>
+        <div id="middle">
+            <div id="gym">
+                <button id="table">桌球室</button>
+                <button id="pool">游泳池</button>
+            </div>
+            <div id="l">
+                <input type="button" value="排球場A" id="option">
+                <input type="button" value="排球場B" id="option">
+                <input type="button" value="排球場C" id="option">
+                <input type="button" value="排球場D" id="option">
+                <br>
+                <br>
+                <input type="button" value="籃球場A" id="option">
+                <input type="button" value="籃球場B" id="option">
+                <input type="button" value="籃球場C" id="option">
+                <input type="button" value="籃球場D" id="option">
+            </div>
+            <div id="r">
+                <input type="button" value="籃球場E" id="option">
+                <input type="button" value="籃球場F" id="option">
+                <br>
+                <br>
+                <input type="button" value="網球場A" id="option">
+                <input type="button" value="網球場B" id="option">
+            </div>
         </div>
-  </div>
-    <div class="row">
-        <div class="col-lg-4 col-lg-offset-3" id="allpic">
-            <input type="button" value="排球場A" id="pic">
-            <input type="button" value="排球場B" id="pic">
-            <input type="button" value="排球場C" id="pic">
-            <input type="button" value="排球場D" id="pic">
-            <br>
-            <br>
-            <input type="button" value="籃球場A" id="pic">
-            <input type="button" value="籃球場B" id="pic">
-            <input type="button" value="籃球場C" id="pic">
-            <input type="button" value="籃球場D" id="pic">
-        </div>
-        <div class="col-lg-offset-1">
-            <input type="button" value="籃球場E" id="pic">
-            <input type="button" value="籃球場F" id="pic">
-            <br>
-            <br>
-            <input type="button" value="網球場A" id="pic">
-            <input type="button" value="網球場B" id="pic">
-        </div>
+        <div id="right-playground">操場</div>
     </div>
 </body> 
 </html>
