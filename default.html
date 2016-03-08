@@ -1,0 +1,193 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>填選志願</title>
+<charset UTF-8>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link href ="../css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
+    <link href ="../css/填選志願.css" rel="stylesheet">
+    <script src="../js/填選志願.js"></script>
+</head>
+<body>
+<div class="container">
+	<div >
+		<a href="首頁.html"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 返回登入</a>
+		<h1><center>填選志願</center></h1>
+		<br>
+	</div>
+	<div class="row">
+	    <!--左長條圖-->
+		<div class="col-lg-5" id="left">
+                <a href="#首頁">Mon</a>
+                <a href="#">Tue</a>
+                <a href="#">Wes</a>
+                <a href="#">Thus</a>
+                <a href="#">Fri</a>
+            <script src="../js/highcharts.js"></script>
+            <script src="../js/module/exporting.js"></script>
+            <div id="container"></div>
+		</div>
+        <!--右填選志願-->
+		<div class="col-lg-6 col-lg-offset-1" id="right" >
+			<br>
+			<br>
+			<fieldset>
+    		<legend>想了解排志願的規則 → <a href="#"><span class="glyphicon glyphicon-tint" style="color:#A8D7FF" aria-hidden="true"></span></a>
+    		</legend>
+                <p>　　　 日期　　　   球類　　  申請時段    　　　 已申請次數</p>    
+                <form method="">
+                    <div class="form-group" id="wish1" >
+                        志願一
+                        <select id="YourTime1" >
+                            <option value="-1" selected></option>
+                            <option value="1">星期一</option>
+                            <option value="2">星期二</option>
+                            <option value="3">星期三</option>
+                            <option value="4">星期四</option>
+                            <option value="5">星期五</option>
+                        </select>
+                        <select id="YourBall1"  >
+                            <option value="-1" selected></option>
+                            <option value="a">排球</option>
+                            <option value="b">籃球</option>
+                            <option value="c">桌球</option>
+                            <option value="d">壘球</option>
+                            <option value="e">羽球</option>
+                        </select>
+                        <select id="YourPlace1">
+                            <option value="-1" selected></option>
+                            <option value="A">1700~1900</option>
+                            <option value="B">1500~1700</option>
+                            <option value="C">1900~2100</option>
+                            <option value="D">2100~2300</option>
+                        </select>
+						<!--依照選擇跳出申請次數-->
+                        <input value="-1" style="display:none; width:80px;background-color:transparent; border:0px; color:#F96;text-align:center;"></input>
+                    </div>
+
+                    <div class="form-group" id="wish2" >
+                        志願二
+                        <select id="YourTime2" >
+                            <option value="-1" selected></option>
+                            <option value="1">星期一</option>
+                            <option value="2">星期二</option>
+                            <option value="3">星期三</option>
+                            <option value="4">星期四</option>
+                            <option value="5">星期五</option>
+                        </select>
+                        <select id="YourBall2"  >
+                            <option value="-1" selected></option>
+                            <option value="a">排球</option>
+                            <option value="b">籃球</option>
+                            <option value="c">桌球</option>
+                            <option value="d">壘球</option>
+                            <option value="e">羽球</option>
+                        </select>
+                        <select id="YourPlace2">
+                            <option value="-1" selected></option>
+                            <option value="A">1700~1900</option>
+                            <option value="B">1500~1700</option>
+                            <option value="C">1900~2100</option>
+                            <option value="D">2100~2300</option>
+                        </select>
+                        <!--依照選擇跳出申請次數-->
+                        <input value="-1" style="display:none; width:80px;background-color:transparent; border:0px; color:#F96;text-align:center;"></input>
+                    </div>
+
+                    <div class="form-group" id="wish3" >
+                        志願三
+                        <select id="YourTime3" >
+                            <option value="-1" selected></option>
+                            <option value="1">星期一</option>
+                            <option value="2">星期二</option>
+                            <option value="3">星期三</option>
+                            <option value="4">星期四</option>
+                            <option value="5">星期五</option>
+                        </select>
+                        <select id="YourBall3"  >
+                            <option value="-1" selected></option>
+                            <option value="a">排球</option>
+                            <option value="b">籃球</option>
+                            <option value="c">桌球</option>
+                            <option value="d">壘球</option>
+                            <option value="e">羽球</option>
+                        </select>
+                        <select id="YourPlace3">
+                            <option value="-1" selected></option>
+                            <option value="A">1700~1900</option>
+                            <option value="B">1500~1700</option>
+                            <option value="C">1900~2100</option>
+                            <option value="D">2100~2300</option>
+                        </select>
+                        <!--依照選擇跳出申請次數-->
+                        <input value="-1" style="display:none; width:80px;background-color:transparent; border:0px; color:#F96;text-align:center;"></input>
+                    </div>
+
+                    <div class="form-group" id="wish4" >
+                        志願四
+                        <select id="YourTime4" >
+                            <option value="-1" selected></option>
+                            <option value="1">星期一</option>
+                            <option value="2">星期二</option>
+                            <option value="3">星期三</option>
+                            <option value="4">星期四</option>
+                            <option value="5">星期五</option>
+                        </select>
+                        <select id="YourBall4"  >
+                            <option value="-1" selected></option>
+                            <option value="a">排球</option>
+                            <option value="b">籃球</option>
+                            <option value="c">桌球</option>
+                            <option value="d">壘球</option>
+                            <option value="e">羽球</option>
+                        </select>
+                        <select id="YourPlace4">
+                            <option value="-1" selected></option>
+                            <option value="A">1700~1900</option>
+                            <option value="B">1500~1700</option>
+                            <option value="C">1900~2100</option>
+                            <option value="D">2100~2300</option>
+                        </select>
+                        <!--依照選擇跳出申請次數-->
+                        <input value="-1" style="display:none; width:80px;background-color:transparent; border:0px; color:#F96;text-align:center;"></input>
+                    </div>
+
+                    <div class="form-group" id="wish5" >
+                        志願五
+                        <select id="YourTime5" >
+                            <option value="-1" selected></option>
+                            <option value="1">星期一</option>
+                            <option value="2">星期二</option>
+                            <option value="3">星期三</option>
+                            <option value="4">星期四</option>
+                            <option value="5">星期五</option>
+                        </select>
+                        <select id="YourBall5"  >
+                            <option value="-1" selected></option>
+                            <option value="a">排球</option>
+                            <option value="b">籃球</option>
+                            <option value="c">桌球</option>
+                            <option value="d">壘球</option>
+                            <option value="e">羽球</option>
+                        </select>
+                        <select id="YourPlace5">
+                            <option value="-1" selected></option>
+                            <option value="A">1700~1900</option>
+                            <option value="B">1500~1700</option>
+                            <option value="C">1900~2100</option>
+                            <option value="D">2100~2300</option>
+                        </select>
+                        <!--依照選擇跳出申請次數-->
+                        <input value="-1" style="display:none; width:80px;background-color:transparent; border:0px; color:#F96;text-align:center;"></input>
+                    </div>
+                    <br>
+                    <div class="col-lg-2 col-lg-offset-8">
+                        <button class="btn btn-primary" >確認</button>
+                    </div>
+                </form>
+			</fieldset>
+		</div>
+	</div>
+</div>
+</body>
