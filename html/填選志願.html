@@ -91,23 +91,23 @@ $(function () {
 <!--左邊長條圖-->
     <div class="row">
         <div class="col-md-6">.
-            
+
                 <a href="#首頁">Mon</a>
                 <a href="#">Tue</a>
                 <a href="#">Wes</a>
                 <a href="#">Thus</a>
                 <a href="#">Fri</a>
                 <br/>
-            
+
             <script src="../js/highcharts.js"></script>
             <script src="../js/module/exporting.js"></script>
             <div id="container" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 left"></div>
         </div>
-    
+
     <!--右邊志願序-->
-    
+
         <div class="col-md-6">
-                <p>　　　 日期　　　   球類　　  申請時段    　　　 申請次數</p>    
+                <p>　　　 日期　　　   球類　　  申請時段    　　　 申請次數</p>
                 <form method="">
 
                     <div class="form-group">
@@ -136,7 +136,7 @@ $(function () {
                         <input type="text"></input>
                     </div>
 
-                    <div class="form-group">             
+                    <div class="form-group">
                         志願二
                         <select name="YourTime">
                             <option value="">星期一</option>
@@ -160,7 +160,7 @@ $(function () {
                         </select>
                         <!--依照選擇跳出申請次數-->
                         <input type="text"></input>
-                    </div> 
+                    </div>
                         志願三
                         <select name="YourTime">
                             <option value="">星期一</option>
@@ -186,8 +186,8 @@ $(function () {
                         <input type="text"></input>
                     </div>
 
-                    <div class="form-group">             
-                        &nbsp&nbsp&nbsp&nbsp志願四 
+                    <div class="form-group">
+                        &nbsp&nbsp&nbsp&nbsp志願四
                         <select name="YourTime">
                             <option value="">星期一</option>
                             <option value="">星期二</option>
@@ -210,10 +210,10 @@ $(function () {
                         </select>
                         <!--依照選擇跳出申請次數-->
                         <input type="text"></input>
-                    </div> 
+                    </div>
 
 
-                    <div class="form-group">             
+                    <div class="form-group">
                         &nbsp&nbsp&nbsp&nbsp志願五
                         <select name="YourTime">
                             <option value="">星期一</option>
@@ -237,15 +237,15 @@ $(function () {
                         </select>
                         <!--依照選擇跳出申請次數-->
                         <input type="text"></input>
-                    </div> 
+                    </div>
 <!--確認後接js跳出確認視窗-->
-<!--prevent this page from creating additional dialogs 
+<!--prevent this page from creating additional dialogs
 這東西好像有點麻煩？有別的方法可以弄視窗嗎？而且（）內到底要不要this阿有this好像跑不出來-->
                     <div class="col-lg-2 col-lg-offset-8">
                         <button class="btn btn-primary" type="submit" onclick="transferData()">確認</button>
                     </div>
                 </form>
-            
+
         </div>
 </div>
 <script>
