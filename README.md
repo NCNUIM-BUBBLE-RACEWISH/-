@@ -10,8 +10,14 @@
  - 志願結果（隊長查詢結果）
 
 ### 其他未完成
- 1. place  場地圖 - 點選跳出圖片
- 2. submitYourWishes  選填志願 - 長條圖日期點了，沒有改變
+ 1. 場地圖 - 點選跳出圖片
+ 2. 填選志願 - 長條圖的日期
+ 3. 填選志願 - POST的 json格式+帳號的key value
+ 4. 填選志願 - 二次確認所選取的志願(跳出小框框之類的)
+ 5. 填選志願 - 球類的選單刪掉(ex:籃球隊不能選桌球場)
+ 6. 全部結果 - 資管男籃登入，關於資管男籃的資料就mark起來
+ 7. 安全性問題(JWT)
+ 8. COOKIE
 
 
 
@@ -23,8 +29,6 @@
  2. chandePassword   修改密碼
  3. reroute   第二次分流(前端)
  4. submitYourWishes  填選志願
- - 星期顯示
- - 志願存入(insert)
  5. resultsOfLeader   志願結果（隊長查詢結果）
  6. allResults   全部結果
  7. rerouteByBall   查詢分流(前端)
