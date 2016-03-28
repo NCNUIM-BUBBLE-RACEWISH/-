@@ -1,14 +1,19 @@
+<!DOCTYPE html>
 <html>
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>填選志願</title>
     <charset UTF-8>
+        <!--↓要加這串才能用bootstrap提供的小圖示，自己的引不到.....-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
         <link href="../css/write/submitYourWishes.css" rel="stylesheet">
         <script src="../js/write/submitYourWishes.js"></script>
+        <!--↓美美的長條圖需要-->
+        <script src="../js/highcharts.js"></script>
+        <script src="../js/module/exporting.js"></script>
 </head>
 
 <body>
@@ -21,13 +26,11 @@
         <div class="row">
             <!--左長條圖-->
             <div class="col-lg-5" id="left">
-                <a href="#首頁">Mon</a>
-                <a href="#">Tue</a>
-                <a href="#">Wes</a>
-                <a href="#">Thus</a>
-                <a href="#">Fri</a>
-                <script src="../js/highcharts.js"></script>
-                <script src="../js/module/exporting.js"></script>
+                <a href="#Monday" class="btn btn-info " role="button" value="一">Mon</a>
+                <a href="#Tuesday" class="btn btn-primary  " role="button" value="二">Tue</a>
+                <a href="#Wednesday" class="btn btn-success" role="button" value="三">Wed</a>
+                <a href="#Thursday" class="btn btn-warning" role="button" value="四">Thu</a>
+                <a href="#Friday" class="btn btn-danger " role="button" value="五">Fri</a>
                 <div id="container"></div>
             </div>
             <!--右填選志願-->
@@ -35,7 +38,7 @@
                 <br>
                 <br>
                 <fieldset>
-                    <legend>想了解排志願的規則 → <a href="#"><span class="glyphicon glyphicon-tint" style="color:#A8D7FF" aria-hidden="true"></span></a>
+                    <legend>想了解排志願的規則 → <a href=""><span class="glyphicon glyphicon-tint" style="color:#A8D7FF" aria-hidden="true"></span></a>
                     </legend>
                     <p>　　　 日期　　　 球類　　 申請時段 　　　 已申請次數</p>
                     <form method="">

@@ -1,31 +1,42 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8" />
     <title>場地圖</title>
     <script src="../js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/write/text.css">
     <link rel="stylesheet" type="text/css" href="../css/write/place.css">
+    <script src="../js/write/allResult.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-<style>
-body {
-    background-image:url("");
-    background-attachment : fixed;
-    background-repeat : no-repeat;
-    background-position:20% 40%;
-    background-size:cover;
-}
-h1{
-  color:#D13109;
-  font-family: "Yu Gothic ", simhei;
-  font-weight: bold;
-}
-</style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
+    <style>
+    body {
+        background-image: url("");
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-position: 20% 40%;
+        background-size: cover;
+    }
+    
+    h1 {
+        color: #D13109;
+        font-family: "Yu Gothic ", simhei;
+        font-weight: bold;
+    }
+    </style>
 </head>
+
 <body>
-    <div class = "col-md-2 col-md-offset-2">
-         <a href="index.html"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 返回登入</a>
+    <div>
+        <p id="aaa">1</p>
+    </div>
+    <div class="col-md-2 col-md-offset-2">
+        <a href="index.html"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 返回登入</a>
     </div>
     <div class="col-md-2 col-md-offset-4">
         <div class="input-group">
@@ -38,188 +49,193 @@ h1{
         </div>
     </div>
     <div class="container" id="back">
-        <div class = "row">
-            <div class = "col-md-2">
+        <div class="row">
+            <div class="col-md-2">
                 <button type="button" class="btn btn-danger">Monday</button>
-                <br><br>
-                <div class ="row">
-                    <div class = "col-md-5" id="search">
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col-md-5" id="search">
                         <p>時段</p>
                         <p>1700</p>
                         <p>1900</p>
                     </div>
-                    <div class = "col-md-7">
-                        <select multiple class="form-control" >
-                          <option>資管男A</option>
-                          <option>財金男B</option>
-                          <option>經濟男C</option>
-                          <option>觀餐男D</option>
-                          <option>國企男E</option>
+                    <div class="col-md-7">
+                        <select multiple class="form-control">
+                            <option>資管男A</option>
+                            <option>財金男B</option>
+                            <option>經濟男C</option>
+                            <option>觀餐男D</option>
+                            <option>國企男E</option>
                         </select>
                     </div>
                 </div>
                 <br>
-                <div class ="row">
-                    <div class = "col-md-5" id="search2">
+                <div class="row">
+                    <div class="col-md-5" id="search2">
                         <p>時段</p>
                         <p>1900</p>
                         <p>2100</p>
                     </div>
-                    <div class = "col-md-7">
+                    <div class="col-md-7">
                         <select multiple class="form-control">
-                          <option>中文女A</option>
-                          <option>公行女B</option>
-                          <option>歷史女C</option>
-                          <option>國企女D</option>
-                          <option>應化女E</option>
+                            <option>中文女A</option>
+                            <option>公行女B</option>
+                            <option>歷史女C</option>
+                            <option>國企女D</option>
+                            <option>應化女E</option>
                         </select>
                     </div>
                 </div>
             </div>
-            <div class = "col-md-2">
+            <div class="col-md-2">
                 <button type="button" class="btn btn-danger">Tuesday</button>
-                <br><br>
-                <div class ="row">
-                    <div class = "col-md-5" id="search">
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col-md-5" id="search">
                         <p>時段</p>
                         <p>1700</p>
                         <p>1900</p>
                     </div>
-                    <div class = "col-md-7">
+                    <div class="col-md-7">
                         <select multiple class="form-control">
-                          <option>資管男A</option>
-                          <option>財金男B</option>
-                          <option>經濟男C</option>
-                          <option>觀餐男D</option>
-                          <option>國企男E</option>
+                            <option>資管男A</option>
+                            <option>財金男B</option>
+                            <option>經濟男C</option>
+                            <option>觀餐男D</option>
+                            <option>國企男E</option>
                         </select>
                     </div>
                 </div>
                 <br>
-                <div class ="row">
-                    <div class = "col-md-5" id="search2">
+                <div class="row">
+                    <div class="col-md-5" id="search2">
                         <p>時段</p>
                         <p>1900</p>
                         <p>2100</p>
                     </div>
-                    <div class = "col-md-7">
+                    <div class="col-md-7">
                         <select multiple class="form-control">
-                          <option>中文女A</option>
-                          <option>公行女B</option>
-                          <option>歷史女C</option>
-                          <option>國企女D</option>
-                          <option>應化女E</option>
+                            <option>中文女A</option>
+                            <option>公行女B</option>
+                            <option>歷史女C</option>
+                            <option>國企女D</option>
+                            <option>應化女E</option>
                         </select>
                     </div>
                 </div>
             </div>
-            <div class = "col-md-2">
+            <div class="col-md-2">
                 <button type="button" class="btn btn-danger">Wednesday</button>
-                <br><br>
-                <div class ="row">
-                    <div class = "col-md-5" id="search">
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col-md-5" id="search">
                         <p>時段</p>
                         <p>1700</p>
                         <p>1900</p>
                     </div>
-                    <div class = "col-md-7">
+                    <div class="col-md-7">
                         <select multiple class="form-control">
-                          <option>資管男A</option>
-                          <option>財金男B</option>
-                          <option>經濟男C</option>
-                          <option>觀餐男D</option>
-                          <option>國企男E</option>
+                            <option>資管男A</option>
+                            <option>財金男B</option>
+                            <option>經濟男C</option>
+                            <option>觀餐男D</option>
+                            <option>國企男E</option>
                         </select>
                     </div>
                 </div>
                 <br>
-                <div class ="row">
-                    <div class = "col-md-5" id="search2">
+                <div class="row">
+                    <div class="col-md-5" id="search2">
                         <p>時段</p>
                         <p>1900</p>
                         <p>2100</p>
                     </div>
-                    <div class = "col-md-7">
+                    <div class="col-md-7">
                         <select multiple class="form-control">
-                          <option>中文女A</option>
-                          <option>公行女B</option>
-                          <option>歷史女C</option>
-                          <option>國企女D</option>
-                          <option>應化女E</option>
+                            <option>中文女A</option>
+                            <option>公行女B</option>
+                            <option>歷史女C</option>
+                            <option>國企女D</option>
+                            <option>應化女E</option>
                         </select>
                     </div>
                 </div>
             </div>
-            <div class = "col-md-2">
+            <div class="col-md-2">
                 <button type="button" class="btn btn-danger">Thursday</button>
-                <br><br>
-                <div class ="row">
-                    <div class = "col-md-5" id="search">
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col-md-5" id="search">
                         <p>時段</p>
                         <p>1700</p>
                         <p>1900</p>
                     </div>
-                    <div class = "col-md-7">
+                    <div class="col-md-7">
                         <select multiple class="form-control">
-                          <option>資管男A</option>
-                          <option>財金男B</option>
-                          <option>經濟男C</option>
-                          <option>觀餐男D</option>
-                          <option>國企男E</option>
+                            <option>資管男A</option>
+                            <option>財金男B</option>
+                            <option>經濟男C</option>
+                            <option>觀餐男D</option>
+                            <option>國企男E</option>
                         </select>
                     </div>
                 </div>
                 <br>
-                <div class ="row">
-                    <div class = "col-md-5" id="search2">
+                <div class="row">
+                    <div class="col-md-5" id="search2">
                         <p>時段</p>
                         <p>1900</p>
                         <p>2100</p>
                     </div>
-                    <div class = "col-md-7">
+                    <div class="col-md-7">
                         <select multiple class="form-control">
-                          <option>中文女A</option>
-                          <option>公行女B</option>
-                          <option>歷史女C</option>
-                          <option>國企女D</option>
-                          <option>應化女E</option>
+                            <option>中文女A</option>
+                            <option>公行女B</option>
+                            <option>歷史女C</option>
+                            <option>國企女D</option>
+                            <option>應化女E</option>
                         </select>
                     </div>
                 </div>
             </div>
-            <div class = "col-md-2">
+            <div class="col-md-2">
                 <button type="button" class="btn btn-danger">Friday</button>
-                <br><br>
-                <div class ="row">
-                    <div class = "col-md-5" id="search">
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col-md-5" id="search">
                         <p>時段</p>
                         <p>1700</p>
                         <p>1900</p>
                     </div>
-                    <div class = "col-md-7">
+                    <div class="col-md-7">
                         <select multiple class="form-control">
-                          <option>資管男A</option>
-                          <option>財金男B</option>
-                          <option>經濟男C</option>
-                          <option>觀餐男D</option>
-                          <option>國企男E</option>
+                            <option>資管男A</option>
+                            <option>財金男B</option>
+                            <option>經濟男C</option>
+                            <option>觀餐男D</option>
+                            <option>國企男E</option>
                         </select>
                     </div>
                 </div>
                 <br>
-                <div class ="row">
-                    <div class = "col-md-5" id="search2">
+                <div class="row">
+                    <div class="col-md-5" id="search2">
                         <p>時段</p>
                         <p>1900</p>
                         <p>2100</p>
                     </div>
-                    <div class = "col-md-7">
+                    <div class="col-md-7">
                         <select multiple class="form-control">
-                          <option>中文女A</option>
-                          <option>公行女B</option>
-                          <option>歷史女C</option>
-                          <option>國企女D</option>
-                          <option>應化女E</option>
+                            <option>中文女A</option>
+                            <option>公行女B</option>
+                            <option>歷史女C</option>
+                            <option>國企女D</option>
+                            <option>應化女E</option>
                         </select>
                     </div>
                 </div>
@@ -227,7 +243,8 @@ h1{
         </div>
     </div>
     <hr>
-    <font color="blue"><h1><center>場地圖</center></h1></font>
+    <font color="blue">
+        <h1><center>場地圖</center></h1></font>
     <div id="content">
         <div id="left-dorm">男生宿舍</div>
         <div id="middle">
@@ -258,9 +275,6 @@ h1{
         </div>
         <div id="right-playground">操場</div>
     </div>
-
-
-    
-
 </body>
+
 </html>
