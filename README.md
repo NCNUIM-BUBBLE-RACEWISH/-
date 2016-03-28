@@ -1,4 +1,5 @@
 # 前端檔案
+網站位置 : http://163.22.17.184:8080/sites/html/index.html
 
 ### 過程
  1. 後台5頁
@@ -10,8 +11,15 @@
  - 志願結果（隊長查詢結果）
 
 ### 其他未完成
- 1. place  場地圖 - 點選跳出圖片
- 2. submitYourWishes  選填志願 - 長條圖日期點了，沒有改變
+ 1. 場地圖 - 點選跳出圖片
+ 2. 填選志願 - 長條圖的日期
+ 3. 填選志願 - POST的 json格式+帳號的key value
+ 4. 填選志願 - 二次確認所選取的志願 (跳出小框框之類的)
+ 5. 填選志願 - 球類的選單刪掉 (ex:籃球隊不能選桌球場)
+ 6. 全部結果 - 資管男籃登入，關於資管男籃的資料就mark起來
+ 7. 安全性問題 (JWT)
+ 8. COOKIE
+ 9. 
 
 
 
@@ -19,23 +27,21 @@
  -----------------------------
 # 目前所有的頁面
 ## 前台
- 1. index   首頁(比對的API，登入頁面)
- 2. chandePassword   修改密碼
- 3. reroute   第二次分流(前端)
- 4. submitYourWishes  填選志願
- - 星期顯示
- - 志願存入(insert)
- 5. resultsOfLeader   志願結果（隊長查詢結果）
- 6. allResults   全部結果
- 7. rerouteByBall   查詢分流(前端)
- 8. place   場地圖(前端)
- 9. nextTeam   下一個練習系隊
+ - index   首頁
+ - chandePassword   修改密碼
+ - reroute   第二次分流
+ - submitYourWishes  填選志願
+ - resultsOfLeader   志願結果（隊長查詢結果）
+ - allResults   全部結果
+ - rerouteByBall   查詢分流
+ - place   場地圖
+ - nextTeam   下一個練習系隊
 
 ## 後台
- 1. 後台首頁
- 2. 更改結果
- 3. 管理帳號密碼
- 4. 更改志願
- 5. 場地管理
+ - 後台首頁
+ - 更改結果
+ - 管理帳號密碼
+ - 更改志願
+ - 場地管理
 
 
