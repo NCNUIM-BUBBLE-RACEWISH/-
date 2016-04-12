@@ -14,10 +14,11 @@ $(document).ready(function() {
     function weekFun(day) {
         $(function() {
             var num = []
-            myurl = "http://163.22.17.184:8080/bubble/wish/imcount/json" + ";week=" + day
             $.ajax({
-                url: myurl,
-                data: {},
+               /* url: "http://163.22.17.184:8080/bubble/wish/imcount/json?week=三",
+                data: {},*/
+                url: "http://163.22.17.184:8080/bubble/wish/imcount/json",
+                data: { "week": day },
                 type: "GET",
                 //↓天辣辣辣辣這行太神了!!!!傳回值終於可以存惹感動
                 async: false,
@@ -66,7 +67,7 @@ $(document).ready(function() {
                     }
                 },
                 yAxis: {
-                    min: 0,
+                  allowDecimals: false,
                     title: {
                         text: 'Population',
                         align: 'middle'
@@ -98,13 +99,13 @@ $(document).ready(function() {
                     shadow: true
                 },
                 series: [{
-                    name: '17:00~20:00',
+                     name: '17:00~20:00',
                     data: [parseInt(num[0]), parseInt(num[2]), parseInt(num[4]), parseInt(num[6])]
                 }, {
-                    name: '20:00~23:00',
+                     name: '20:00~23:00',
                     data: [parseInt(num[1]), parseInt(num[3]), parseInt(num[5]), parseInt(num[7])]
-                }, ]
-            });
+                },]
+             });
         });
     }
 
