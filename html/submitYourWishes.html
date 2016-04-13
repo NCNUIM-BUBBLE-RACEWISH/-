@@ -4,16 +4,15 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html" ; charset="utf-8">
     <title>填選志願</title>
-    <charset UTF-8>
-        <!--↓要加這串才能用bootstrap提供的小圖示，自己的引不到.....-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
         <link href="../css/bootstrap.min.css" rel="stylesheet">
-        <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
         <link href="../css/write/submitYourWishes.css" rel="stylesheet">
+        <script src="../js/write/postdata.js" type="text/javascript"></script>
         <script src="../js/write/submitYourWishes.js"></script>
         <!--↓美美的長條圖需要-->
         <script src="../js/highcharts.js"></script>
-        <script src="../js/module/exporting.js"></script>
+        <script src="../js/module/exporting.js"></script>        
 </head>
 
 <body>
@@ -33,117 +32,113 @@
                 <a href="#" class="btn btn-danger " role="button" value="五">Fri</a>
                 <div id="container"></div>
             </div>
-            <!--右填選志願-->
-            <div class="col-md-6 col-md-offset-1" id="right">
-                <br>
-                <br>
+            <div class="col-md-6">
                 <fieldset>
                     <legend>想了解排志願的規則 → <a href=""><span class="glyphicon glyphicon-tint" style="color:#A8D7FF" aria-hidden="true"></span></a>
                     </legend>
-                    <p>　　　 日期　　　 場地　　 申請時段 　　　 已申請次數</p>
-                    <form method="">
-                        <div class="form-group" id="wish1">
-                            志願一
-                            <select id="YourWeek1">
-                                <option value="-1" selected></option>
-                                <option value="一">星期一</option>
-                                <option value="二">星期二</option>
-                                <option value="三">星期三</option>
-                                <option value="四">星期四</option>
-                                <option value="五">星期五</option>
-                            </select>
-                            <select id="YourBall1" class="Ball">
-                                <option value="-1" selected></option>
-                            </select>
-                            <select id="YourTime1" class="Time">
-                                <option value="-1" selected></option>
-                            </select>
-                            <!--依照選擇跳出申請次數-->
-                            <input value="-1" style="display:none; width:80px;background-color:transparent; border:0px; color:#F96;text-align:center;"></input>
-                        </div>
-                        <div class="form-group" id="wish2">
-                            志願二
-                            <select id="YourWeek2">
-                                <option value="-1" selected></option>
-                                <option value="一">星期一</option>
-                                <option value="二">星期二</option>
-                                <option value="三">星期三</option>
-                                <option value="四">星期四</option>
-                                <option value="五">星期五</option>
-                            </select>
-                            <select id="YourBall2" class="Ball">
-                                <option value="-1" selected></option>
-                            </select>
-                            <select id="YourTime2" class="Time">
-                                <option value="-1" selected></option>
-                            </select>
-                            <!--依照選擇跳出申請次數-->
-                            <input value="-1" style="display:none; width:80px;background-color:transparent; border:0px; color:#F96;text-align:center;"></input>
-                        </div>
-                        <div class="form-group" id="wish3">
-                            志願三
-                            <select id="YourWeek3">
-                                <option value="-1" selected></option>
-                                <option value="一">星期一</option>
-                                <option value="二">星期二</option>
-                                <option value="三">星期三</option>
-                                <option value="四">星期四</option>
-                                <option value="五">星期五</option>
-                            </select>
-                            <select id="YourBall3" class="Ball">
-                                <option value="-1" selected></option>
-                            </select>
-                            <select id="YourTime3" class="Time">
-                                <option value="-1" selected></option>
-                            </select>
-                            <!--依照選擇跳出申請次數-->
-                            <input value="-1" style="display:none; width:80px;background-color:transparent; border:0px; color:#F96;text-align:center;"></input>
-                        </div>
-                        <div class="form-group" id="wish4">
-                            志願四
-                            <select id="YourWeek4">
-                                <option value="-1" selected></option>
-                                <option value="一">星期一</option>
-                                <option value="二">星期二</option>
-                                <option value="三">星期三</option>
-                                <option value="四">星期四</option>
-                                <option value="五">星期五</option>
-                            </select>
-                            <select id="YourBall4" class="Ball">
-                                <option value="-1" selected></option>
-                            </select>
-                            <select id="YourTime4" class="Time">
-                                <option value="-1" selected></option>
-                            </select>
-                            <!--依照選擇跳出申請次數-->
-                            <input value="-1" style="display:none; width:80px;background-color:transparent; border:0px; color:#F96;text-align:center;"></input>
-                        </div>
-                        <div class="form-group" id="wish5">
-                            志願五
-                            <select id="YourWeek5">
-                                <option value="-1" selected></option>
-                                <option value="一">星期一</option>
-                                <option value="二">星期二</option>
-                                <option value="三">星期三</option>
-                                <option value="四">星期四</option>
-                                <option value="五">星期五</option>
-                            </select>
-                            <select id="YourBall5" class="Ball">
-                                <option value="-1" selected></option>
-                            </select>
-                            <select id="YourTime5" class="Time">
-                                <option value="-1" selected></option>
-                            </select>
-                            <!--依照選擇跳出申請次數-->
-                            <input value="-1" style="display:none; width:80px;background-color:transparent; border:0px; color:#F96;text-align:center;"></input>
-                        </div>
-                        <br>
-                        <div class="col-md-2 col-md-offset-8">
-                            <button class="btn btn-primary">確認</button>
-                        </div>
-                    </form>
+                <p>　　　 日期　　　 場地　　 申請時段 　　　 申請次數 </p>
+                <form id="volunteer">
+                    <div class="form-group" id="wish1">
+                        志願一
+                        <input type="hidden" name="wish" value="1">
+                        <select name="week" id="YourWeek1">
+                            <option value="-1" selected></option>
+                            <option value="一">星期一</option>
+                            <option value="二">星期二</option>
+                            <option value="三">星期三</option>
+                            <option value="四">星期四</option>
+                            <option value="五">星期五</option>
+                        </select>
+                        <select name="placeid" id="YourBall1" class="Place">
+                            <option value="-1" selected></option>
+                        </select>
+                        <select name="timecode" id="YourTime1" class="Time">
+                            <option value="-1" selected></option>
+                        </select>
+                        <input id="num1" value="-1" style="display:none; width:80px;background-color:transparent; border:0px; color:#F96;text-align:center;"></input>
+                    </div>
+                    <div class="form-group" id="wish2">
+                        志願一
+                        <input type="hidden" name="wish" value="2">
+                        <select name="week" id="YourWeek2">
+                            <option value="-1" selected></option>
+                            <option value="一">星期一</option>
+                            <option value="二">星期二</option>
+                            <option value="三">星期三</option>
+                            <option value="四">星期四</option>
+                            <option value="五">星期五</option>
+                        </select>
+                        <select name="placeid" id="YourBall2" class="Place">
+                            <option value="-1" selected></option>
+                        </select>
+                        <select name="timecode" id="YourTime2" class="Time">
+                            <option value="-1" selected></option>
+                        </select>
+                        <input id="num2" value="-1" style="display:none; width:80px;background-color:transparent; border:0px; color:#F96;text-align:center;"></input>
+                    </div>
+                    <div class="form-group" id="wish3">
+                        志願一
+                        <input type="hidden" name="wish" value="3">
+                        <select name="week" id="YourWeek3">
+                            <option value="-1" selected></option>
+                            <option value="一">星期一</option>
+                            <option value="二">星期二</option>
+                            <option value="三">星期三</option>
+                            <option value="四">星期四</option>
+                            <option value="五">星期五</option>
+                        </select>
+                        <select name="placeid" id="YourBall3" class="Place">
+                            <option value="-1" selected></option>
+                        </select>
+                        <select name="timecode" id="YourTime3" class="Time">
+                            <option value="-1" selected></option>
+                        </select>
+                        <input id="num3" value="-1" style="display:none; width:80px;background-color:transparent; border:0px; color:#F96;text-align:center;"></input>
+                    </div>
+                    <div class="form-group" id="wish4">
+                        志願一
+                        <input type="hidden" name="wish" value="4">
+                        <select name="week" id="YourWeek4">
+                            <option value="-1" selected></option>
+                            <option value="一">星期一</option>
+                            <option value="二">星期二</option>
+                            <option value="三">星期三</option>
+                            <option value="四">星期四</option>
+                            <option value="五">星期五</option>
+                        </select>
+                        <select name="placeid" id="YourBall4" class="Place">
+                            <option value="-1" selected></option>
+                        </select>
+                        <select name="timecode" id="YourTime4" class="Time">
+                            <option value="-1" selected></option>
+                        </select>
+                        <input id="num4" value="-1" style="display:none; width:80px;background-color:transparent; border:0px; color:#F96;text-align:center;"></input>
+                    </div>
+                    <div class="form-group" id="wish5">
+                        志願一
+                        <input type="hidden" name="wish" value="5">
+                        <select name="week" id="YourWeek5">
+                            <option value="-1" selected></option>
+                            <option value="一">星期一</option>
+                            <option value="二">星期二</option>
+                            <option value="三">星期三</option>
+                            <option value="四">星期四</option>
+                            <option value="五">星期五</option>
+                        </select>
+                        <select name="placeid" id="YourBall5" class="Place">
+                            <option value="-1" selected></option>
+                        </select>
+                        <select name="timecode" id="YourTime5" class="Time">
+                            <option value="-1" selected></option>
+                        </select>
+                        <input id="num5" value="-1" style="display:none; width:80px;background-color:transparent; border:0px; color:#F96;text-align:center;"></input>
+                    </div>
+                    <div class="col-lg-2 col-lg-offset-8">
+                        <button type="submit" class="btn btn-primary">確認</button>
+                    </div>
+                </form>
                 </fieldset>
             </div>
         </div>
-    </div>
 </body>
+</html>

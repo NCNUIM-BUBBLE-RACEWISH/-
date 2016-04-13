@@ -7,15 +7,15 @@ $(document).ready(function() {
     var cookie = 0 //ballcode
     var json = [
         { "球類": "籃球", "場地數": 8, "場地": ["A", "B", "C", "D", "E", "F", "G", "H"], "時段數": 2, "時段": ["a", "b"], "時段差": 3, "時段開始": 1700 },
-        { "球類": "桌球", "場地數": 4, "場地": ["A", "B", "C", "D"], "時段": 2, "時段數": 2, "時段": ["c", "d"], "時段差": 2, "時段開始": 1500 },
-        { "球類": "羽球", "場地數": 4, "場地": ["A", "B", "C", "D"], "時段": 2, "時段數": 2, "時段": ["a", "b"], "時段差": 2, "時段開始": 1500 }, //不確定
-        { "球類": "排球", "場地數": 4, "場地": ["A", "B", "C", "D"], "時段": 2, "時段數": 2, "時段": ["a", "b"], "時段差": 2, "時段開始": 1500 }, //不確定
-        { "球類": "壘球", "場地數": 4, "場地": ["A", "B", "C", "D"], "時段": 2, "時段數": 2, "時段": ["a", "b"], "時段差": 2, "時段開始": 1500 } //不確定
+        { "球類": "桌球", "場地數": 4, "場地": ["A", "B", "C", "D"], "時段數": 2, "時段": ["c", "d"], "時段差": 2, "時段開始": 1500 },
+        { "球類": "羽球", "場地數": 4, "場地": ["A", "B", "C", "D"], "時段數": 2, "時段": ["a", "b"], "時段差": 2, "時段開始": 1500 }, 
+        { "球類": "排球", "場地數": 4, "場地": ["A", "B", "C", "D"], "時段數": 2, "時段": ["a", "b"], "時段差": 2, "時段開始": 1500 }, 
+        { "球類": "壘球", "場地數": 4, "場地": ["A", "B", "C", "D"], "時段數": 2, "時段": ["a", "b"], "時段差": 2, "時段開始": 1500 } 
     ]
     place = json[cookie].球類; //中文名
     //依照球類，把該球類的場地和時段塞進選單
     for (i = 0; i < json[cookie].場地數; i++) {
-        $(".Ball").append("<option value=" + cookie + json[cookie].場地[i] + ">" + place + json[cookie].場地[i] + "</option>");
+        $(".Place").append("<option value=" + cookie + json[cookie].場地[i] + ">" + place + json[cookie].場地[i] + "</option>");
     }
     for (i = 0; i < json[cookie].時段數; i++) {
         from = json[cookie].時段開始 + (json[cookie].時段差 * i * 100)
@@ -206,10 +206,7 @@ $(document).ready(function() {
                 data: { "time": time, "place": ball, "week": week },
                 type: "GET",
                 success: function(data) {
-                    $.each(data, function(key, value) {
-                        $("#wish1 > input").val(value).show();
-                        console.log(key + ": " + value);
-                    });
+                    $("#num1").val(data.申請次數).show();
                 }
             });
             console.log("week", week, "ball", ball, "time", time);
@@ -226,10 +223,7 @@ $(document).ready(function() {
                 data: { "time": time, "place": ball, "week": week },
                 type: "GET",
                 success: function(data) {
-                    $.each(data, function(key, value) {
-                        $("#wish2 > input").val(value).show();
-                        console.log(key + ": " + value);
-                    });
+                    $("#num2").val(data.申請次數).show();
                 }
             });
         }
@@ -245,10 +239,7 @@ $(document).ready(function() {
                 data: { "time": time, "place": ball, "week": week },
                 type: "GET",
                 success: function(data) {
-                    $.each(data, function(key, value) {
-                        $("#wish3 > input").val(value).show();
-                        console.log(key + ": " + value);
-                    });
+                    $("#num3").val(data.申請次數).show();
                 }
             });
         }
@@ -264,10 +255,7 @@ $(document).ready(function() {
                 data: { "time": time, "place": ball, "week": week },
                 type: "GET",
                 success: function(data) {
-                    $.each(data, function(key, value) {
-                        $("#wish4 > input").val(value).show();
-                        console.log(key + ": " + value);
-                    });
+                    $("#num4").val(data.申請次數).show();
                 }
             });
         }
@@ -283,10 +271,7 @@ $(document).ready(function() {
                 data: { "time": time, "place": ball, "week": week },
                 type: "GET",
                 success: function(data) {
-                    $.each(data, function(key, value) {
-                        $("#wish5 > input").val(value).show();
-                        console.log(key + ": " + value);
-                    });
+                    $("#num5").val(data.申請次數).show();
                 }
             });
         }
