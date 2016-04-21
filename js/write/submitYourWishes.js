@@ -40,7 +40,7 @@ $(document).ready(function() {
         $(function() {
             var num = [] //存各時段的申請次數
             $.ajax({
-                url: "http://163.22.17.184:8080/bubble/wish/imcount/json",
+                url: "http://163.22.17.184:8080/bubble/user/apply/bar_chart",
                 data: { "week": day }, //需要球類的參數?
                 type: "GET",
                 //↓天辣辣辣辣這行太神了!!!!傳回值終於可以存惹感動
