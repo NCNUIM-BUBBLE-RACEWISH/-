@@ -2,7 +2,7 @@ $(document).ready(function(){
     $("#volunteer").submit(function(event){
         //console.log($(this).serializeArray());
         var formData = $(this).serializeArray();
-        var dataObj ={};
+        var dataObj ={"userid":sessionStorage["account"]};
         var alldata =[];
         for (var j = 0; j < 5; j++) {
             for (var i = j*4; i < j*4+4; i++) {
@@ -29,7 +29,6 @@ $(document).ready(function(){
                 console.log(err);
             }
         });
-
         event.preventDefault();
     });
 });
