@@ -2,7 +2,12 @@ $(document).ready(function(){
     $("#volunteer").submit(function(event){
         //console.log($(this).serializeArray());
         var formData = $(this).serializeArray();
-        var dataObj ={"ballid":sessionStorage["account"]};
+        var nowDate = new Date();
+        if(nowDate.getMonth()<9||nowDate.getMonth()>2)
+          nowDate=(nowDate.getFullYear()-1912)*10+2;
+        else
+          nowDate=(nowDate.getFullYear()-1911)*10+1;
+        var dataObj ={"ballid":sessionStorage["account"],"term":nowDate};
         var alldata =[];
         for (var j = 0; j < 5; j++) {
             for (var i = j*4; i < j*4+4; i++) {
@@ -17,7 +22,7 @@ $(document).ready(function(){
         $.ajax({
             url: 'http://163.22.17.184:8080/bubble/users/apply/input',
             contentType: "application/json",
-            data: JSON.stringify(dataObj),
+            data: JSON.stringify(alldata),
             dataType: 'json',
             type: 'POST',
             success: function(data) {

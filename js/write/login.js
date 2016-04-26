@@ -23,11 +23,14 @@ $(document).ready(function(){
                                         sessionStorage["account"]=result.account;
                                         document.location.href="reroute.html";
                                 }
-                                if(result.statuscode==401){
-                                        document.getElementById("status").innerHTML='帳號密碼錯誤!';
+                                else if(result.statuscode==401){
+                                        document.getElementById("status").innerHTML=result.message;
                                 }
-                                if(result.statuscode==500){
-                                        document.getElementById("status").innerHTML='伺服器問題 請稍後再試';
+                                else if(result.statuscode==500){
+                                        document.getElementById("status").innerHTML=result.message;
+                                }
+                                else{
+                                        document.getElementById("status").innerHTML="發生不明原因錯誤 請稍後再試";
                                 }
                         },
                         error: function(err) {
