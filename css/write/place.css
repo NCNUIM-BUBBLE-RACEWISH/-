@@ -1,0 +1,82 @@
+body{
+    margin:0 auto;
+    width:1200px;
+    height:40px;
+}
+#return{
+    width:1000px;
+    margin-left:50px;
+}
+#content{
+    width:900px;
+    height:400px;
+    margin:0 auto;
+}
+#left-dorm{
+    width:100px;
+    height:200px;
+    float:left;/*並排*/
+    border-style:solid;/*邊框*/
+    text-align:center;/*字置中*/
+    padding-top:80px;/*內容距離邊框高度:80px*/
+    margin-top:100px;/*和外圍的距離*/
+    background-color:#9999FF;
+}
+#middle{
+    width:650px;
+    float:left;/*並排*/
+    margin-left:50px;
+}
+#gym{
+    border-style:solid;
+    width:400px;
+    height:130px; 
+    margin-top:30px;
+    margin-left:100px;
+    margin-right:100px;
+    float:left;
+}
+#table{
+    border-style:solid;
+    width:70px;
+    height:70px;  
+}
+#pool{
+    border-style:solid;
+    width:150px;
+    height:46px;
+    margin-top:78px;
+    margin-right:20px;
+    float:right;     
+}
+#l{
+    width:360px;
+    float:left;      
+    margin-left:40px;
+    margin-top:80px;
+
+}
+#r{
+    width:200px;
+    float:left;     
+    margin-top:80px;
+}
+#option{
+    border-style:solid;
+    width:70px;
+    height:70px; 
+}
+#right-playground{
+    width:100px;
+    height:200px;
+    float:left;/*並排*/
+    background-color:#F96;
+    border-style:solid;/*邊框*/
+    text-align:center;/*字置中*/
+    padding-top:80px;/*內容距離邊框高度:80px*/
+    margin-top:100px;/*和外圍的距離*/
+    border-radius: 50px / 100px; /*橢圓形*/
+}
+#b01 {
+    margin-top:120px;
+}

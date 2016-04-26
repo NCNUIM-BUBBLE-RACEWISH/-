@@ -1,0 +1,19 @@
+#search{
+    background-color:#5bc0de;
+    padding:10px;
+    margin-bottom:5px;
+}
+#search2{
+    background-color:#FFD991;
+    padding:10px;
+    margin-bottom:5px;
+}
+#ground{
+        width: 600px;
+        height: 450px;
+}
+#tabletime{
+        border-collapse:separate;
+        border-spacing:25px 40px;
+}
+

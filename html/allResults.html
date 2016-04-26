@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html"; charset="utf-8">
+    <title>全部結果</title>
+    <!--↓要加這串才能用bootstrap提供的小圖示，自己的引不到.....-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <script src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/write/text.css">
+    <link rel="stylesheet" type="text/css" href="../css/write/place.css">
+    <script src="../js/write/allResult.js"></script>
+    <style>
+    body {
+        background-image: url("");
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-position: 20% 40%;
+        background-size: cover;
+    }
+    
+    h1 {
+        color: #D13109;
+        font-family: "Yu Gothic ", simhei;
+        font-weight: bold;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="col-md-2">
+            <a href="index.html"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 返回登入</a>
+        </div>
+        <div class="col-md-8">
+            <h1><center>所有結果</center></h1>
+            <br>
+            <br>
+        </div>
+        <div class="col-md-2 ">
+            <br>
+            <div class="input-group">
+                <input type="text" class="form-control" id="userSearch" placeholder="資管女籃" aria-label="...">
+                <div class="input-group-btn">
+                    <button type="button" class="btn btn-default" id="lookFor" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="back">
+        <div class="row">
+            <!-- 星期一 -->
+            <div class="col-md-2 col-md-offset-1">
+                <button type="button" class="btn btn-default btn-block">Monday</button>
+                <br>
+                <div class="row">
+                    <div class="col-md-5" id="search">
+                        <p>時段</p>
+                        <p>1700</p>
+                        <p>1900</p>
+                    </div>
+                    <!-- 時段A -->
+                    <div class="col-md-7" id="MonA">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-5" id="search2">
+                        <p>時段</p>
+                        <p>1900</p>
+                        <p>2100</p>
+                    </div>
+                    <div class="col-md-7" id="MonB">
+                        <!-- 時段B -->
+                    </div>
+                </div>
+            </div>
+            <!-- 星期二 -->
+            <div class="col-md-2 ">
+                <button type="button" class="btn btn-default btn-block">Tuesday</button>
+                <br>
+                <div class="row">
+                    <div class="col-md-5" id="search">
+                        <p>時段</p>
+                        <p>1700</p>
+                        <p>1900</p>
+                    </div>
+                    <!-- 時段A -->
+                    <ol class="col-md-7" id="TueA">
+                    </ol>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-5" id="search2">
+                        <p>時段</p>
+                        <p>1900</p>
+                        <p>2100</p>
+                    </div>
+                    <ol class="col-md-7" id="TueB">
+                        <!-- 時段B -->
+                    </ol>
+                </div>
+            </div>
+            <!-- 星期三 -->
+            <div class="col-md-2 ">
+                <button type="button" class="btn btn-default btn-block">Wednesday</button>
+                <br>
+                <div class="row">
+                    <div class="col-md-5" id="search">
+                        <p>時段</p>
+                        <p>1700</p>
+                        <p>1900</p>
+                    </div>
+                    <!-- 時段A -->
+                    <div class="col-md-7" id="WedA">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-5" id="search2">
+                        <p>時段</p>
+                        <p>1900</p>
+                        <p>2100</p>
+                    </div>
+                    <div class="col-md-7" id="WedB">
+                        <!-- 時段B -->
+                    </div>
+                </div>
+            </div>
+            <!-- 星期四 -->
+            <div class="col-md-2 ">
+                <button type="button" class="btn btn-default btn-block">Thursday</button>
+                <br>
+                <div class="row">
+                    <div class="col-md-5" id="search">
+                        <p>時段</p>
+                        <p>1700</p>
+                        <p>1900</p>
+                    </div>
+                    <!-- 時段A -->
+                    <div class="col-md-7" id="ThuA">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-5" id="search2">
+                        <p>時段</p>
+                        <p>1900</p>
+                        <p>2100</p>
+                    </div>
+                    <div class="col-md-7" id="ThuB">
+                        <!-- 時段B -->
+                    </div>
+                </div>
+            </div>
+            <!-- 星期五 -->
+            <div class="col-md-2 ">
+                <button type="button" class="btn btn-default btn-block">Friday</button>
+                <br>
+                <div class="row">
+                    <div class="col-md-5" id="search">
+                        <p>時段</p>
+                        <p>1700</p>
+                        <p>1900</p>
+                    </div>
+                    <!-- 時段A -->
+                    <div class="col-md-7" id="FriA">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-5" id="search2">
+                        <p>時段</p>
+                        <p>1900</p>
+                        <p>2100</p>
+                    </div>
+                    <div class="col-md-7" id="FriB">
+                        <!-- 時段B -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <hr>
+    <font color="blue">
+        <h1><center>場地圖</center></h1></font>
+    <div id="content">
+        <div id="left-dorm">男生宿舍</div>
+        <div id="middle">
+            <div id="gym">
+                <button id="table">桌球室</button>
+                <button id="pool">游泳池</button>
+            </div>
+            <div id="l">
+                <input type="button" value="排球場A" id="option">
+                <input type="button" value="排球場B" id="option">
+                <input type="button" value="排球場C" id="option">
+                <input type="button" value="排球場D" id="option">
+                <br>
+                <br>
+                <input type="button" value="籃球場A" id="option">
+                <input type="button" value="籃球場B" id="option">
+                <input type="button" value="籃球場C" id="option">
+                <input type="button" value="籃球場D" id="option">
+            </div>
+            <div id="r">
+                <input type="button" value="籃球場E" id="option">
+                <input type="button" value="籃球場F" id="option">
+                <br>
+                <br>
+                <input type="button" value="網球場A" id="option">
+                <input type="button" value="網球場B" id="option">
+            </div>
+        </div>
+        <div id="right-playground">操場</div>
+    </div>
+</body>
+
+</html>
