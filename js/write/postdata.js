@@ -15,7 +15,7 @@ $(document).ready(function(){
         };
         console.log(JSON.stringify(alldata));
         $.ajax({
-            url: 'http://163.22.17.184:8080/bubble/apply/json',
+            url: 'http://163.22.17.184:8080/bubble/Test/passwd',
             contentType: "application/json",
             data: JSON.stringify(dataObj),
             dataType: 'json',
