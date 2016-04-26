@@ -10,7 +10,7 @@ $(document).ready(function(){
                 data.passwd=passwd;
                 console.log(JSON.stringify(data));
                 $.ajax({
-                        url:'http://163.22.17.184:8080/bubble/Test/passwd',
+                        url:'http://163.22.17.184:8080/bubble/user/passwd',
                         contentType:"application/json",
                         data:JSON.stringify(data),
                         dataType: 'json',

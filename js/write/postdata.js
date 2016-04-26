@@ -2,7 +2,7 @@ $(document).ready(function(){
     $("#volunteer").submit(function(event){
         //console.log($(this).serializeArray());
         var formData = $(this).serializeArray();
-        var dataObj ={"userid":sessionStorage["account"]};
+        var dataObj ={"ballid":sessionStorage["account"]};
         var alldata =[];
         for (var j = 0; j < 5; j++) {
             for (var i = j*4; i < j*4+4; i++) {
@@ -15,7 +15,7 @@ $(document).ready(function(){
         };
         console.log(JSON.stringify(alldata));
         $.ajax({
-            url: 'http://163.22.17.184:8080/bubble/Test/passwd',
+            url: 'http://163.22.17.184:8080/bubble/users/apply/input',
             contentType: "application/json",
             data: JSON.stringify(dataObj),
             dataType: 'json',
