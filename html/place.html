@@ -19,12 +19,14 @@
     <script type="text/javascript" src="../js/prototype.js"></script>
     <script type="text/javascript" src="../js/scriptaculous.js?load=effects,builder"></script>
     <script type="text/javascript" src="../js/lightbox.js"></script>
+    <!-- 加入身分認證 -->
+    <script type="text/javascript" src="../js/write/identity.js"></script>
     <link rel="stylesheet" href="../css/lightbox.min.css" type="text/css" media="screen" />
 </head>
-<body>
+<body onload='showAccount()'>
     <!--返回-->
     <div id="return">
-        <a href="index.html"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 返回登入</a>
+        <span class="glyphicon glyphicon-user" aria-hidden="true"></span><span id="account">ASE</span><a href="index.html"> 返回登入</a>
     </div>
     <!--大標題-->
     <font color="blue"><h1><center>場地圖</center></h1></font>
