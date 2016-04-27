@@ -21,6 +21,7 @@ $(document).ready(function(){
                                 // 成功時將帳號存入session
                                 if(result.statuscode==200){
                                         sessionStorage["account"]=result.account;
+                                        sessionStorage["statuscode"]=result.statuscode;
                                         document.location.href="reroute.html";
                                 }
                                 else if(result.statuscode==401){
@@ -45,3 +46,7 @@ $(document).ready(function(){
 function printdata(){
         console.log(sessionStorage["account"]);
 }
+function autoLogin(){
+        if(sessionStorage["statuscode"]==200)
+                document.location.href="reroute.html";
+ }
