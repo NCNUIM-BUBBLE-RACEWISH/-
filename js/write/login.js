@@ -46,7 +46,9 @@ $(document).ready(function(){
 function printdata(){
         console.log(sessionStorage["account"]);
 }
-function autoLogin(){
+// 若未關閉瀏覽器則自動登入
+/*function autoLogin(){
         if(sessionStorage["statuscode"]==200)
                 document.location.href="reroute.html";
  }
+*/
