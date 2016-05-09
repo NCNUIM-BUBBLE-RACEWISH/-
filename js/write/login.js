@@ -18,7 +18,7 @@ $(document).ready(function(){
                         success: function(result) {
                                 console.log('woohoo!');
                                 console.log(result);
-                                // 成功時將帳號存入session
+                                // 成功時將帳號,狀態碼,存入session
                                 if(result.statuscode==200){
                                         sessionStorage["account"]=result.account;
                                         sessionStorage["statuscode"]=result.statuscode;
