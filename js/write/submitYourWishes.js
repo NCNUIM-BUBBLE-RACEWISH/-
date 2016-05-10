@@ -290,7 +290,7 @@ $(document).ready(function() {
         if ((week != -1) && (ball != -1) && (time != -1)) {
             $.ajax({
                 //http://163.22.17.184:8080/bubble/apply_count2/json? time=a & place=0A &week=五
-                url: "http://163.22.17.184:8080/bubble/apply_count2/json",
+                url: "http://163.22.17.184:8080/bubble/user/apply/information/Real_time",
                 data: { "time": time, "place": ball, "week": week },
                 type: "GET",
                 success: function(data) {
@@ -307,7 +307,7 @@ $(document).ready(function() {
         if ((week != -1) && (ball != -1) && (time != -1)) {
             $.ajax({
                 //http://163.22.17.184:8080/bubble/apply_count2/json? time=a & place=0A &week=五
-                url: "http://163.22.17.184:8080/bubble/apply_count2/json",
+                url: "http://163.22.17.184:8080/bubble/user/apply/information/Real_time",
                 data: { "time": time, "place": ball, "week": week },
                 type: "GET",
                 success: function(data) {
@@ -323,7 +323,7 @@ $(document).ready(function() {
         if ((week != -1) && (ball != -1) && (time != -1)) {
             $.ajax({
                 //http://163.22.17.184:8080/bubble/apply_count2/json? time=a & place=0A &week=五
-                url: "http://163.22.17.184:8080/bubble/apply_count2/json",
+                url: "http://163.22.17.184:8080/bubble/user/apply/information/Real_time",
                 data: { "time": time, "place": ball, "week": week },
                 type: "GET",
                 success: function(data) {
@@ -339,7 +339,7 @@ $(document).ready(function() {
         if ((week != -1) && (ball != -1) && (time != -1)) {
             $.ajax({
                 //http://163.22.17.184:8080/bubble/apply_count2/json? time=a & place=0A &week=五
-                url: "http://163.22.17.184:8080/bubble/apply_count2/json",
+                url: "http://163.22.17.184:8080/bubble/user/apply/information/Real_time",
                 data: { "time": time, "place": ball, "week": week },
                 type: "GET",
                 success: function(data) {
@@ -355,7 +355,7 @@ $(document).ready(function() {
         if ((week != -1) && (ball != -1) && (time != -1)) {
             $.ajax({
                 //http://163.22.17.184:8080/bubble/apply_count2/json? time=a & place=0A &week=五
-                url: "http://163.22.17.184:8080/bubble/apply_count2/json",
+                url: "http://163.22.17.184:8080/bubble/user/apply/information/Real_time",
                 data: { "time": time, "place": ball, "week": week },
                 type: "GET",
                 success: function(data) {
