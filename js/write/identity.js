@@ -68,3 +68,9 @@ function showAccount(){
         else if(sessionStorage['account']=='420B')
                 document.getElementById('account').innerHTML='觀餐男籃'
 }
+/*$(document).ready(function(){
+        alert(sessionStorage['account'].substring(1,3));
+        if(sessionStorage['account'].substring(1,3)=='01'){
+                $("p").append("中文");
+        }
+});*/

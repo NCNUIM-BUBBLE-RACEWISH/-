@@ -4,26 +4,85 @@ $(document).ready(function() {
         假設:
             0->籃球  1->排球  2->羽球  3->桌球  4->壘球
     */
+    //cookie為球種代碼
     var cookie = sessionStorage["account"].substring(2,3); //ballcode
     var json = [
         { "球類": "籃球", "場地數": 8, "場地": ["A", "B", "C", "D", "E", "F", "G", "H"], "時段數": 2, "時段": ["a", "b"], "時段差": 3, "時段開始": 1700 },
-        { "球類": "排球", "場地數": 4, "場地": ["A", "B", "C", "D"], "時段數": 2, "時段": ["c", "d"], "時段差": 2, "時段開始": 1500 },
+        { "球類": "排球", "場地數": 4, "場地": ["A", "B", "C", "D"], "時段數": 2, "時段": ["c", "d"], "時段差": 2, "時段開始": 1500 ,"時間":["1700", "1900","2100"]},
         { "球類": "羽球", "場地數": 4, "場地": ["A", "B", "C", "D"], "時段數": 2, "時段": ["a", "b"], "時段差": 2, "時段開始": 1500 },
         { "球類": "桌球", "場地數": 4, "場地": ["A", "B", "C", "D"], "時段數": 2, "時段": ["a", "b"], "時段差": 2, "時段開始": 1500 },
         { "球類": "壘球", "場地數": 4, "場地": ["A", "B", "C", "D"], "時段數": 2, "時段": ["a", "b"], "時段差": 2, "時段開始": 1500 }
     ]
     place = json[cookie].球類; //中文名
-    //依照球類，把該球類的場地和時段塞進選單
-    for (i = 0; i < json[cookie].場地數; i++) {
-        $(".Place").append("<option value=" + cookie + json[cookie].場地[i] + ">" + place + json[cookie].場地[i] + "</option>");
+    // 偵測 Volleyball 改變時段選擇 (將原先時段刪除再加上新時段)
+    for(i = 0; i < json[cookie].場地數; i++){
+        $(".Place").append("<option value=" +  json[cookie].場地[i] + ">" + place + json[cookie].場地[i] + "</option>");
     }
-    for (i = 0; i < json[cookie].時段數; i++) {
-        from = json[cookie].時段開始 + (json[cookie].時段差 * i * 100)
-        to = json[cookie].時段開始 + (json[cookie].時段差 * (i + 1) * 100)
-        $(".Time").append("<option value=" + json[cookie].時段[i] + ">" + from + "~" + to + "</option>");
-    }
-
-
+    $("#YourBall1").change(function(){
+        if($("#YourBall1").val()=="A" || $("#YourBall1").val()=="B"){
+            $("#YourTime1 option:last").remove();
+            $("#YourTime1 option:last").remove();
+            $("#YourTime1").append("<option value=" + json[cookie].時間[0] + ">" + json[cookie].時間[0] + "~" + json[cookie].時間[1] + "</option>");
+        }
+        if($("#YourBall1").val()=="C" || $("#YourBall1").val()=="D"){
+        $("#YourTime1 option:last").remove();
+            $("#YourTime1 option:last").remove();
+            $("#YourTime1").append("<option value=" + json[cookie].時間[0] + ">" + json[cookie].時間[0] + "~" + json[cookie].時間[1] + "</option>");
+            $("#YourTime1").append("<option value=" + json[cookie].時間[0] + ">" + json[cookie].時間[1] + "~" + json[cookie].時間[2] + "</option>");
+        }
+    });
+    $("#YourBall2").change(function(){
+        if($("#YourBall2").val()=="A" || $("#YourBall2").val()=="B"){
+            $("#YourTime2 option:last").remove();
+            $("#YourTime2 option:last").remove();
+            $("#YourTime2").append("<option value=" + json[cookie].時間[0] + ">" + json[cookie].時間[0] + "~" + json[cookie].時間[1] + "</option>");
+        }
+        if($("#YourBall2").val()=="C" || $("#YourBall2").val()=="D"){
+        $("#YourTime2 option:last").remove();
+            $("#YourTime2 option:last").remove();
+            $("#YourTime2").append("<option value=" + json[cookie].時間[0] + ">" + json[cookie].時間[0] + "~" + json[cookie].時間[1] + "</option>");
+            $("#YourTime2").append("<option value=" + json[cookie].時間[0] + ">" + json[cookie].時間[1] + "~" + json[cookie].時間[2] + "</option>");
+        }
+    });
+    $("#YourBall3").change(function(){
+        if($("#YourBall3").val()=="A" || $("#YourBall3").val()=="B"){
+            $("#YourTime3 option:last").remove();
+            $("#YourTime3 option:last").remove();
+            $("#YourTime3").append("<option value=" + json[cookie].時間[0] + ">" + json[cookie].時間[0] + "~" + json[cookie].時間[1] + "</option>");
+        }
+        if($("#YourBall3").val()=="C" || $("#YourBall3").val()=="D"){
+        $("#YourTime3 option:last").remove();
+            $("#YourTime3 option:last").remove();
+            $("#YourTime3").append("<option value=" + json[cookie].時間[0] + ">" + json[cookie].時間[0] + "~" + json[cookie].時間[1] + "</option>");
+            $("#YourTime3").append("<option value=" + json[cookie].時間[0] + ">" + json[cookie].時間[1] + "~" + json[cookie].時間[2] + "</option>");
+        }
+    });
+    $("#YourBall4").change(function(){
+        if($("#YourBall4").val()=="A" || $("#YourBall4").val()=="B"){
+            $("#YourTime4 option:last").remove();
+            $("#YourTime4 option:last").remove();
+            $("#YourTime4").append("<option value=" + json[cookie].時間[0] + ">" + json[cookie].時間[0] + "~" + json[cookie].時間[1] + "</option>");
+        }
+        if($("#YourBall4").val()=="C" || $("#YourBall4").val()=="D"){
+        $("#YourTime4 option:last").remove();
+            $("#YourTime4 option:last").remove();
+            $("#YourTime4").append("<option value=" + json[cookie].時間[0] + ">" + json[cookie].時間[0] + "~" + json[cookie].時間[1] + "</option>");
+            $("#YourTime4").append("<option value=" + json[cookie].時間[0] + ">" + json[cookie].時間[1] + "~" + json[cookie].時間[2] + "</option>");
+        }
+    });
+    $("#YourBall5").change(function(){
+        if($("#YourBall5").val()=="A" || $("#YourBall5").val()=="B"){
+            $("#YourTime5 option:last").remove();
+            $("#YourTime5 option:last").remove();
+            $("#YourTime5").append("<option value=" + json[cookie].時間[0] + ">" + json[cookie].時間[0] + "~" + json[cookie].時間[1] + "</option>");
+        }
+        if($("#YourBall5").val()=="C" || $("#YourBall5").val()=="D"){
+        $("#YourTime5 option:last").remove();
+            $("#YourTime5 option:last").remove();
+            $("#YourTime5").append("<option value=" + json[cookie].時間[0] + ">" + json[cookie].時間[0] + "~" + json[cookie].時間[1] + "</option>");
+            $("#YourTime5").append("<option value=" + json[cookie].時間[0] + ">" + json[cookie].時間[1] + "~" + json[cookie].時間[2] + "</option>");
+        }
+    });
 
     /*      左邊的長條圖~~~~~~~~~~~~~~~~~   */
     //進入頁面時預設顯示星期一
@@ -276,7 +335,15 @@ $(document).ready(function() {
             });
         }
     });
-
-
-
 });
+/*  保留青儀原作xD
+    依照球類，把該球類的場地和時段塞進選單
+    for (i = 0; i < json[cookie].場地數; i++) {
+        $(".Place").append("<option value=" + cookie + json[cookie].場地[i] + ">" + place + json[cookie].場地[i] + "</option>");
+    }
+    for (i = 0; i < json[cookie].時段數; i++) {
+        from = json[cookie].時段開始 + (json[cookie].時段差 * i * 100)
+        to = json[cookie].時段開始 + (json[cookie].時段差 * (i + 1) * 100)
+        $(".Time").append("<option value=" + json[cookie].時段[i] + ">" + from + "~" + to + "</option>");
+    }
+    */
