@@ -29,22 +29,26 @@ $(document).ready(function() {
             check+="志願"+i+" : "+w+" "+p+" "+t+" \n";
         }
         if(confirm(check)){
-             postData(dataObj);
+             postData(alldata);
         }
         event.preventDefault();
     });
-function postData(dataObj) {
+function postData(alldata) {
         $.ajax({
             url: 'http://163.22.17.184:8080/bubble/user/apply/insert',
             contentType: "application/json",
-            data: JSON.stringify(dataObj),
+            data: JSON.stringify(alldata),
             dataType: 'json',
             type: 'POST',
             success: function(data) {
                 console.log('woohoo!');
                 console.log(data);
-                alert("已送出申請");
-                window.location.href='reroute.html';
+                if(data.statuscode==200){
+                        alert("已送出申請");
+                        window.location.href='reroute.html';
+                }
+                else
+                        alert("送出失敗");
             },
             error: function(err) {
                 console.log('shit!');
