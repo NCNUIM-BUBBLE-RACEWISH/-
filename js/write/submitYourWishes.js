@@ -365,7 +365,7 @@ $(document).ready(function() {
         }
     });
 });
-/*  保留青儀原作xD
+/*  保留青儀原作塞場地xD
     依照球類，把該球類的場地和時段塞進選單
     for (i = 0; i < json[cookie].場地數; i++) {
         $(".Place").append("<option value=" + cookie + json[cookie].場地[i] + ">" + place + json[cookie].場地[i] + "</option>");
