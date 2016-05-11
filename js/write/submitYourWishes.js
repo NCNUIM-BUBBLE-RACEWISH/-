@@ -5,10 +5,18 @@ $(document).ready(function() {
             0->籃球  1->排球  2->羽球  3->桌球  4->壘球
     */
     //cookie為球種代碼
-    var cookie = sessionStorage["account"].substring(2,3); //ballcode
+    var cookie = parseInt(sessionStorage["account"].substring(2,3))*2; //ballcode
+    if (sessionStorage["account"].substring(3,4)=="B")
+        var sex=0;
+    else
+        var sex=1;
+    cookie+=sex;
+    console.log(cookie);
     var json = [
-        { "球類": "籃球", "場地數": 8, "場地": ["A", "B", "C", "D", "E", "F", "G", "H"], "時段數": 2, "時段": ["a", "b"], "時段差": 3, "時段開始": 1700 },
-        { "球類": "排球", "場地數": 4, "場地": ["A", "B", "C", "D"], "時段數": 2, "時段": ["c", "d"], "時段差": 2, "時段開始": 1500 ,"時間":["1700", "1900","2100"]},
+        { "球類": "男籃", "場地數": 8, "場地": ["A", "B", "C", "D", "E", "F", "G", "H"], "時段數": 2, "時段": ["a", "b"], "時段差": 3, "時段開始": 1700 },
+        { "球類": "女籃", "場地數": 8, "場地": ["A", "B", "C", "D", "E", "F", "G", "H"], "時段數": 2, "時段": ["a", "b"], "時段差": 3, "時段開始": 1700 },
+        { "球類": "男排", "場地數": 2, "場地": ["A", "D"], "時段數": 2, "時段": ["c", "d"], "時段差": 2, "時段開始": 1500 ,"時間":["1700", "1900","2100"]},
+        { "球類": "女排", "場地數": 2, "場地": ["B", "C"], "時段數": 2, "時段": ["c", "d"], "時段差": 2, "時段開始": 1500 ,"時間":["1700", "1900","2100"]},
         { "球類": "羽球", "場地數": 4, "場地": ["A", "B", "C", "D"], "時段數": 2, "時段": ["a", "b"], "時段差": 2, "時段開始": 1500 },
         { "球類": "桌球", "場地數": 4, "場地": ["A", "B", "C", "D"], "時段數": 2, "時段": ["a", "b"], "時段差": 2, "時段開始": 1500 },
         { "球類": "壘球", "場地數": 4, "場地": ["A", "B", "C", "D"], "時段數": 2, "時段": ["a", "b"], "時段差": 2, "時段開始": 1500 }
@@ -31,14 +39,11 @@ $(document).ready(function() {
             $("#YourBall1 option:last").remove();
             $("#YourBall1").append("<option value=" + json[cookie].場地[0] + ">" + json[cookie].場地[0] + "</option>");
             $("#YourBall1").append("<option value=" + json[cookie].場地[1] + ">" + json[cookie].場地[1] + "</option>");
-            $("#YourBall1").append("<option value=" + json[cookie].場地[2] + ">" + json[cookie].場地[2] + "</option>");
-            $("#YourBall1").append("<option value=" + json[cookie].場地[3] + ">" + json[cookie].場地[3] + "</option>");
         }
         if($("#YourTime1").val()=="1900"){
             $("#YourBall1 option:last").remove();
             $("#YourBall1 option:last").remove();
             $("#YourBall1").append("<option value=" + json[cookie].場地[0] + ">" + json[cookie].場地[0] + "</option>");
-            $("#YourBall1").append("<option value=" + json[cookie].場地[1] + ">" + json[cookie].場地[1] + "</option>");
         }
     });
     $("#YourTime2").change(function(){
@@ -49,14 +54,11 @@ $(document).ready(function() {
             $("#YourBall2 option:last").remove();
             $("#YourBall2").append("<option value=" + json[cookie].場地[0] + ">" + json[cookie].場地[0] + "</option>");
             $("#YourBall2").append("<option value=" + json[cookie].場地[1] + ">" + json[cookie].場地[1] + "</option>");
-            $("#YourBall2").append("<option value=" + json[cookie].場地[2] + ">" + json[cookie].場地[2] + "</option>");
-            $("#YourBall2").append("<option value=" + json[cookie].場地[3] + ">" + json[cookie].場地[3] + "</option>");
         }
         if($("#YourTime2").val()=="1900"){
             $("#YourBall2 option:last").remove();
             $("#YourBall2 option:last").remove();
             $("#YourBall2").append("<option value=" + json[cookie].場地[0] + ">" + json[cookie].場地[0] + "</option>");
-            $("#YourBall2").append("<option value=" + json[cookie].場地[1] + ">" + json[cookie].場地[1] + "</option>");
         }
     });
     $("#YourTime3").change(function(){
@@ -67,14 +69,11 @@ $(document).ready(function() {
             $("#YourBall3 option:last").remove();
             $("#YourBall3").append("<option value=" + json[cookie].場地[0] + ">" + json[cookie].場地[0] + "</option>");
             $("#YourBall3").append("<option value=" + json[cookie].場地[1] + ">" + json[cookie].場地[1] + "</option>");
-            $("#YourBall3").append("<option value=" + json[cookie].場地[2] + ">" + json[cookie].場地[2] + "</option>");
-            $("#YourBall3").append("<option value=" + json[cookie].場地[3] + ">" + json[cookie].場地[3] + "</option>");
         }
         if($("#YourTime3").val()=="1900"){
             $("#YourBall3 option:last").remove();
             $("#YourBall3 option:last").remove();
             $("#YourBall3").append("<option value=" + json[cookie].場地[0] + ">" + json[cookie].場地[0] + "</option>");
-            $("#YourBall3").append("<option value=" + json[cookie].場地[1] + ">" + json[cookie].場地[1] + "</option>");
         }
     });
     $("#YourTime4").change(function(){
@@ -85,14 +84,11 @@ $(document).ready(function() {
             $("#YourBall4 option:last").remove();
             $("#YourBall4").append("<option value=" + json[cookie].場地[0] + ">" + json[cookie].場地[0] + "</option>");
             $("#YourBall4").append("<option value=" + json[cookie].場地[1] + ">" + json[cookie].場地[1] + "</option>");
-            $("#YourBall4").append("<option value=" + json[cookie].場地[2] + ">" + json[cookie].場地[2] + "</option>");
-            $("#YourBall4").append("<option value=" + json[cookie].場地[3] + ">" + json[cookie].場地[3] + "</option>");
         }
         if($("#YourTime4").val()=="1900"){
             $("#YourBall4 option:last").remove();
             $("#YourBall4 option:last").remove();
             $("#YourBall4").append("<option value=" + json[cookie].場地[0] + ">" + json[cookie].場地[0] + "</option>");
-            $("#YourBall4").append("<option value=" + json[cookie].場地[1] + ">" + json[cookie].場地[1] + "</option>");
         }
     });
     $("#YourTime5").change(function(){
@@ -103,14 +99,11 @@ $(document).ready(function() {
             $("#YourBall5 option:last").remove();
             $("#YourBall5").append("<option value=" + json[cookie].場地[0] + ">" + json[cookie].場地[0] + "</option>");
             $("#YourBall5").append("<option value=" + json[cookie].場地[1] + ">" + json[cookie].場地[1] + "</option>");
-            $("#YourBall5").append("<option value=" + json[cookie].場地[2] + ">" + json[cookie].場地[2] + "</option>");
-            $("#YourBall5").append("<option value=" + json[cookie].場地[3] + ">" + json[cookie].場地[3] + "</option>");
         }
         if($("#YourTime5").val()=="1900"){
             $("#YourBall5 option:last").remove();
             $("#YourBall5 option:last").remove();
             $("#YourBall5").append("<option value=" + json[cookie].場地[0] + ">" + json[cookie].場地[0] + "</option>");
-            $("#YourBall5").append("<option value=" + json[cookie].場地[1] + ">" + json[cookie].場地[1] + "</option>");
         }
     });
     /*      左邊的長條圖~~~~~~~~~~~~~~~~~   */
