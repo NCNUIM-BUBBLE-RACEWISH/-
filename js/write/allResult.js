@@ -20,7 +20,7 @@ $(document).ready(function() {
 function getAll() {
     var object = []
     $.ajax({
-        url: "http://163.22.17.184:8080/bubble/Search_result/json",
+        url: "http://163.22.17.184:8080/bubble/Search/result",
         data: {},
         type: "GET",
         //↓天辣辣辣辣這行太神了!!!!傳回值終於可以存惹感動
@@ -28,16 +28,14 @@ function getAll() {
         success: function(data) {
             for (i = 0; i < data.length; i++) {
                 var inner = {
-                        "使用者": data[i].使用者,
-                        "球種": data[i].球種,
-                        "星期": data[i].星期,
-                        "場地代碼": data[i].場地代碼,
-                        "時間代碼": data[i].時間代碼
+                        "使用者": data.使用者,//資管
+                        "球種": data.球種,//女籃
+                        "星期": data.星期,//四
+                        "場地代碼": data.場地代碼,//B
+                        "時間代碼": data.時間代碼//a
                     }
-                    //object[i]=inner
-                object.push(inner);
+                    object[i]=inner
             }
-            console.log(object)
         }
     });
     return object
@@ -72,7 +70,7 @@ function pushIn(data) {
 function search(user, data) {
     //所有含有<P>的元素
     var x = document.getElementsByTagName("p");
-    console.log(x)
+    //console.log(x)
     for (i = 0; i < x.length; i++) {
         var tmp = x[i].innerText
         if (tmp.match(user) != null) {

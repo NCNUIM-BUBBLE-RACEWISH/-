@@ -21,12 +21,12 @@ $(document).ready(function() {
         };
         console.log(JSON.stringify(alldata));
 
-        var check="二次確認您的志願序：\n";
+        var check="二次確認您的志願序：\n\n";
         for(var i=1;i<=5;i++){
             var w=$('#YourWeek'+i+' :selected').text();
             var p=$('#YourBall'+i+' :selected').text();
             var t=$('#YourTime'+i+' :selected').text();
-            check+="志願"+i+" : "+w+" "+p+" "+t+" \n";
+            check+="志願"+i+" : "+w+"  "+p+"  "+t+"  \n";
         }
         if(confirm(check)){
              postData(alldata);
