@@ -22,6 +22,7 @@ $(document).ready(function(){
                                 if(result.statuscode==200){
                                         sessionStorage["account"]=result.account;
                                         sessionStorage["statuscode"]=result.statuscode;
+                                        sessionStorage['pwd']=passwd;
                                         document.location.href="reroute.html";
                                 }
                                 else if(result.statuscode==401){

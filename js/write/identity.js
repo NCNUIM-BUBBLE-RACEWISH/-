@@ -136,6 +136,111 @@ function showAccount(){
                 document.getElementById('account').innerHTML='觀餐女排'
         else if(sessionStorage['account']=='421B')
                 document.getElementById('account').innerHTML='觀餐男排'
+        // 羽球部分
+        else if(sessionStorage['account']=='012')
+                document.getElementById('account').innerHTML='中文羽球';
+        else if(sessionStorage['account']=='022')
+                document.getElementById('account').innerHTML='國比羽球'
+        else if(sessionStorage['account']=='032')
+                document.getElementById('account').innerHTML='社工羽球'
+        else if(sessionStorage['account']=='042')
+                document.getElementById('account').innerHTML='外文羽球'
+        else if(sessionStorage['account']=='052')
+                document.getElementById('account').innerHTML='歷史羽球'
+        else if(sessionStorage['account']=='062')
+                document.getElementById('account').innerHTML='公行羽球'
+        else if(sessionStorage['account']=='072')
+                document.getElementById('account').innerHTML='教政羽球'
+        else if(sessionStorage['account']=='082')
+                document.getElementById('account').innerHTML='東南亞羽球'
+        else if(sessionStorage['account']=='112')
+                document.getElementById('account').innerHTML='經濟羽球'
+        else if(sessionStorage['account']=='122')
+                document.getElementById('account').innerHTML='國企羽球'
+        else if(sessionStorage['account']=='132')
+                document.getElementById('account').innerHTML='資管羽球'
+        else if(sessionStorage['account']=='142')
+                document.getElementById('account').innerHTML='財金羽球'
+        else if(sessionStorage['account']=='212')
+                document.getElementById('account').innerHTML='資工羽球'
+        else if(sessionStorage['account']=='222')
+                document.getElementById('account').innerHTML='土木羽球'
+        else if(sessionStorage['account']=='232')
+                document.getElementById('account').innerHTML='電機羽球'
+        else if(sessionStorage['account']=='242')
+                document.getElementById('account').innerHTML='應化羽球'
+        else if(sessionStorage['account']=='422')
+                document.getElementById('account').innerHTML='觀餐羽球'
+        // 桌球部分
+        else if(sessionStorage['account']=='013')
+                document.getElementById('account').innerHTML='中文桌球';
+        else if(sessionStorage['account']=='023')
+                document.getElementById('account').innerHTML='國比桌球'
+        else if(sessionStorage['account']=='033')
+                document.getElementById('account').innerHTML='社工桌球'
+        else if(sessionStorage['account']=='043')
+                document.getElementById('account').innerHTML='外文桌球'
+        else if(sessionStorage['account']=='053')
+                document.getElementById('account').innerHTML='歷史桌球'
+        else if(sessionStorage['account']=='063')
+                document.getElementById('account').innerHTML='公行桌球'
+        else if(sessionStorage['account']=='073')
+                document.getElementById('account').innerHTML='教政桌球'
+        else if(sessionStorage['account']=='083')
+                document.getElementById('account').innerHTML='東南亞桌球'
+        else if(sessionStorage['account']=='113')
+                document.getElementById('account').innerHTML='經濟桌球'
+        else if(sessionStorage['account']=='123')
+                document.getElementById('account').innerHTML='國企桌球'
+        else if(sessionStorage['account']=='133')
+                document.getElementById('account').innerHTML='資管桌球'
+        else if(sessionStorage['account']=='143')
+                document.getElementById('account').innerHTML='財金桌球'
+        else if(sessionStorage['account']=='213')
+                document.getElementById('account').innerHTML='資工桌球'
+        else if(sessionStorage['account']=='223')
+                document.getElementById('account').innerHTML='土木桌球'
+        else if(sessionStorage['account']=='233')
+                document.getElementById('account').innerHTML='電機桌球'
+        else if(sessionStorage['account']=='243')
+                document.getElementById('account').innerHTML='應化桌球'
+        else if(sessionStorage['account']=='423')
+                document.getElementById('account').innerHTML='觀餐桌球'
+        // 壘球部分
+        else if(sessionStorage['account']=='014')
+                document.getElementById('account').innerHTML='中文壘球';
+        else if(sessionStorage['account']=='024')
+                document.getElementById('account').innerHTML='國比壘球'
+        else if(sessionStorage['account']=='034')
+                document.getElementById('account').innerHTML='社工壘球'
+        else if(sessionStorage['account']=='044')
+                document.getElementById('account').innerHTML='外文壘球'
+        else if(sessionStorage['account']=='054')
+                document.getElementById('account').innerHTML='歷史壘球'
+        else if(sessionStorage['account']=='064')
+                document.getElementById('account').innerHTML='公行壘球'
+        else if(sessionStorage['account']=='074')
+                document.getElementById('account').innerHTML='教政壘球'
+        else if(sessionStorage['account']=='084')
+                document.getElementById('account').innerHTML='東南亞壘球'
+        else if(sessionStorage['account']=='114')
+                document.getElementById('account').innerHTML='經濟壘球'
+        else if(sessionStorage['account']=='124')
+                document.getElementById('account').innerHTML='國企壘球'
+        else if(sessionStorage['account']=='134')
+                document.getElementById('account').innerHTML='資管壘球'
+        else if(sessionStorage['account']=='144')
+                document.getElementById('account').innerHTML='財金壘球'
+        else if(sessionStorage['account']=='214')
+                document.getElementById('account').innerHTML='資工壘球'
+        else if(sessionStorage['account']=='224')
+                document.getElementById('account').innerHTML='土木壘球'
+        else if(sessionStorage['account']=='234')
+                document.getElementById('account').innerHTML='電機壘球'
+        else if(sessionStorage['account']=='244')
+                document.getElementById('account').innerHTML='應化壘球'
+        else if(sessionStorage['account']=='424')
+                document.getElementById('account').innerHTML='觀餐壘球'
 }
 /*$(document).ready(function(){
         alert(sessionStorage['account'].substring(1,3));
