@@ -1,5 +1,9 @@
 $(document).ready(function() {
-    var user = "資管女籃"
+    var user="資管女籃"
+    console.log("sfsdf")
+    var a=""
+    a=document.getElementById("account").innerHTML;
+    console.log(a)
     //取所有資料
     var data = getAll();
     //塞入
@@ -28,13 +32,13 @@ function getAll() {
         success: function(data) {
             for (i = 0; i < data.length; i++) {
                 var inner = {
-                        "使用者": data.使用者,//資管
-                        "球種": data.球種,//女籃
-                        "星期": data.星期,//四
-                        "場地代碼": data.場地代碼,//B
-                        "時間代碼": data.時間代碼//a
+                        "使用者": data[i].使用者,//資管
+                        "球種": data[i].球種,//女籃
+                        "星期": data[i].星期,//四
+                        "場地代碼": data[i].場地代碼,//B
+                        "時間代碼": data[i].時間代碼//a
                     }
-                    object[i]=inner
+                    object.push(inner);
             }
         }
     });

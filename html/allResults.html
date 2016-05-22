@@ -10,6 +10,8 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="../css/write/text.css">
         <link rel="stylesheet" type="text/css" href="../css/write/place.css">
+        <!-- 加入身分認證 -->
+        <script type="text/javascript" src="../js/write/identity.js"></script>
         <script src="../js/write/allResult.js"></script>
         <style>
         body {
@@ -28,10 +30,10 @@
         </style>
 </head>
 
-<body>
+<body onload="showAccount()">
         <div class="container">
                 <div class="col-md-2">
-                        <a href="index.html"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 返回登入</a>
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span><span id="account" name="title"></span><a href="index.html"> 返回登入</a>
                 </div>
                 <div class="col-md-8">
                         <h1><center>所有結果</center></h1>
