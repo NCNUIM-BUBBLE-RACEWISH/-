@@ -1,12 +1,17 @@
 $(document).ready(function() {
-    var cookie = parseInt(sessionStorage["account"].substring(2,3))*2;
-    //cookie=3
+    var cookie
+    if(parseInt(sessionStorage["account"].substring(2, 3)==0)||
+        (parseInt(sessionStorage["account"].substring(2, 3)==1))){
+        cookie = parseInt(sessionStorage["account"].substring(2, 3)) * 2;
+    }else{
+        cookie=parseInt(sessionStorage["account"].substring(2, 3))
+    }
     console.log(cookie)
         //0->籃球  1->排球  2->桌球  3->羽球  4->壘球
     var json = [{
                 "球類": "籃球",
                 "場地數": 6,
-                "總時間":["a", "b"],
+                "總時間": ["a", "b"],
                 "總開始時間": [17, 20],
                 "時段差": 3,
                 "場地資料": [{
@@ -49,7 +54,7 @@ $(document).ready(function() {
             }, {
                 "球類": "排球",
                 "場地數": 4,
-                "總時間":["c", "d"],
+                "總時間": ["c", "d"],
                 "總開始時間": [17, 19],
                 "時段差": 2,
                 "場地資料": [{
@@ -78,28 +83,9 @@ $(document).ready(function() {
                     "時段數": 2
                 }]
             }, {
-                "球類": "桌球",
-                "場地數": 2,
-                "總時間":["c", "d"],
-                "總開始時間": [17, 19],
-                "時段差": 2,
-                "場地資料": [{
-                    "場地名": "體育館",
-                    "場地代碼": "G",
-                    "開始時間": [17, 19],
-                    "時段代碼": ["c", "d"],
-                    "時段數": 2
-                }, {
-                    "場地名": "綜B",
-                    "場地代碼": "H",
-                    "開始時間": [17, 19],
-                    "時段代碼": ["c", "d"],
-                    "時段數": 2
-                }]
-            }, {
                 "球類": "羽球",
                 "場地數": 2,
-                "總時間":["e", "f", "c", "d"],
+                "總時間": ["e", "f", "c", "d"],
                 "總開始時間": [13, 15, 17, 19],
                 "時段差": 2,
                 "場地資料": [{
@@ -115,83 +101,102 @@ $(document).ready(function() {
                     "時段代碼": ["e", "f", "c", "d"],
                     "時段數": 4
                 }]
-            }
+            }, {
+                "球類": "桌球",
+                "場地數": 2,
+                "總時間": ["c", "d"],
+                "總開始時間": [17, 19],
+                "時段差": 2,
+                "場地資料": [{
+                    "場地名": "體育館",
+                    "場地代碼": "G",
+                    "開始時間": [17, 19],
+                    "時段代碼": ["c", "d"],
+                    "時段數": 2
+                }, {
+                    "場地名": "綜B",
+                    "場地代碼": "H",
+                    "開始時間": [17, 19],
+                    "時段代碼": ["c", "d"],
+                    "時段數": 2
+                }]
+            },
             //壘球另外弄
         ]
         //塞場地
     for (var i = 0; i < json[cookie].總時間.length; i++) {
-        $(".Time").append("<option value=" +  json[cookie].總時間[i] + ">" + json[cookie].總開始時間[i] +"00~"+(json[cookie].總開始時間[i]+json[cookie].時段差)+"00</option>");
+        $(".Time").append("<option value=" + json[cookie].總時間[i] + ">" + json[cookie].總開始時間[i] + "00~" + (json[cookie].總開始時間[i] + json[cookie].時段差) + "00</option>");
     }
     //選時段，塞入場地
     $("#YourTime1").change(function() {
         $("#YourBall1").html("<option value='-1' selected></option>");
-        $("#YourBall1").removeAttr("disabled");   
-        var timecode = $("#YourTime1").val();//所選時段
+        $("#YourBall1").removeAttr("disabled");
+        var timecode = $("#YourTime1").val(); //所選時段
         //列出有此時段的所有場地
         var count;
-        for(var i = 0; i < json[cookie].場地數; i++){
-            for(var h=0;h<json[cookie].場地資料[i].時段數;h++){
-                if(json[cookie].場地資料[i].時段代碼[h]==timecode){
-                    $("#YourBall1").append("<option value=" + cookie+json[cookie].場地資料[i].場地代碼 + ">" + json[cookie].場地資料[i].場地名  + "</option>");
+        for (var i = 0; i < json[cookie].場地數; i++) {
+            for (var h = 0; h < json[cookie].場地資料[i].時段數; h++) {
+                if (json[cookie].場地資料[i].時段代碼[h] == timecode) {
+                    $("#YourBall1").append("<option value=" + cookie + json[cookie].場地資料[i].場地代碼 + ">" + json[cookie].場地資料[i].場地名 + "</option>");
                 }
             }
-        }  
+        }
     });
     $("#YourTime2").change(function() {
         $("#YourBall2").html("<option value='-1' selected></option>");
-        $("#YourBall2").removeAttr("disabled");   
-        var timecode = $("#YourTime2").val();//所選時段
+        $("#YourBall2").removeAttr("disabled");
+        var timecode = $("#YourTime2").val(); //所選時段
         //列出有此時段的所有場地
         var count;
-        for(var i = 0; i < json[cookie].場地數; i++){
-            for(var h=0;h<json[cookie].場地資料[i].時段數;h++){
-                if(json[cookie].場地資料[i].時段代碼[h]==timecode){
-                    $("#YourBall2").append("<option value=" + cookie+json[cookie].場地資料[i].場地代碼 + ">" + json[cookie].場地資料[i].場地名  + "</option>");
+        for (var i = 0; i < json[cookie].場地數; i++) {
+            for (var h = 0; h < json[cookie].場地資料[i].時段數; h++) {
+                if (json[cookie].場地資料[i].時段代碼[h] == timecode) {
+                    $("#YourBall2").append("<option value=" + cookie + json[cookie].場地資料[i].場地代碼 + ">" + json[cookie].場地資料[i].場地名 + "</option>");
                 }
             }
-        }  
+        }
     });
     $("#YourTime3").change(function() {
         $("#YourBall3").html("<option value='-1' selected></option>");
-        $("#YourBall3").removeAttr("disabled");   
-        var timecode = $("#YourTime3").val();//所選時段
+        $("#YourBall3").removeAttr("disabled");
+        var timecode = $("#YourTime3").val(); //所選時段
         //列出有此時段的所有場地
         var count;
-        for(var i = 0; i < json[cookie].場地數; i++){
-            for(var h=0;h<json[cookie].場地資料[i].時段數;h++){
-                if(json[cookie].場地資料[i].時段代碼[h]==timecode){
-                    $("#YourBall3").append("<option value=" + cookie+json[cookie].場地資料[i].場地代碼 + ">" + json[cookie].場地資料[i].場地名  + "</option>");
+        for (var i = 0; i < json[cookie].場地數; i++) {
+            for (var h = 0; h < json[cookie].場地資料[i].時段數; h++) {
+                if (json[cookie].場地資料[i].時段代碼[h] == timecode) {
+                    $("#YourBall3").append("<option value=" + cookie + json[cookie].場地資料[i].場地代碼 + ">" + json[cookie].場地資料[i].場地名 + "</option>");
                 }
             }
-        }  
+        }
     });
     $("#YourTime4").change(function() {
         $("#YourBall4").html("<option value='-1' selected></option>");
-        $("#YourBall4").removeAttr("disabled");   
-        var timecode = $("#YourTime4").val();//所選時段
+        $("#YourBall4").removeAttr("disabled");
+        var timecode = $("#YourTime4").val(); //所選時段
         //列出有此時段的所有場地
         var count;
-        for(var i = 0; i < json[cookie].場地數; i++){
-            for(var h=0;h<json[cookie].場地資料[i].時段數;h++){
-                if(json[cookie].場地資料[i].時段代碼[h]==timecode){
-                    $("#YourBall4").append("<option value=" + cookie+json[cookie].場地資料[i].場地代碼 + ">" + json[cookie].場地資料[i].場地名  + "</option>");
+        for (var i = 0; i < json[cookie].場地數; i++) {
+            for (var h = 0; h < json[cookie].場地資料[i].時段數; h++) {
+                if (json[cookie].場地資料[i].時段代碼[h] == timecode) {
+                    $("#YourBall4").append("<option value=" + cookie + json[cookie].場地資料[i].場地代碼 + ">" + json[cookie].場地資料[i].場地名 + "</option>");
                 }
             }
-        }  
+        }
     });
     $("#YourTime5").change(function() {
         $("#YourBall5").html("<option value='-1' selected></option>");
-        $("#YourBall5").removeAttr("disabled");   
-        var timecode = $("#YourTime5").val();//所選時段
+        $("#YourBall5").removeAttr("disabled");
+        var timecode = $("#YourTime5").val(); //所選時段
         //列出有此時段的所有場地
         var count;
-        for(var i = 0; i < json[cookie].場地數; i++){
-            for(var h=0;h<json[cookie].場地資料[i].時段數;h++){
-                if(json[cookie].場地資料[i].時段代碼[h]==timecode){
-                    $("#YourBall5").append("<option value=" + cookie+json[cookie].場地資料[i].場地代碼 + ">" + json[cookie].場地資料[i].場地名  + "</option>");
+        for (var i = 0; i < json[cookie].場地數; i++) {
+            for (var h = 0; h < json[cookie].場地資料[i].時段數; h++) {
+                if (json[cookie].場地資料[i].時段代碼[h] == timecode) {
+                    $("#YourBall5").append("<option value=" + cookie + json[cookie].場地資料[i].場地代碼 + ">" + json[cookie].場地資料[i].場地名 + "</option>");
                 }
             }
-        }  
+        }
     });
 
 
@@ -485,7 +490,7 @@ $(document).ready(function() {
                 }, {
                     name: '17:00~19:00',
                     data: [parseInt(num[2]), parseInt(num[6])]
-                },{
+                }, {
                     name: '19:00~21:00',
                     data: [parseInt(num[3]), parseInt(num[7])]
                 }]
