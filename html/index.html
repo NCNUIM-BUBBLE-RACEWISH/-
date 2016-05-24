@@ -1,6 +1,6 @@
 <html>
-
 <head>
+<<<<<<< HEAD
     <meta http-equiv="Content-Type" content="text/html" ; charset="utf-8">
     <title>首頁</title>
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -85,30 +85,122 @@
                     <label class="col-lg-5 control-label"></label>
                     <div class="col-lg-7">
                         <input type="checkbox"> 記住密碼呦<3
+=======
+        <meta http-equiv="Content-Type" content="text/html" ; charset="utf-8">
+        <title>首頁</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <!-- jquery -->
+        <script type="text/javascript" src="../js/jquery-1.4.4.min.js"></script>
+        <link rel="stylesheet" href="../css/reveal.css">
+        <script type="text/javascript" src="../js/jquery.reveal.js"></script>
+        <!-- 登入js -->
+        <script type="text/javascript" src="../js/write/login.js"></script>
+        <script type="text/javascript" src="../js/write/forgetpwd.js"></script>
+        <style>
+                body {
+                        background-image: url("../img/indexBackground.png");
+                        background-attachment: fixed;
+                        background-repeat: no-repeat;
+                        background-position: 20% 40%;
+                        background-size: cover;
+                }
+                h1 {
+                        color: #D13109;
+                        font-family: "Yu Gothic ", simhei;
+                        font-weight: bold;
+                }
+                #status{
+                        text-align: center;
+                        font-size: 20px;
+                        color: red;
+                }
+        </style>
+
+</head>
+
+<body>
+        <div class="container">
+                <!--內容-->
+                <div class="col-md-4 col-md-offset-4">
+                        <h1 class="text-center">賽程系統</h1>
+                        <p id="status"></p>
+                        <form id="account" class="form-horizontal">
+>>>>>>> shane
                         <br>
-                        <a href="#" class="big-link" data-reveal-id="myModal" data-animation="fade">忘記密碼？</a>
+                        <div class="form-group">
+                                <label class="col-lg-5 control-label">系所</label>
+                                <div class="col-lg-4">
+                                        <select class="selectpicker show-tick form-control " id="deptid" >
+                                                <option value="01">中文系</option>
+                                                <option value="02">國比系</option>
+                                                <option value="03">社工系</option>
+                                                <option value="04">外文系</option>
+                                                <option value="05">歷史系</option>
+                                                <option value="06">公行系</option>
+                                                <option value="07">教政系</option>
+                                                <option value="08">東南亞系</option>
+                                                <option value="11">經濟系</option>
+                                                <option value="12">國企系</option>
+                                                <option value="13">資管系</option>
+                                                <option value="14">財金系</option>
+                                                <option value="21">資工系</option>
+                                                <option value="22">土木系</option>
+                                                <option value="23">電機系</option>
+                                                <option value="24">應化系</option>
+                                                <option value="42">觀餐系</option>
+                                        </select>
+                                </div>
+                        </div>
+                        <div class="form-group">
+                                <label class="col-lg-5 control-label">球類</label>
+                                <div class="col-lg-4">
+                                        <select class="selectpicker show-tick form-control " id="kind">
+                                                <option value="0B">男籃</option>
+                                                <option value="0G">女籃</option>
+                                                <option value="1B">男排</option>
+                                                <option value="1G">女排</option>
+                                                <option value="2">羽球</option>
+                                                <option value="3">桌球</option>
+                                                <option value="4">壘球</option>
+                                        </select>
+                                </div>
+                        </div>
+                        <div class="form-group">
+                                <label class="col-lg-5 control-label">密碼</label>
+                                <div class="col-lg-7">
+                                        <input type="password" class="form-control" id="passwd" placeholder="密碼">
+                                </div>
+                        </div>
+                        <div class="form-group">
+                                <label class="col-lg-5 control-label"></label>
+                                <div class="col-lg-7">
+                                        <input type="checkbox"> 記住密碼呦<3
+                                        <br>
+                                        <a href="#" class="big-link" data-reveal-id="myModal" data-animation="fade">忘記密碼？</a>
+                                </div>
+                        </div>
+                        <div class="form-group">
+                                <p class="checkbox col-lg-5 col-lg-offset-7">
+                                <button type="submit" class="btn btn-primary " type="button">確認</button>
+                                <button class="btn btn-primary " type="button" onclick="location.href='reroute.html'">查詢</button>
+                                </p>
+                        </div>
+                        </form>
                         <!--點選忘記密碼時浮現-->
                         <div class="reveal-modal" id="myModal">
-                           <p>請填寫申請時的電子信箱，若無誤，系統將會寄出密碼至此信箱</p>
-                           <br>
-                           <label class="col-lg-3">電子信箱</label>
-                             <div class="col-lg-8">
-                               <input class="form-control" id="inputEmail" placeholder="email">
-                             </div>
-                           <br>
-                           <button class="btn btn-primary col-lg-offset-11 " type="button" onclick="location.href='index.html'">確認</button>
+                                <p>請填寫申請時的電子信箱，若無誤，系統將會寄出密碼至此信箱</p>
+                                <br>
+                                <label class="col-lg-3">電子信箱</label>
+                                <form id="email">
+                                        <div class="col-lg-8">
+                                                <input class="form-control" id="inputEmail" placeholder="email">
+                                        </div>
+                                        <button class="btn btn-primary col-lg-offset-11 " type="submit" onclick="location.href='index.html'">確認</button>
+                                </form>
+                                <br>
                         </div>
-                    </div>
-              </div>
-              <div class="form-group">
-                  <p class="checkbox col-lg-5 col-lg-offset-7">
-                    <button type="submit" class="btn btn-primary " type="button">確認</button>
-                    <button class="btn btn-primary " type="button" onclick="location.href='reroute.html'">查詢</button>
-                  </p>
-              </div>
-            </form>
+                </div>
         </div>
-    </div>
 </body>
 </html>
 

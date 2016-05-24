@@ -1,4 +1,5 @@
 $(document).ready(function() {
+<<<<<<< HEAD
     /*
         ㄜ 做一個判斷，看使用者是哪種球類
         假設:
@@ -21,8 +22,202 @@ $(document).ready(function() {
         from = json[cookie].時段開始 + (json[cookie].時段差 * i * 100)
         to = json[cookie].時段開始 + (json[cookie].時段差 * (i + 1) * 100)
         $(".Time").append("<option value=" + json[cookie].時段[i] + ">" + from + "~" + to + "</option>");
+=======
+    var cookie = parseInt(sessionStorage["account"].substring(2,3))*2;
+    //cookie=3
+    console.log(cookie)
+        //0->籃球  1->排球  2->桌球  3->羽球  4->壘球
+    var json = [{
+                "球類": "籃球",
+                "場地數": 6,
+                "總時間":["a", "b"],
+                "總開始時間": [17, 20],
+                "時段差": 3,
+                "場地資料": [{
+                    "場地名": "籃球場B",
+                    "場地代碼": "A",
+                    "開始時間": [17, 20],
+                    "時段代碼": ["a", "b"],
+                    "時段數": 2
+                }, {
+                    "場地名": "籃球場C",
+                    "場地代碼": "B",
+                    "開始時間": [17, 20],
+                    "時段代碼": ["a", "b"],
+                    "時段數": 2
+                }, {
+                    "場地名": "籃球場D",
+                    "場地代碼": "C",
+                    "開始時間": [17, 20],
+                    "時段代碼": ["a", "b"],
+                    "時段數": 2
+                }, {
+                    "場地名": "新一場",
+                    "場地代碼": "D",
+                    "開始時間": [17, 20],
+                    "時段代碼": ["a", "b"],
+                    "時段數": 2
+                }, {
+                    "場地名": "新二場",
+                    "場地代碼": "E",
+                    "開始時間": [17, 20],
+                    "時段代碼": ["a", "b"],
+                    "時段數": 2
+                }, {
+                    "場地名": "新三場",
+                    "場地代碼": "F",
+                    "開始時間": [17, 20],
+                    "時段代碼": ["a", "b"],
+                    "時段數": 2
+                }]
+            }, {
+                "球類": "排球",
+                "場地數": 4,
+                "總時間":["c", "d"],
+                "總開始時間": [17, 19],
+                "時段差": 2,
+                "場地資料": [{
+                    "場地名": "排球場A",
+                    "場地代碼": "I",
+                    "開始時間": [17],
+                    "時段代碼": ["c"],
+                    "時段數": 1
+                }, {
+                    "場地名": "排球場B",
+                    "場地代碼": "J",
+                    "開始時間": [17],
+                    "時段代碼": ["c"],
+                    "時段數": 1
+                }, {
+                    "場地名": "排球場C",
+                    "場地代碼": "K",
+                    "開始時間": [17, 19],
+                    "時段代碼": ["c", "d"],
+                    "時段數": 2
+                }, {
+                    "場地名": "排球場D",
+                    "場地代碼": "L",
+                    "開始時間": [17, 19],
+                    "時段代碼": ["c", "d"],
+                    "時段數": 2
+                }]
+            }, {
+                "球類": "桌球",
+                "場地數": 2,
+                "總時間":["c", "d"],
+                "總開始時間": [17, 19],
+                "時段差": 2,
+                "場地資料": [{
+                    "場地名": "體育館",
+                    "場地代碼": "G",
+                    "開始時間": [17, 19],
+                    "時段代碼": ["c", "d"],
+                    "時段數": 2
+                }, {
+                    "場地名": "綜B",
+                    "場地代碼": "H",
+                    "開始時間": [17, 19],
+                    "時段代碼": ["c", "d"],
+                    "時段數": 2
+                }]
+            }, {
+                "球類": "羽球",
+                "場地數": 2,
+                "總時間":["e", "f", "c", "d"],
+                "總開始時間": [13, 15, 17, 19],
+                "時段差": 2,
+                "場地資料": [{
+                    "場地名": "體育館A",
+                    "場地代碼": "M",
+                    "開始時間": [13, 15, 17, 19],
+                    "時段代碼": ["e", "f", "c", "d"],
+                    "時段數": 4
+                }, {
+                    "場地名": "體育館B",
+                    "場地代碼": "N",
+                    "開始時間": [13, 15, 17, 19],
+                    "時段代碼": ["e", "f", "c", "d"],
+                    "時段數": 4
+                }]
+            }
+            //壘球另外弄
+        ]
+        //塞場地
+    for (var i = 0; i < json[cookie].總時間.length; i++) {
+        $(".Time").append("<option value=" +  json[cookie].總時間[i] + ">" + json[cookie].總開始時間[i] +"00~"+(json[cookie].總開始時間[i]+json[cookie].時段差)+"00</option>");
+>>>>>>> shane
     }
-
+    //選時段，塞入場地
+    $("#YourTime1").change(function() {
+        $("#YourBall1").html("<option value='-1' selected></option>");
+        $("#YourBall1").removeAttr("disabled");   
+        var timecode = $("#YourTime1").val();//所選時段
+        //列出有此時段的所有場地
+        var count;
+        for(var i = 0; i < json[cookie].場地數; i++){
+            for(var h=0;h<json[cookie].場地資料[i].時段數;h++){
+                if(json[cookie].場地資料[i].時段代碼[h]==timecode){
+                    $("#YourBall1").append("<option value=" + cookie+json[cookie].場地資料[i].場地代碼 + ">" + json[cookie].場地資料[i].場地名  + "</option>");
+                }
+            }
+        }  
+    });
+    $("#YourTime2").change(function() {
+        $("#YourBall2").html("<option value='-1' selected></option>");
+        $("#YourBall2").removeAttr("disabled");   
+        var timecode = $("#YourTime2").val();//所選時段
+        //列出有此時段的所有場地
+        var count;
+        for(var i = 0; i < json[cookie].場地數; i++){
+            for(var h=0;h<json[cookie].場地資料[i].時段數;h++){
+                if(json[cookie].場地資料[i].時段代碼[h]==timecode){
+                    $("#YourBall2").append("<option value=" + cookie+json[cookie].場地資料[i].場地代碼 + ">" + json[cookie].場地資料[i].場地名  + "</option>");
+                }
+            }
+        }  
+    });
+    $("#YourTime3").change(function() {
+        $("#YourBall3").html("<option value='-1' selected></option>");
+        $("#YourBall3").removeAttr("disabled");   
+        var timecode = $("#YourTime3").val();//所選時段
+        //列出有此時段的所有場地
+        var count;
+        for(var i = 0; i < json[cookie].場地數; i++){
+            for(var h=0;h<json[cookie].場地資料[i].時段數;h++){
+                if(json[cookie].場地資料[i].時段代碼[h]==timecode){
+                    $("#YourBall3").append("<option value=" + cookie+json[cookie].場地資料[i].場地代碼 + ">" + json[cookie].場地資料[i].場地名  + "</option>");
+                }
+            }
+        }  
+    });
+    $("#YourTime4").change(function() {
+        $("#YourBall4").html("<option value='-1' selected></option>");
+        $("#YourBall4").removeAttr("disabled");   
+        var timecode = $("#YourTime4").val();//所選時段
+        //列出有此時段的所有場地
+        var count;
+        for(var i = 0; i < json[cookie].場地數; i++){
+            for(var h=0;h<json[cookie].場地資料[i].時段數;h++){
+                if(json[cookie].場地資料[i].時段代碼[h]==timecode){
+                    $("#YourBall4").append("<option value=" + cookie+json[cookie].場地資料[i].場地代碼 + ">" + json[cookie].場地資料[i].場地名  + "</option>");
+                }
+            }
+        }  
+    });
+    $("#YourTime5").change(function() {
+        $("#YourBall5").html("<option value='-1' selected></option>");
+        $("#YourBall5").removeAttr("disabled");   
+        var timecode = $("#YourTime5").val();//所選時段
+        //列出有此時段的所有場地
+        var count;
+        for(var i = 0; i < json[cookie].場地數; i++){
+            for(var h=0;h<json[cookie].場地資料[i].時段數;h++){
+                if(json[cookie].場地資料[i].時段代碼[h]==timecode){
+                    $("#YourBall5").append("<option value=" + cookie+json[cookie].場地資料[i].場地代碼 + ">" + json[cookie].場地資料[i].場地名  + "</option>");
+                }
+            }
+        }  
+    });
 
 
     /*      左邊的長條圖~~~~~~~~~~~~~~~~~   */
@@ -41,25 +236,31 @@ $(document).ready(function() {
             var num = [] //存各時段的申請次數
             $.ajax({
                 url: "http://163.22.17.184:8080/bubble/user/apply/bar_chart",
-                data: { "week": day }, //需要球類的參數?
+                data: { "week": day },
                 type: "GET",
                 //↓天辣辣辣辣這行太神了!!!!傳回值終於可以存惹感動
                 async: false,
                 success: function(data) {
-                    all_time = obj.場地數 * obj.時段數
-                    for (i = 0; i < all_time; i++) {
+                    var all_time = 0;
+                    for (var i = 0; i < obj.場地數; i++) {
+                        all_time += obj.場地資料[i].時段數;
+                    }
+                    for (var i = 0; i < all_time; i++) {
                         num[i] = 0
                     }
-                    for (i = 0; i < data.length; i++) {
-                        for (k = 0; k < obj.場地數; k++) { //場地 8
-                            for (z = 0; z < obj.時段數; z++) { //時段 2
-                                times = k * 2 + z
-                                p_code = cookie + obj.場地[k]
-                                t_code = obj.時段[z]
+                    console.log(all_time)
+
+                    for (var i = 0; i < data.length; i++) {
+                        for (var k = 0; k < obj.場地數; k++) {
+                            for (var z = 0; z < obj.場地資料[k].時段數; z++) {
+                                p_code = ball_type + obj.場地資料[k].場地代碼
+                                t_code = obj.場地資料[k].時段代碼[z]
+                                times = k * obj.場地資料[k].時段數 + z
                                 if ((data[i].場地代碼 == p_code) && (data[i].時段 == t_code)) {
                                     num[times] = data[i].申請隊伍數
                                     console.log(times, num[times])
                                 }
+
                             }
                         }
                     }
@@ -70,7 +271,7 @@ $(document).ready(function() {
 
     }
 
-    //只寫了籃球(0)和桌球(1)的情況...
+    //只寫了籃球(0)和排球(1)和桌球(2)的情況...
     function longchart(day, obj, ball_type, num) {
         if (ball_type == 0) {
             //籃球
@@ -85,7 +286,7 @@ $(document).ready(function() {
                     text: ': <a href=""></a>'
                 },
                 xAxis: {
-                    categories: [place + obj.場地[0], place + obj.場地[1], place + obj.場地[2], place + obj.場地[3], place + obj.場地[4], place + obj.場地[5], place + obj.場地[6], place + obj.場地[7]],
+                    categories: [obj.場地資料[0].場地名, obj.場地資料[1].場地名, obj.場地資料[2].場地名, obj.場地資料[3].場地名, obj.場地資料[4].場地名, obj.場地資料[5].場地名],
                     title: {
                         text: null
                     }
@@ -125,13 +326,13 @@ $(document).ready(function() {
                 },
                 series: [{
                     name: '17:00~20:00',
-                    data: [parseInt(num[0]), parseInt(num[2]), parseInt(num[4]), parseInt(num[6]), parseInt(num[8]), parseInt(num[10]), parseInt(num[12]), parseInt(num[14])]
+                    data: [parseInt(num[0]), parseInt(num[2]), parseInt(num[4]), parseInt(num[6]), parseInt(num[8]), parseInt(num[10])]
                 }, {
                     name: '20:00~23:00',
-                    data: [parseInt(num[1]), parseInt(num[3]), parseInt(num[5]), parseInt(num[7]), parseInt(num[9]), parseInt(num[11]), parseInt(num[13]), parseInt(num[15])]
+                    data: [parseInt(num[1]), parseInt(num[3]), parseInt(num[5]), parseInt(num[7]), parseInt(num[9]), parseInt(num[11])]
                 }, ]
             });
-        } else if(ball_type == 1){
+        } else if (ball_type == 1) {
             //排球
             $('#container').highcharts({
                 chart: {
@@ -144,7 +345,7 @@ $(document).ready(function() {
                     text: ': <a href=""></a>'
                 },
                 xAxis: {
-                    categories: [place + obj.場地[0], place + obj.場地[1], place + obj.場地[2], place + obj.場地[3]],
+                    categories: [obj.場地資料[0].場地名, obj.場地資料[1].場地名, obj.場地資料[2].場地名, obj.場地資料[3].場地名],
                     title: {
                         text: null
                     }
@@ -184,16 +385,140 @@ $(document).ready(function() {
                 },
                 series: [{
                     name: '17:00~19:00',
-                    data: [parseInt(num[0]), parseInt(num[2]), parseInt(num[4]), parseInt(num[6])]
+                    data: [parseInt(num[0]), parseInt(num[1]), parseInt(num[2]), parseInt(num[4])]
                 }, {
                     name: '19:00~21:00',
-                    data: [parseInt(num[1]), parseInt(num[3]), parseInt(num[5]), parseInt(num[7])]
+                    data: ["", "", parseInt(num[3]), parseInt(num[5])]
                 }, ]
+            });
+        } else if (ball_type == 2) {
+            //籃球
+            $('#container').highcharts({
+                chart: {
+                    type: 'bar'
+                },
+                title: {
+                    text: "星期" + day + '的申請人數'
+                },
+                subtitle: {
+                    text: ': <a href=""></a>'
+                },
+                xAxis: {
+                    categories: [obj.場地資料[0].場地名, obj.場地資料[1].場地名],
+                    title: {
+                        text: null
+                    }
+                },
+                yAxis: {
+                    min: 0,
+                    allowDecimals: false,
+                    title: {
+                        text: 'Population',
+                        align: 'middle'
+                    },
+                    labels: {
+                        overflow: 'justify'
+                    }
+                },
+                //游標滑過顯示的
+                tooltip: {
+                    valueSuffix: ''
+                },
+                plotOptions: {
+                    bar: {
+                        dataLabels: {
+                            enabled: true
+                        }
+                    }
+                },
+                legend: {
+                    layout: 'vertical',
+                    align: 'right',
+                    verticalAlign: 'top',
+                    x: -40,
+                    y: 80,
+                    floating: true,
+                    borderWidth: 1,
+                    backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+                    shadow: true
+                },
+                series: [{
+                    name: '17:00~19:00',
+                    data: [parseInt(num[0]), parseInt(num[2])]
+                }, {
+                    name: '19:00~21:00',
+                    data: [parseInt(num[1]), parseInt(num[3])]
+                }, ]
+            });
+        } else if (ball_type == 3) {
+            //籃球
+            $('#container').highcharts({
+                chart: {
+                    type: 'bar'
+                },
+                title: {
+                    text: "星期" + day + '的申請人數'
+                },
+                subtitle: {
+                    text: ': <a href=""></a>'
+                },
+                xAxis: {
+                    categories: [obj.場地資料[0].場地名, obj.場地資料[1].場地名],
+                    title: {
+                        text: null
+                    }
+                },
+                yAxis: {
+                    min: 0,
+                    allowDecimals: false,
+                    title: {
+                        text: 'Population',
+                        align: 'middle'
+                    },
+                    labels: {
+                        overflow: 'justify'
+                    }
+                },
+                //游標滑過顯示的
+                tooltip: {
+                    valueSuffix: ''
+                },
+                plotOptions: {
+                    bar: {
+                        dataLabels: {
+                            enabled: true
+                        }
+                    }
+                },
+                legend: {
+                    layout: 'vertical',
+                    align: 'right',
+                    verticalAlign: 'top',
+                    x: -40,
+                    y: 80,
+                    floating: true,
+                    borderWidth: 1,
+                    backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+                    shadow: true
+                },
+                series: [{
+                    name: '13:00~15:00',
+                    data: [parseInt(num[0]), parseInt(num[4])]
+                }, {
+                    name: '15:00~17:00',
+                    data: [parseInt(num[1]), parseInt(num[5])]
+                }, {
+                    name: '17:00~19:00',
+                    data: [parseInt(num[2]), parseInt(num[6])]
+                },{
+                    name: '19:00~21:00',
+                    data: [parseInt(num[3]), parseInt(num[7])]
+                }]
             });
         }
     }
 
-    /*      右邊的的申請場地次數~~~~~~~~~~~~~~~~~   */
+    //      右邊的的申請場地次數~~~~~~~~~~~~~~~~~   
     //顯示對應的次數
     $("#wish1").change(function() {
         var week = $("#YourWeek1").val();
@@ -202,7 +527,7 @@ $(document).ready(function() {
         if ((week != -1) && (ball != -1) && (time != -1)) {
             $.ajax({
                 //http://163.22.17.184:8080/bubble/apply_count2/json? time=a & place=0A &week=五
-                url: "http://163.22.17.184:8080/bubble/apply_count2/json",
+                url: "http://163.22.17.184:8080/bubble/user/apply/information/Real_time",
                 data: { "time": time, "place": ball, "week": week },
                 type: "GET",
                 success: function(data) {
@@ -219,7 +544,7 @@ $(document).ready(function() {
         if ((week != -1) && (ball != -1) && (time != -1)) {
             $.ajax({
                 //http://163.22.17.184:8080/bubble/apply_count2/json? time=a & place=0A &week=五
-                url: "http://163.22.17.184:8080/bubble/apply_count2/json",
+                url: "http://163.22.17.184:8080/bubble/user/apply/information/Real_time",
                 data: { "time": time, "place": ball, "week": week },
                 type: "GET",
                 success: function(data) {
@@ -235,7 +560,7 @@ $(document).ready(function() {
         if ((week != -1) && (ball != -1) && (time != -1)) {
             $.ajax({
                 //http://163.22.17.184:8080/bubble/apply_count2/json? time=a & place=0A &week=五
-                url: "http://163.22.17.184:8080/bubble/apply_count2/json",
+                url: "http://163.22.17.184:8080/bubble/user/apply/information/Real_time",
                 data: { "time": time, "place": ball, "week": week },
                 type: "GET",
                 success: function(data) {
@@ -251,7 +576,7 @@ $(document).ready(function() {
         if ((week != -1) && (ball != -1) && (time != -1)) {
             $.ajax({
                 //http://163.22.17.184:8080/bubble/apply_count2/json? time=a & place=0A &week=五
-                url: "http://163.22.17.184:8080/bubble/apply_count2/json",
+                url: "http://163.22.17.184:8080/bubble/user/apply/information/Real_time",
                 data: { "time": time, "place": ball, "week": week },
                 type: "GET",
                 success: function(data) {
@@ -267,7 +592,7 @@ $(document).ready(function() {
         if ((week != -1) && (ball != -1) && (time != -1)) {
             $.ajax({
                 //http://163.22.17.184:8080/bubble/apply_count2/json? time=a & place=0A &week=五
-                url: "http://163.22.17.184:8080/bubble/apply_count2/json",
+                url: "http://163.22.17.184:8080/bubble/user/apply/information/Real_time",
                 data: { "time": time, "place": ball, "week": week },
                 type: "GET",
                 success: function(data) {
