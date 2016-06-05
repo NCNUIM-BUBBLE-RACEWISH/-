@@ -1,6 +1,19 @@
 $(document).ready(function(){
         $("#email").submit(function(event){
                 var email=document.getElementById("inputEmail").value;
-                console.log(email);
+                console.log(JSON.stringify(email));
+                $.ajax({
+                        url:'http://163.22.17.184:8080/bubble/user/passwd/forget',
+                        contentType:'application/json',
+                        data:JSON.stringify(email),
+                        dataType:'json',
+                        type:'POST',
+                        success:function(result){
+                                console.log(result);
+                        },
+                        error:function(err){
+                                console.log(err);
+                        }
+                });
         });
 });
