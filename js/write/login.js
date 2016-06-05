@@ -20,6 +20,8 @@ $(document).ready(function(){
                                 console.log(result);
                                 // 成功時將帳號,狀態碼,存入session
                                 if(result.statuscode==200){
+                                        sessionStorage["deptid"]=deptid;
+                                        sessionStorage["kind"]=kind;
                                         sessionStorage["account"]=result.account;
                                         sessionStorage["statuscode"]=result.statuscode;
                                         sessionStorage['pwd']=passwd;
