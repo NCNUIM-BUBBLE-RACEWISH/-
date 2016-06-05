@@ -1,0 +1,40 @@
+<html>
+<head>
+        <title></title>
+</head>
+        <link rel="stylesheet" type="text/css" href="../css/write/text.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <script type="text/javascript">
+                function border(){
+                        document.getElementById('rcorners2').style.width=100px;
+                        var a=document.body.offsetWidth;
+                        console.log(a);
+                }
+        </script>
+        <style type="text/css">
+        #rcorners2 {
+                border-radius: 25px;
+                border: 2px solid #73AD21;
+                padding: 20px;
+                width: 1200px;
+                height: 650px;
+        }
+        </style>
+<body onload="border()">
+        <div class="btn-group btn-group-justified" role="group" aria-label="...">
+                <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default" onclick="location.href='backWorkResult.html'">全部結果</button>
+                </div>
+                <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default">場地開放&時間</button>
+                </div>
+                <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default">管理場地使用者</button>
+                </div>
+                <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-info">管理帳號/密碼</button>
+                </div>
+        </div>
+        <div id="rcorners2" class="col-md-offset-2"><h1>hello</h1></div>
+</body>
+</html>
