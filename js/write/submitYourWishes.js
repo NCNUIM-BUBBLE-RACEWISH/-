@@ -7,7 +7,7 @@ $(document).ready(function() {
         cookie=parseInt(sessionStorage["account"].substring(2, 3))
     }
     console.log(cookie)
-        //0->籃球  1->排球  2->桌球  3->羽球  4->壘球
+        //0->籃球  1->排球  2->羽球  3->桌球  4->壘球
     var json = [{
                 "球類": "籃球",
                 "場地數": 6,
@@ -251,7 +251,6 @@ $(document).ready(function() {
 
     }
 
-    //只寫了籃球(0)和排球(1)和桌球(2)的情況...
     function longchart(day, obj, ball_type, num) {
         if (ball_type == 0) {
             //籃球
@@ -371,8 +370,8 @@ $(document).ready(function() {
                     data: ["", "", parseInt(num[3]), parseInt(num[5])]
                 }, ]
             });
-        } else if (ball_type == 2) {
-            //籃球
+        } else if (ball_type == 3) {
+            //桌球
             $('#container').highcharts({
                 chart: {
                     type: 'bar'
@@ -430,8 +429,8 @@ $(document).ready(function() {
                     data: [parseInt(num[1]), parseInt(num[3])]
                 }, ]
             });
-        } else if (ball_type == 3) {
-            //籃球
+        } else if (ball_type == 2) {
+            //排球
             $('#container').highcharts({
                 chart: {
                     type: 'bar'
