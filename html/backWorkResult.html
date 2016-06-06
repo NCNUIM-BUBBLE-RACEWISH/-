@@ -1,10 +1,29 @@
 <html>
 <head>
         <title></title>
-</head>
-        </style>
         <link rel="stylesheet" type="text/css" href="../css/write/text.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <meta http-equiv="Content-Type" content="text/html"; charset="utf-8">
+        <title>全部結果</title>
+        <!--↓要加這串才能用bootstrap提供的小圖示，自己的引不到.....-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <!-- 加入身分認證 -->
+        <script type="text/javascript" src="../js/write/identity.js"></script>
+        <script src="../js/write/allResult.js"></script>
+        <style type="text/css">
+        #rcorners2 {
+                position: absolute;
+                top:50px;
+                border-radius: 25px;
+                border: 2px solid #73AD21;
+                padding: 50px;
+                width: 60%;
+                height: 650px;
+        }
+        </style>
+</head>
 <body>
         <div class="btn-group btn-group-justified" role="group" aria-label="...">
                 <div class="btn-group" role="group">
@@ -20,10 +39,10 @@
                         <button type="button" class="btn btn-default" onclick="location.href='backWorkManagement.html'">管理帳號/密碼</button>
                 </div>
         </div>
-        <div class="col-md-8">
-                </div>
-                <div class="col-md-2 ">
-                        <br>
+        <div class="col-md-offset-2" id="rcorners2">
+                <div class="container">
+                <div class="col-md-2">
+                        <span id="account" name="title"></span>
                 </div>
         </div>
         <div class="container" id="back">
@@ -159,6 +178,11 @@
                                 </div>
                         </div>
                 </div>
+        </div>
+        <br>
+        <br>
+        <hr>
+        <font color="blue">
         </div>
 </body>
 </html>
