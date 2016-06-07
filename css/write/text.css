@@ -1,10 +1,20 @@
-#search{
+#search0{
     background-color:#5bc0de;
     padding:10px;
     margin-bottom:5px;
 }
-#search2{
+#search1{
     background-color:#FFD991;
+    padding:10px;
+    margin-bottom:5px;
+}
+#search2{
+    background-color:pink;
+    padding:10px;
+    margin-bottom:5px;
+}
+#search3{
+    background-color:yellow;
     padding:10px;
     margin-bottom:5px;
 }

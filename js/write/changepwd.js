@@ -1,6 +1,6 @@
 $(document).ready(function(){
-        var kind=sessionStorage['account'].substring(2,3);
-        var deptid=sessionStorage['account'].substring(0,2);
+        var kind=sessionStorage['kind'];
+        var deptid=sessionStorage['deptid'];
         var email="test@ya";
         var ckstatus=1;
         $("#chpwd").submit(function(event){
@@ -23,8 +23,9 @@ $(document).ready(function(){
                         var data={};
                         data.kind=kind;
                         data.deptid=deptid;
-                        data.passwd=pwd;
-                        data.email=email;
+                        data.passwd=oldpwd;
+                        data.newpasswd=newpwd;
+                        console.log(JSON.stringify(data));
                         $.ajax({
                                 url:'http://163.22.17.184:8080/bubble/user/passwd/verification',
                                 contentType:'application/json',
@@ -32,6 +33,7 @@ $(document).ready(function(){
                                 dataType:'json',
                                 type:'POST',
                                 success:function(result){
+                                        console.log(result);
                                         if(result.statuscode==200){
                                                 alert("密碼修改成功!");
                                                 document.location.href='reroute.html';

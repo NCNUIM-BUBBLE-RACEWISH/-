@@ -1,0 +1,188 @@
+<html>
+<head>
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="../css/write/text.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <meta http-equiv="Content-Type" content="text/html"; charset="utf-8">
+        <title>全部結果</title>
+        <!--↓要加這串才能用bootstrap提供的小圖示，自己的引不到.....-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <!-- 加入身分認證 -->
+        <script type="text/javascript" src="../js/write/identity.js"></script>
+        <script src="../js/write/allResult.js"></script>
+        <style type="text/css">
+        #rcorners2 {
+                position: absolute;
+                top:50px;
+                border-radius: 25px;
+                border: 2px solid #73AD21;
+                padding: 50px;
+                width: 60%;
+                height: 650px;
+        }
+        </style>
+</head>
+<body>
+        <div class="btn-group btn-group-justified" role="group" aria-label="...">
+                <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-info">全部結果</button>
+                </div>
+                <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default">場地開放&時間</button>
+                </div>
+                <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default">管理場地使用者</button>
+                </div>
+                <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default" onclick="location.href='backWorkManagement.html'">管理帳號/密碼</button>
+                </div>
+        </div>
+        <div class="col-md-offset-2" id="rcorners2">
+                <div class="container">
+                <div class="col-md-2">
+                        <span id="account" name="title"></span>
+                </div>
+        </div>
+        <div class="container" id="back">
+                <div class="row">
+                        <!-- 星期一 -->
+                        <div class="col-md-2 col-md-offset-1">
+                                <button type="button" class="btn btn-default btn-block">Monday</button>
+                                <br>
+                                <div class="row">
+                                        <div class="col-md-5" id="search">
+                                                <p>時段</p>
+                                                <p>1700</p>
+                                                <p>1900</p>
+                                        </div>
+                                        <!-- 時段A -->
+                                        <div class="col-md-7" id="MonA">
+                                        </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                        <div class="col-md-5" id="search2">
+                                                <p>時段</p>
+                                                <p>1900</p>
+                                                <p>2100</p>
+                                        </div>
+                                        <div class="col-md-7" id="MonB">
+                                                <!-- 時段B -->
+                                        </div>
+                                </div>
+                        </div>
+                        <!-- 星期二 -->
+                        <div class="col-md-2 ">
+                                <button type="button" class="btn btn-default btn-block">Tuesday</button>
+                                <br>
+                                <div class="row">
+                                        <div class="col-md-5" id="search">
+                                                <p>時段</p>
+                                                <p>1700</p>
+                                                <p>1900</p>
+                                        </div>
+                                        <!-- 時段A -->
+                                        <ol class="col-md-7" id="TueA">
+                                        </ol>
+                                </div>
+                                <br>
+                                <div class="row">
+                                        <div class="col-md-5" id="search2">
+                                                <p>時段</p>
+                                                <p>1900</p>
+                                                <p>2100</p>
+                                        </div>
+                                        <ol class="col-md-7" id="TueB">
+                                                <!-- 時段B -->
+                                        </ol>
+                                </div>
+                        </div>
+                        <!-- 星期三 -->
+                        <div class="col-md-2 ">
+                                <button type="button" class="btn btn-default btn-block">Wednesday</button>
+                                <br>
+                                <div class="row">
+                                        <div class="col-md-5" id="search">
+                                                <p>時段</p>
+                                                <p>1700</p>
+                                                <p>1900</p>
+                                        </div>
+                                        <!-- 時段A -->
+                                        <div class="col-md-7" id="WedA">
+                                        </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                        <div class="col-md-5" id="search2">
+                                                <p>時段</p>
+                                                <p>1900</p>
+                                                <p>2100</p>
+                                        </div>
+                                        <div class="col-md-7" id="WedB">
+                                                <!-- 時段B -->
+                                        </div>
+                                </div>
+                        </div>
+                        <!-- 星期四 -->
+                        <div class="col-md-2 ">
+                                <button type="button" class="btn btn-default btn-block">Thursday</button>
+                                <br>
+                                <div class="row">
+                                        <div class="col-md-5" id="search">
+                                                <p>時段</p>
+                                                <p>1700</p>
+                                                <p>1900</p>
+                                        </div>
+                                        <!-- 時段A -->
+                                        <div class="col-md-7" id="ThuA">
+                                        </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                        <div class="col-md-5" id="search2">
+                                                <p>時段</p>
+                                                <p>1900</p>
+                                                <p>2100</p>
+                                        </div>
+                                        <div class="col-md-7" id="ThuB">
+                                                <!-- 時段B -->
+                                        </div>
+                                </div>
+                        </div>
+                        <!-- 星期五 -->
+                        <div class="col-md-2 ">
+                                <button type="button" class="btn btn-default btn-block">Friday</button>
+                                <br>
+                                <div class="row">
+                                        <div class="col-md-5" id="search">
+                                                <p>時段</p>
+                                                <p>1700</p>
+                                                <p>1900</p>
+                                        </div>
+                                        <!-- 時段A -->
+                                        <div class="col-md-7" id="FriA">
+                                        </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                        <div class="col-md-5" id="search2">
+                                                <p>時段</p>
+                                                <p>1900</p>
+                                                <p>2100</p>
+                                        </div>
+                                        <div class="col-md-7" id="FriB">
+                                                <!-- 時段B -->
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </div>
+        <br>
+        <br>
+        <hr>
+        <font color="blue">
+        </div>
+</body>
+</html>
