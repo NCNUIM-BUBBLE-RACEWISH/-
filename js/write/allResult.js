@@ -10,7 +10,7 @@ $(document).ready(function() {
     var user = sessionStorage['cname']
     document.getElementById('userSearch').setAttribute("placeholder", user)
         //取所有資料
-    var data = getAll();
+    var data = getAll(cookie);
     //塞入
     pushIn(data, cookie);
     //一進入頁面(mark所屬系球種)
@@ -27,17 +27,19 @@ $(document).ready(function() {
 
 });
 
-function getAll() {
-	var nowDate = new Date();
+function getAll(cookie) {
+	/*
+    var nowDate = new Date();
     if (nowDate.getMonth() < 9 || nowDate.getMonth() > 2)
         nowDate = (nowDate.getFullYear() - 1912) * 10 + 2;
     else
         nowDate = (nowDate.getFullYear() - 1911) * 10 + 1;
-    console.log(sessionStorage["account"],nowDate)
+    */
+    //console.log(sessionStorage["account"],nowDate)
     var object = []
     $.ajax({
         url: "http://163.22.17.184:8080/bubble/Search/result",
-        data: { "ballid": sessionStorage["account"], "term": nowDate  },
+        data: { "what": cookie, "term": 1031  },
         type: "GET",
         //↓天辣辣辣辣這行太神了!!!!傳回值終於可以存惹感動
         async: false,
@@ -81,7 +83,7 @@ function pushIn(data, cookie) {
         },
         //壘球另外弄
     ];
-    //該球類多少時段  
+    //該球類多少時段
     var week = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
     for (var w = 0; w < 5; w++) {
         var sho = week[w].substring(0, 3);
