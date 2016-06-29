@@ -4,11 +4,11 @@ $(document).ready(function(){
                 var kind=document.getElementById("kind").value;
                 var deptid=document.getElementById("deptid").value;
                 var passwd=document.getElementById("passwd").value;
-                var data ={}
+                var data ={};
                 data.kind=kind;
                 data.deptid=deptid;
                 data.passwd=passwd;
-                console.log(JSON.stringify(data));
+                //console.log(JSON.stringify(data));
                 $.ajax({
                         url:'http://163.22.17.184:8080/bubble/user/passwd',
                         contentType:"application/json",
@@ -51,11 +51,10 @@ function printdata(){
         console.log(sessionStorage["account"]);
 }
 // 若未關閉瀏覽器則自動登入
-/*function autoLogin(){
-        if(sessionStorage["statuscode"]==200)
-                document.location.href="reroute.html";
- }
-*/
+// function autoLogin(){
+//         if(sessionStorage["statuscode"]==200 )
+//                 document.location.href="reroute.html";
+//  }
 function get_cname(account){
         var full;
         if(account.substring(0,2)=='01')

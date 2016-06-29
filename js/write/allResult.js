@@ -81,7 +81,7 @@ function pushIn(data, cookie) {
         },
         //壘球另外弄
     ];
-    //該球類多少時段  
+    //該球類多少時段
     var week = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
     for (var w = 0; w < 5; w++) {
         var sho = week[w].substring(0, 3);
