@@ -26,7 +26,7 @@ $(document).ready(function() {
             var w=$('#YourWeek'+i+' :selected').text();
             var p=$('#YourBall'+i+' :selected').text();
             var t=$('#YourTime'+i+' :selected').text();
-            check+="志願"+i+" : "+w+"  "+p+"  "+t+"  \n";
+            check+="志願"+i+" : "+w+"  "+t+"  "+p+"  \n";
         }
         if(confirm(check)){
              postData(alldata);

@@ -1,72 +1,76 @@
 <html>
+
 <head>
-        <title></title>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html" ; charset="utf-8">
 </head>
-        <link rel="stylesheet" type="text/css" href="../css/write/text.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-        <style type="text/css">
-        #rcorners2 {
-                position: absolute;
-                top:50px;
-                border-radius: 25px;
-                border: 2px solid #73AD21;
-                padding: 50px;
-                width: 60%;
-                height: 650px;
-        }
-        </style>
+<link rel="stylesheet" type="text/css" href="../css/write/text.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<style type="text/css">
+#rcorners2 {
+    position: absolute;
+    top: 50px;
+    border-radius: 25px;
+    border: 2px solid #73AD21;
+    padding: 50px;
+    width: 60%;
+    height: 650px;
+}
+</style>
+
 <body onload="border()">
-        <div class="btn-group btn-group-justified" role="group" aria-label="...">
-                <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-default" onclick="location.href='backWorkResult.html'">全部結果</button>
-                </div>
-                <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-default">場地開放&時間</button>
-                </div>
-                <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-default">管理場地使用者</button>
-                </div>
-                <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-info">管理帳號/密碼</button>
-                </div>
+    <div class="btn-group btn-group-justified" role="group" aria-label="...">
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default" onclick="location.href='backWorkResult.html'">全部結果</button>
         </div>
-        <div id="rcorners2" class="col-md-offset-2">
-                <!--內容-->
-                <div class="col-md-4 col-md-offset-3">
-                        <p id="status"></p>
-                        <form id="account" class="form-horizontal">
-                        <br>
-                        <div class="form-group">
-                                <label class="col-md-5 control-label">球類</label>
-                                <div class="col-md-4">
-                                        <select class="selectpicker show-tick form-control " id="kind">
-                                                <option value="0B">男籃</option>
-                                                <option value="0G">女籃</option>
-                                                <option value="1B">男排</option>
-                                                <option value="1G">女排</option>
-                                                <option value="2">羽球</option>
-                                                <option value="3">桌球</option>
-                                                <option value="4">壘球</option>
-                                        </select>
-                                </div>
-                        </div>
-                        <div class="form-group">
-                                <label class="col-md-5 control-label">電子信箱</label>
-                                <div class="col-md-7">
-                                        <input class="form-control" id="inputEmail" placeholder="email">
-                                </div>
-                        </div>
-                        <div class="form-group">
-                                <label class="col-md-5 control-label">新密碼</label>
-                                <div class="col-md-7">
-                                        <input type="password" class="form-control" id="passwd" placeholder="密碼">
-                                </div>
-                        </div>
-                        </form>
-                        <div class="form-group col-md-offset-12">
-                                <button type="submit" class="btn btn-primary " type="button">確認</button>
-                        </div>
-                </div>
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default">場地開放&時間</button>
         </div>
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default">管理場地使用者</button>
+        </div>
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-info">管理帳號/密碼</button>
+        </div>
+    </div>
+    <div id="rcorners2" class="col-md-offset-2">
+        <!--內容-->
+        <div class="col-md-4 col-md-offset-3">
+            <p id="status"></p>
+            <form id="account" class="form-horizontal">
+                <br>
+                <div class="form-group">
+                    <label class="col-md-5 control-label">球類</label>
+                    <div class="col-md-4">
+                        <select class="selectpicker show-tick form-control " id="kind" style="width: 100px;">
+                            <option value="0B">男籃</option>
+                            <option value="0G">女籃</option>
+                            <option value="1B">男排</option>
+                            <option value="1G">女排</option>
+                            <option value="2">羽球</option>
+                            <option value="3">桌球</option>
+                            <option value="4">壘球</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-5 control-label">電子信箱</label>
+                    <div class="col-md-7">
+                        <input class="form-control" id="inputEmail" placeholder="email" style="width: 180px;">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-5 control-label">新密碼</label>
+                    <div class="col-md-7">
+                        <input type="password" class="form-control" id="passwd" placeholder="密碼">
+                    </div>
+                </div>
+            </form>
+            <div class="form-group col-md-offset-12">
+                <button type="submit" class="btn btn-primary " type="button">確認</button>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>

@@ -1,29 +1,17 @@
 $(document).ready(function() {
-    var cookie;
+    var cookie=0;
+    /*
     if (parseInt(sessionStorage["account"].substring(2, 3) == 0) ||
         (parseInt(sessionStorage["account"].substring(2, 3) == 1))) {
         cookie = parseInt(sessionStorage["account"].substring(2, 3)) * 2;
     } else {
         cookie = parseInt(sessionStorage["account"].substring(2, 3))
     }
-    //搜尋的預設值
-    var user = sessionStorage['cname']
-    document.getElementById('userSearch').setAttribute("placeholder", user)
-        //取所有資料
+    */
+    //取所有資料
     var data = getAll();
     //塞入
     pushIn(data, cookie);
-    //一進入頁面(mark所屬系球種)
-    search(user, data)
-        //點擊搜尋
-    $(function() {
-        $("#lookFor").click(function() {
-            //先將有mark的地方擦掉
-            remove();
-            var userSearch = $("#userSearch").val()
-            search(userSearch, data)
-        });
-    });
 
 });
 
