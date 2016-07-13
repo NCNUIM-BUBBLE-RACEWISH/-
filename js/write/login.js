@@ -8,7 +8,7 @@ $(document).ready(function(){
                 data.kind=kind;
                 data.deptid=deptid;
                 data.passwd=passwd;
-                //console.log(JSON.stringify(data));
+                console.log(JSON.stringify(data));
                 $.ajax({
                         url:'http://163.22.17.184:8080/bubble/user/passwd',
                         contentType:"application/json",

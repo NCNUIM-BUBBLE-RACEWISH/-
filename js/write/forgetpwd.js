@@ -11,7 +11,10 @@ $(document).ready(function(){
                         dataType:'json',
                         type:'POST',
                         success:function(result){
-                                alert("信件已寄出，請至信箱查看您的密碼");
+                                if(result.statuscode==200)
+                                        alert("信件已寄出，請至信箱查看您的密碼");
+                                else if(result.statuscode==401)
+                                        alert("信箱有錯喔!");
                                 document.location.href="index.html";
                         },
                         error:function(err){
