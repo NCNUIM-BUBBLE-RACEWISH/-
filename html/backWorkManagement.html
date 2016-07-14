@@ -17,14 +17,28 @@
     height: 650px;
 }
 </style>
-
+<script>
+    var cookie=3;//以哪種球類登入
+    function change_page() {
+        if (cookie==0){//籃球
+            location.href='timeManagement_basketball.html';
+        }else if(cookie==1){//排球
+            location.href='timeManagement_volleyball.html';
+        }else if(cookie==2){//羽球
+            location.href='timeManagement_badmiton.html';
+        }else if(cookie==3){//桌球
+            location.href='timeManagement_table.html';
+        }else if(cookie==4){//壘球
+        }
+    }
+</script>
 <body onload="border()">
     <div class="btn-group btn-group-justified" role="group" aria-label="...">
         <div class="btn-group" role="group">
             <button type="button" class="btn btn-default" onclick="location.href='backWorkResult.html'">全部結果</button>
         </div>
         <div class="btn-group" role="group">
-            <button type="button" class="btn btn-default">場地開放&時間</button>
+            <button type="button" onclick="change_page()" class="btn btn-default">場地開放&時間</button>
         </div>
         <div class="btn-group" role="group">
             <button type="button" class="btn btn-default">管理場地使用者</button>
