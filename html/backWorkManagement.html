@@ -6,6 +6,8 @@
 </head>
 <link rel="stylesheet" type="text/css" href="../css/write/text.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<script type="text/javascript" src="../js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="../js/write/adduser.js"></script>
 <style type="text/css">
 #rcorners2 {
     position: absolute;
@@ -17,28 +19,14 @@
     height: 650px;
 }
 </style>
-<script>
-    var cookie=3;//以哪種球類登入
-    function change_page() {
-        if (cookie==0){//籃球
-            location.href='timeManagement_basketball.html';
-        }else if(cookie==1){//排球
-            location.href='timeManagement_volleyball.html';
-        }else if(cookie==2){//羽球
-            location.href='timeManagement_badmiton.html';
-        }else if(cookie==3){//桌球
-            location.href='timeManagement_table.html';
-        }else if(cookie==4){//壘球
-        }
-    }
-</script>
-<body onload="border()">
+
+<body>
     <div class="btn-group btn-group-justified" role="group" aria-label="...">
         <div class="btn-group" role="group">
             <button type="button" class="btn btn-default" onclick="location.href='backWorkResult.html'">全部結果</button>
         </div>
         <div class="btn-group" role="group">
-            <button type="button" onclick="change_page()" class="btn btn-default">場地開放&時間</button>
+            <button type="button" class="btn btn-default">場地開放&時間</button>
         </div>
         <div class="btn-group" role="group">
             <button type="button" class="btn btn-default">管理場地使用者</button>
@@ -53,6 +41,30 @@
             <p id="status"></p>
             <form id="account" class="form-horizontal">
                 <br>
+                <div class="form-group">
+                                <label class="col-lg-5 control-label">系所</label>
+                                <div class="col-lg-4">
+                                        <select class="selectpicker show-tick form-control " id="deptid" >
+                                                <option value="01">中文系</option>
+                                                <option value="02">國比系</option>
+                                                <option value="03">社工系</option>
+                                                <option value="04">外文系</option>
+                                                <option value="05">歷史系</option>
+                                                <option value="06">公行系</option>
+                                                <option value="07">教政系</option>
+                                                <option value="08">東南亞系</option>
+                                                <option value="11">經濟系</option>
+                                                <option value="12">國企系</option>
+                                                <option value="13">資管系</option>
+                                                <option value="14">財金系</option>
+                                                <option value="21">資工系</option>
+                                                <option value="22">土木系</option>
+                                                <option value="23">電機系</option>
+                                                <option value="24">應化系</option>
+                                                <option value="42">觀餐系</option>
+                                        </select>
+                                </div>
+                        </div>
                 <div class="form-group">
                     <label class="col-md-5 control-label">球類</label>
                     <div class="col-md-4">
@@ -79,10 +91,10 @@
                         <input type="password" class="form-control" id="passwd" placeholder="密碼">
                     </div>
                 </div>
+                <div class="form-group col-md-offset-12">
+                    <button  type="submit" class="btn btn-primary " type="button">確認</button>
+                </div>
             </form>
-            <div class="form-group col-md-offset-12">
-                <button type="submit" class="btn btn-primary " type="button">確認</button>
-            </div>
         </div>
     </div>
 </body>
