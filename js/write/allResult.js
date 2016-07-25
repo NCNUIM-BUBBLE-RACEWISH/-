@@ -37,7 +37,7 @@ function getAll() {
     var object = []
     $.ajax({
         url: "http://163.22.17.184:8080/bubble/Search/result",
-        data: { "what": sessionStorage["account"], "term": 1031  },
+        data: { "what": 0, "term": 1031  },
         //data: { "what": sessionStorage["account"], "term": nowDate  },
         type: "GET",
         //↓天辣辣辣辣這行太神了!!!!傳回值終於可以存惹感動
