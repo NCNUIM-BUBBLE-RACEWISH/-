@@ -84,19 +84,49 @@ $(document).ready(function() {
                 }]
             }, {
                 "球類": "羽球",
-                "場地數": 2,
+                "場地數": 7,
                 "總時間": ["e", "f", "c", "d"],
                 "總開始時間": [13, 15, 17, 19],
                 "時段差": 2,
                 "場地資料": [{
-                    "場地名": "體育館A",
+                    "場地名": "A1場",
                     "場地代碼": "M",
                     "開始時間": [13, 15, 17, 19],
                     "時段代碼": ["e", "f", "c", "d"],
                     "時段數": 4
                 }, {
-                    "場地名": "體育館B",
-                    "場地代碼": "N",
+                    "場地名": "A2場",
+                    "場地代碼": "I",
+                    "開始時間": [13, 15, 17, 19],
+                    "時段代碼": ["e", "f", "c", "d"],
+                    "時段數": 4
+                },{
+                    "場地名": "A3場",
+                    "場地代碼": "J",
+                    "開始時間": [13, 15, 17, 19],
+                    "時段代碼": ["e", "f", "c", "d"],
+                    "時段數": 4
+                },{
+                    "場地名": "B1場",
+                    "場地代碼": "K",
+                    "開始時間": [13, 15, 17, 19],
+                    "時段代碼": ["e", "f", "c", "d"],
+                    "時段數": 4
+                },{
+                    "場地名": "B2場",
+                    "場地代碼": "L",
+                    "開始時間": [13, 15, 17, 19],
+                    "時段代碼": ["e", "f", "c", "d"],
+                    "時段數": 4
+                },{
+                    "場地名": "B3場",
+                    "場地代碼": "Q",
+                    "開始時間": [13, 15, 17, 19],
+                    "時段代碼": ["e", "f", "c", "d"],
+                    "時段數": 4
+                },{
+                    "場地名": "B4場",
+                    "場地代碼": "Z",
                     "開始時間": [13, 15, 17, 19],
                     "時段代碼": ["e", "f", "c", "d"],
                     "時段數": 4
@@ -430,7 +460,6 @@ $(document).ready(function() {
                 }, ]
             });
         } else if (ball_type == 2) {
-            //排球
             $('#container').highcharts({
                 chart: {
                     type: 'bar'
@@ -442,7 +471,7 @@ $(document).ready(function() {
                     text: ': <a href=""></a>'
                 },
                 xAxis: {
-                    categories: [obj.場地資料[0].場地名, obj.場地資料[1].場地名],
+                    categories: [obj.場地資料[0].場地名, obj.場地資料[1].場地名, obj.場地資料[2].場地名, obj.場地資料[3].場地名, obj.場地資料[4].場地名, obj.場地資料[5].場地名,obj.場地資料[6].場地名],
                     title: {
                         text: null
                     }
@@ -482,17 +511,17 @@ $(document).ready(function() {
                 },
                 series: [{
                     name: '13:00~15:00',
-                    data: [parseInt(num[0]), parseInt(num[4])]
+                    data: [parseInt(num[0]), parseInt(num[4]),parseInt(num[8]),parseInt(num[12]),parseInt(num[16]),parseInt(num[20]),parseInt(num[24])]
                 }, {
                     name: '15:00~17:00',
-                    data: [parseInt(num[1]), parseInt(num[5])]
+                    data: [parseInt(num[1]), parseInt(num[5]),parseInt(num[9]),parseInt(num[13]),parseInt(num[17]),parseInt(num[21]),parseInt(num[25])]
                 }, {
                     name: '17:00~19:00',
-                    data: [parseInt(num[2]), parseInt(num[6])]
+                    data: [parseInt(num[2]), parseInt(num[6]),parseInt(num[10]),parseInt(num[14]),parseInt(num[18]),parseInt(num[22]),parseInt(num[26])]
                 }, {
                     name: '19:00~21:00',
-                    data: [parseInt(num[3]), parseInt(num[7])]
-                }]
+                    data: [parseInt(num[3]), parseInt(num[7]),parseInt(num[11]),parseInt(num[15]),parseInt(num[19]),parseInt(num[23]),parseInt(num[27])]
+                } ]
             });
         }
     }
