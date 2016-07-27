@@ -526,7 +526,7 @@ $(document).ready(function() {
         }
     }
 
-    //      右邊的的申請場地次數~~~~~~~~~~~~~~~~~   
+    //      右邊的的申請場地次數~~~~~~~~~~~~~~~~~
     //顯示對應的次數
     $("#wish1").change(function() {
         var week = $("#YourWeek1").val();
