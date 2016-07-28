@@ -1,10 +1,10 @@
 $(document).ready(function() {
     var cookie
-    if(parseInt(sessionStorage["account"].substring(2, 3)==0)||
-        (parseInt(sessionStorage["account"].substring(2, 3)==1))){
+    if (parseInt(sessionStorage["account"].substring(2, 3) == 0) ||
+        (parseInt(sessionStorage["account"].substring(2, 3) == 1))) {
         cookie = parseInt(sessionStorage["account"].substring(2, 3)) * 2;
-    }else{
-        cookie=parseInt(sessionStorage["account"].substring(2, 3))
+    } else {
+        cookie = parseInt(sessionStorage["account"].substring(2, 3))
     }
     console.log(cookie)
         //0->籃球  1->排球  2->羽球  3->桌球  4->壘球
@@ -100,31 +100,31 @@ $(document).ready(function() {
                     "開始時間": [13, 15, 17, 19],
                     "時段代碼": ["e", "f", "c", "d"],
                     "時段數": 4
-                },{
+                }, {
                     "場地名": "A3場",
                     "場地代碼": "J",
                     "開始時間": [13, 15, 17, 19],
                     "時段代碼": ["e", "f", "c", "d"],
                     "時段數": 4
-                },{
+                }, {
                     "場地名": "B1場",
                     "場地代碼": "K",
                     "開始時間": [13, 15, 17, 19],
                     "時段代碼": ["e", "f", "c", "d"],
                     "時段數": 4
-                },{
+                }, {
                     "場地名": "B2場",
                     "場地代碼": "L",
                     "開始時間": [13, 15, 17, 19],
                     "時段代碼": ["e", "f", "c", "d"],
                     "時段數": 4
-                },{
+                }, {
                     "場地名": "B3場",
                     "場地代碼": "Q",
                     "開始時間": [13, 15, 17, 19],
                     "時段代碼": ["e", "f", "c", "d"],
                     "時段數": 4
-                },{
+                }, {
                     "場地名": "B4場",
                     "場地代碼": "Z",
                     "開始時間": [13, 15, 17, 19],
@@ -459,7 +459,9 @@ $(document).ready(function() {
                     data: [parseInt(num[1]), parseInt(num[3])]
                 }, ]
             });
-        } else if (ball_type == 2) {
+        } else if (ball_type == 2){
+        
+            //羽球
             $('#container').highcharts({
                 chart: {
                     type: 'bar'
@@ -511,104 +513,104 @@ $(document).ready(function() {
                 },
                 series: [{
                     name: '13:00~15:00',
+                    //data: [1, 3, 2, 5, 10,2,1]
                     data: [parseInt(num[0]), parseInt(num[4]),parseInt(num[8]),parseInt(num[12]),parseInt(num[16]),parseInt(num[20]),parseInt(num[24])]
                 }, {
                     name: '15:00~17:00',
+                    //data: [2, 0, 3, 2, 2,4,10]
                     data: [parseInt(num[1]), parseInt(num[5]),parseInt(num[9]),parseInt(num[13]),parseInt(num[17]),parseInt(num[21]),parseInt(num[25])]
                 }, {
                     name: '17:00~19:00',
+                    //data: [9, 2, 13, 2, 2,4,10]
                     data: [parseInt(num[2]), parseInt(num[6]),parseInt(num[10]),parseInt(num[14]),parseInt(num[18]),parseInt(num[22]),parseInt(num[26])]
                 }, {
                     name: '19:00~21:00',
+                    //data: [5, 10, 3, 6, 4,4,7]
                     data: [parseInt(num[3]), parseInt(num[7]),parseInt(num[11]),parseInt(num[15]),parseInt(num[19]),parseInt(num[23]),parseInt(num[27])]
                 } ]
             });
-        }
     }
+}
 
-    //      右邊的的申請場地次數~~~~~~~~~~~~~~~~~
-    //顯示對應的次數
-    $("#wish1").change(function() {
-        var week = $("#YourWeek1").val();
-        var ball = $("#YourBall1").val();
-        var time = $("#YourTime1").val();
-        if ((week != -1) && (ball != -1) && (time != -1)) {
-            $.ajax({
-                //http://163.22.17.184:8080/bubble/apply_count2/json? time=a & place=0A &week=五
-                url: "http://163.22.17.184:8080/bubble/user/apply/information/Real_time",
-                data: { "time": time, "place": ball, "week": week },
-                type: "GET",
-                success: function(data) {
-                    $("#num1").val(data.申請次數).show();
-                }
-            });
-            console.log("week", week, "ball", ball, "time", time);
-        }
-    });
-    $("#wish2").change(function() {
-        var week = $("#YourWeek2").val();
-        var ball = $("#YourBall2").val();
-        var time = $("#YourTime2").val();
-        if ((week != -1) && (ball != -1) && (time != -1)) {
-            $.ajax({
-                //http://163.22.17.184:8080/bubble/apply_count2/json? time=a & place=0A &week=五
-                url: "http://163.22.17.184:8080/bubble/user/apply/information/Real_time",
-                data: { "time": time, "place": ball, "week": week },
-                type: "GET",
-                success: function(data) {
-                    $("#num2").val(data.申請次數).show();
-                }
-            });
-        }
-    });
-    $("#wish3").change(function() {
-        var week = $("#YourWeek3").val();
-        var ball = $("#YourBall3").val();
-        var time = $("#YourTime3").val();
-        if ((week != -1) && (ball != -1) && (time != -1)) {
-            $.ajax({
-                //http://163.22.17.184:8080/bubble/apply_count2/json? time=a & place=0A &week=五
-                url: "http://163.22.17.184:8080/bubble/user/apply/information/Real_time",
-                data: { "time": time, "place": ball, "week": week },
-                type: "GET",
-                success: function(data) {
-                    $("#num3").val(data.申請次數).show();
-                }
-            });
-        }
-    });
-    $("#wish4").change(function() {
-        var week = $("#YourWeek4").val();
-        var ball = $("#YourBall4").val();
-        var time = $("#YourTime4").val();
-        if ((week != -1) && (ball != -1) && (time != -1)) {
-            $.ajax({
-                //http://163.22.17.184:8080/bubble/apply_count2/json? time=a & place=0A &week=五
-                url: "http://163.22.17.184:8080/bubble/user/apply/information/Real_time",
-                data: { "time": time, "place": ball, "week": week },
-                type: "GET",
-                success: function(data) {
-                    $("#num4").val(data.申請次數).show();
-                }
-            });
-        }
-    });
-    $("#wish5").change(function() {
-        var week = $("#YourWeek5").val();
-        var ball = $("#YourBall5").val();
-        var time = $("#YourTime5").val();
-        if ((week != -1) && (ball != -1) && (time != -1)) {
-            $.ajax({
-                //http://163.22.17.184:8080/bubble/apply_count2/json? time=a & place=0A &week=五
-                url: "http://163.22.17.184:8080/bubble/user/apply/information/Real_time",
-                data: { "time": time, "place": ball, "week": week },
-                type: "GET",
-                success: function(data) {
-                    $("#num5").val(data.申請次數).show();
-                }
-            });
-        }
-    });
+//      右邊的的申請場地次數~~~~~~~~~~~~~~~~~
+//顯示對應的次數
+$("#wish1").change(function() {
+    var week = $("#YourWeek1").val();
+    var ball = $("#YourBall1").val();
+    var time = $("#YourTime1").val();
+    if ((week != -1) && (ball != -1) && (time != -1)) {
+        $.ajax({
+            //http://163.22.17.184:8080/bubble/apply_count2/json? time=a & place=0A &week=五
+            url: "http://163.22.17.184:8080/bubble/user/apply/information/Real_time",
+            data: { "time": time, "place": ball, "week": week },
+            type: "GET",
+            success: function(data) {
+                $("#num1").val(data.申請次數).show();
+            }
+        });
+        console.log("week", week, "ball", ball, "time", time);
+    }
+}); $("#wish2").change(function() {
+    var week = $("#YourWeek2").val();
+    var ball = $("#YourBall2").val();
+    var time = $("#YourTime2").val();
+    if ((week != -1) && (ball != -1) && (time != -1)) {
+        $.ajax({
+            //http://163.22.17.184:8080/bubble/apply_count2/json? time=a & place=0A &week=五
+            url: "http://163.22.17.184:8080/bubble/user/apply/information/Real_time",
+            data: { "time": time, "place": ball, "week": week },
+            type: "GET",
+            success: function(data) {
+                $("#num2").val(data.申請次數).show();
+            }
+        });
+    }
+}); $("#wish3").change(function() {
+    var week = $("#YourWeek3").val();
+    var ball = $("#YourBall3").val();
+    var time = $("#YourTime3").val();
+    if ((week != -1) && (ball != -1) && (time != -1)) {
+        $.ajax({
+            //http://163.22.17.184:8080/bubble/apply_count2/json? time=a & place=0A &week=五
+            url: "http://163.22.17.184:8080/bubble/user/apply/information/Real_time",
+            data: { "time": time, "place": ball, "week": week },
+            type: "GET",
+            success: function(data) {
+                $("#num3").val(data.申請次數).show();
+            }
+        });
+    }
+}); $("#wish4").change(function() {
+    var week = $("#YourWeek4").val();
+    var ball = $("#YourBall4").val();
+    var time = $("#YourTime4").val();
+    if ((week != -1) && (ball != -1) && (time != -1)) {
+        $.ajax({
+            //http://163.22.17.184:8080/bubble/apply_count2/json? time=a & place=0A &week=五
+            url: "http://163.22.17.184:8080/bubble/user/apply/information/Real_time",
+            data: { "time": time, "place": ball, "week": week },
+            type: "GET",
+            success: function(data) {
+                $("#num4").val(data.申請次數).show();
+            }
+        });
+    }
+}); $("#wish5").change(function() {
+    var week = $("#YourWeek5").val();
+    var ball = $("#YourBall5").val();
+    var time = $("#YourTime5").val();
+    if ((week != -1) && (ball != -1) && (time != -1)) {
+        $.ajax({
+            //http://163.22.17.184:8080/bubble/apply_count2/json? time=a & place=0A &week=五
+            url: "http://163.22.17.184:8080/bubble/user/apply/information/Real_time",
+            data: { "time": time, "place": ball, "week": week },
+            type: "GET",
+            success: function(data) {
+                $("#num5").val(data.申請次數).show();
+            }
+        });
+    }
+});
 
 
 
