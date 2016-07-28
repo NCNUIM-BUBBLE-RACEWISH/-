@@ -21,7 +21,7 @@ $(document).ready(function() {
         }
         console.log(JSON.stringify(alldata));
         var check = "二次確認您的志願序：\n\n";
-        var count = 0;
+        var count = 0,goback=false;
         for (var i = 1; i <= 5; i++) {
             var w = $('#YourWeek' + i + ' :selected').text();
             var p = $('#YourBall' + i + ' :selected').text();
@@ -30,21 +30,20 @@ $(document).ready(function() {
             if ((w == p) && (p == t)) { //放棄此志願
                 count++;
             } else if (w == "") {
-                alert("項目不可有空值")
-                return;
+                goback=true;
             } else if (p == "") {
-                alert("項目不可有空值")
-                return;
+                goback=true;
             } else if (t == "") {
-                alert("項目不可有空值")
-                return;
+                goback=true;
             } else {
                 check += "志願" + i + " : " + w + "  " + t + "  " + p + "  \n";
             }
         }
         if (count == 5) {
             alert("請填寫志願")
-        } else {
+        } else if(goback==true){
+            alert("項目不可有空值")
+        } else{
             if (confirm(check)) {
                 postData(alldata);
             }
