@@ -21,29 +21,52 @@ $(document).ready(function() {
         }
         console.log(JSON.stringify(alldata));
         var check = "二次確認您的志願序：\n\n";
-        var count = 0,goback=false;
+        var wishes = [];
+        var count = 0,
+            goback = false,
+            goback2 = false;
         for (var i = 1; i <= 5; i++) {
             var w = $('#YourWeek' + i + ' :selected').text();
             var p = $('#YourBall' + i + ' :selected').text();
             var t = $('#YourTime' + i + ' :selected').text();
+            var wish = w + p + t;
+            wishes[i - 1] = wish;
             //不可有欄位為空
             if ((w == p) && (p == t)) { //放棄此志願
                 count++;
             } else if (w == "") {
-                goback=true;
+                goback = true;
             } else if (p == "") {
-                goback=true;
+                goback = true;
             } else if (t == "") {
-                goback=true;
+                goback = true;
             } else {
                 check += "志願" + i + " : " + w + "  " + t + "  " + p + "  \n";
             }
         }
+        //比對志願是否重複
+        for (var i = 0; i < 5; i++) {
+            if (wishes[i].length == 0) {//字串match("")---->true
+                continue
+            }
+            for (var k = i + 1; k < 5; k++) {
+                if (wishes[k].length == 0) {
+                    continue
+                }
+                if (wishes[i].match(wishes[k])) {
+                    goback2 = true
+                    break;
+                }
+            }
+        }
+        console.log(goback, wishes[0], wishes[1])
         if (count == 5) {
             alert("請填寫志願")
-        } else if(goback==true){
+        } else if (goback == true) {
             alert("項目不可有空值")
-        } else{
+        } else if (goback2 == true) {
+            alert("志願不可重複")
+        } else {
             if (confirm(check)) {
                 postData(alldata);
             }
