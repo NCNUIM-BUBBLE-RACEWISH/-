@@ -5,32 +5,42 @@
     <meta http-equiv="Content-Type" content="text/html" ; charset="utf-8">
 </head>
 <link rel="stylesheet" type="text/css" href="../css/write/text.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="../css/buttonstyles.css">
-<style type="text/css">
-        body{
-                background-color: white;
-        }
-        table {
-    width: 50%;
-}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-td, th {
+<style type="text/css">
+        body {
+        background-attachment: fixed;
+        background-image: url("../img/sportman.png");
+        background-size: 400px;
+        background-repeat: no-repeat;
+        background-position: 90% 90%;
+        position: relative;
+        background-color: #E4D8FB;
+    }
+
+td, tr {
     text-align: left;
-    padding: 8px;
-    vertical-align:text-top;
+    padding: 30px;
 }
 
 .form{
         text-align: center;
-        padding: 8px;
 }
 tr:nth-child(even) {
-    background-color: #ddd000;
+    background-color: #ddd555;
 }
 input{
         width: 70px;
+}
+input:enabled {
+    background: #ffffcc;
+}
+input:disabled {
+    background: #cccccc;
 }
 </style>
 
@@ -38,130 +48,851 @@ input{
 <body>
         <div class="btn-group btn-group-justified" role="group" aria-label="...">
                 <div class="btn-group" role="group">
-                <button type="button" class="btn btn-default" onclick="location.href='backWorkResult.html'">全部結果</button>
+                <button type="button" class="btn btn-primary" onclick="location.href='backWorkResult.html'">全部結果</button>
                 </div>
                 <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-info">場地開放&時間</button>
+                        <button type="button" class="btn btn-info">場地管理</button>
                 </div>
                 <div class="btn-group" role="group">
-                         <button type="button" class="btn btn-default">管理場地使用者</button>
+                         <button type="button" class="btn btn-primary">管理場地使用者</button>
                 </div>
                 <div class="btn-group" role="group">
-                         <button type="button" class="btn btn-default" onclick="location.href='backWorkManagement.html'">管理帳號/密碼</button>
+                         <button type="button" class="btn btn-primary" onclick="location.href='backWorkManagement.html'">管理帳號/密碼</button>
                 </div>
         </div>
+
         <div class="container">
-                <table>
-                        <tr>
-                                <td>
-                                        <div class= "col-md-2 col-md-offset-1"><section class="model-13"><span>場地A</span><div class="checkbox"><input type="checkbox" /><label></label></div></section></div>
-                                </td>
-                                <td>
-                                        <div class= "col-md-2 col-md-offset-1"><section class="model-13"><span>場地B</span><div class="checkbox"><input type="checkbox" /><label></label></div></section></div>
-                                </td>
-                                <td>
-                                        <div class= "col-md-2 col-md-offset-1"><section class="model-13"><span>場地C</span><div class="checkbox"><input type="checkbox" /><label></label></div></section></div>
-                                </td>
-                                <td>
-                                        <div class= "col-md-2 col-md-offset-1"><section class="model-13"><span>場地D</span><div class="checkbox"><input type="checkbox" /><label></label></div></section></div>
-                                </td>
-                                <td>
-                                        <div class= "col-md-2 col-md-offset-1"><section class="model-13"><span>場地E</span><div class="checkbox"><input type="checkbox" /><label></label></div></section></div>
-                                </td>
-                        </tr>
-                        <tr>
-                                <form>
-                                        <td class="form">
-                                                星期一<select id="mon"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+                <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#A">A</a></li>
+            <li><a data-toggle="tab" href="#B">B</a></li>
+            <li><a data-toggle="tab" href="#C">C</a></li>
+            <li><a data-toggle="tab" href="#D">D</a></li>
+            <li><a data-toggle="tab" href="#E">E</a></li>
+        </ul>
+                <div class="tab-content">
+                        <div id="A" class="tab-pane fade in active">
+                                <table id="block1">
+                                    <tr>
+                                        <form>
+                                                <td class="form">
+                                                        星期一<select id="mon"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+                                                </td>
+                                                <td class="form">
+                                                        星期二<select id="tue"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+                                                </td>
+                                                <td class="form">
+                                                        星期三<select id="wed"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+                                                </td>
+                                                <td class="form">
+                                                        星期四<select id="thur"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+                                                </td>
+                                                <td class="form">
+                                                        星期五<select id="fri"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+                                                </td>
+                                        </form>
+                                    </tr>
+                                    <tr>
+                                        <td>開始時間 結束時間
+                                                <span ><input id="b1moninput1"></span>
+                                                <span ><input id="b1moninput2"></span>
                                         </td>
-                                        <td class="form">
-                                                星期二<select id="tue"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b1tueinput1"></span>
+                                                <span><input id="b1tueinput2"></span>
                                         </td>
-                                        <td class="form">
-                                                星期三<select id="wed"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b1wedinput1"></span>
+                                                <span><input id="b1wedinput2"></span>
                                         </td>
-                                        <td class="form">
-                                                星期四<select id="thur"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+                                        <td>開始時間 結束時間
+                                                <span ><input id="b1thurinput1"></span>
+                                                <span ><input id="b1thurinput2"></span>
                                         </td>
-                                        <td class="form">
-                                                星期五<select id="fri"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b1friinput1"></span>
+                                                <span><input id="b1friinput2"></span>
                                         </td>
-                                </form>
-                        </tr>
-                        <tr>
-                                <td>開始時間 結束時間
-                                        <span id="moninput1"><input></span>
-                                        <span id="moninput2"><input></span>
-                                </td>
-                                <td>開始時間 結束時間
-                                        <span id="tueinput1"><input></span>
-                                        <span id="tueinput2"><input></span>
-                                </td>
-                                <td>開始時間 結束時間
-                                        <span id="wedinput1"><input></span>
-                                        <span id="wedinput2"><input></span>
-                                </td>
-                                <td>開始時間 結束時間
-                                        <span id="thurinput1"><input></span>
-                                        <span id="thurinput2"><input></span>
-                                </td>
-                                <td>開始時間 結束時間
-                                        <span id="friinput1"><input></span>
-                                        <span id="friinput2"><input></span>
-                                </td>
-                        </tr>
-                </table>
+                                    </tr>
+                                </table>
+                                <br>
+                                <table id="block2">
+                                    <tr>
+                                    </tr>
+                                    <tr>
+                                        <td>開始時間 結束時間
+                                                <span ><input id="b2moninput1" disabled="true"></span>
+                                                <span ><input id="b2moninput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b2tueinput1" disabled="true"></span>
+                                                <span><input id="b2tueinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b2wedinput1" disabled="true"></span>
+                                                <span><input id="b2wedinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span ><input id="b2thurinput1" disabled="true"></span>
+                                                <span ><input id="b2thurinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b2friinput1" disabled="true"></span>
+                                                <span><input id="b2friinput2" disabled="true"></span>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <br>
+                                <table id="block3">
+                                    <tr>
+                                    </tr>
+                                    <tr>
+                                        <td>開始時間 結束時間
+                                                <span ><input id="b3moninput1" disabled="true"></span>
+                                                <span ><input id="b3moninput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b3tueinput1" disabled="true"></span>
+                                                <span><input id="b3tueinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b3wedinput1" disabled="true"></span>
+                                                <span><input id="b3wedinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span ><input id="b3thurinput1" disabled="true"></span>
+                                                <span ><input id="b3thurinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b3friinput1" disabled="true"></span>
+                                                <span><input id="b3friinput2" disabled="true"></span>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <br>
+                                <table id="block4">
+                                    <tr>
+                                    </tr>
+                                    <tr>
+                                        <td>開始時間 結束時間
+                                                <span ><input id="b4moninput1" disabled="true"></span>
+                                                <span ><input id="b4moninput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b4tueinput1" disabled="true"></span>
+                                                <span><input id="b4tueinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b4wedinput1" disabled="true"></span>
+                                                <span><input id="b4wedinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span ><input id="b4thurinput1" disabled="true"></span>
+                                                <span ><input id="b4thurinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b4friinput1" disabled="true"></span>
+                                                <span><input id="b4friinput2" disabled="true"></span>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <br>
+                                <table id="block5">
+                                    <tr>
+                                    </tr>
+                                    <tr>
+                                        <td>開始時間 結束時間
+                                                <span ><input id="b5moninput1" disabled="true"></span>
+                                                <span ><input id="b5moninput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b5tueinput1" disabled="true"></span>
+                                                <span><input id="b5tueinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b5wedinput1" disabled="true"></span>
+                                                <span><input id="b5wedinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span ><input id="b5thurinput1" disabled="true"></span>
+                                                <span ><input id="b5thurinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b5friinput1" disabled="true"></span>
+                                                <span><input id="b5friinput2" disabled="true"></span>
+                                        </td>
+                                    </tr>
+                                </table>
+                        </div>
+                        <div id="B" class="tab-pane fade">
+                                <table id="block1">
+                                    <tr>
+                                        <form>
+                                                <td class="form">
+                                                        星期一<select id="mon"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+                                                </td>
+                                                <td class="form">
+                                                        星期二<select id="tue"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+                                                </td>
+                                                <td class="form">
+                                                        星期三<select id="wed"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+                                                </td>
+                                                <td class="form">
+                                                        星期四<select id="thur"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+                                                </td>
+                                                <td class="form">
+                                                        星期五<select id="fri"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+                                                </td>
+                                        </form>
+                                    </tr>
+                                    <tr>
+                                        <td>開始時間 結束時間
+                                                <span ><input id="b1moninput1"></span>
+                                                <span ><input id="b1moninput2"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b1tueinput1"></span>
+                                                <span><input id="b1tueinput2"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b1wedinput1"></span>
+                                                <span><input id="b1wedinput2"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span ><input id="b1thurinput1"></span>
+                                                <span ><input id="b1thurinput2"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b1friinput1"></span>
+                                                <span><input id="b1friinput2"></span>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <br>
+                                <table id="block2">
+                                    <tr>
+                                    </tr>
+                                    <tr>
+                                        <td>開始時間 結束時間
+                                                <span ><input id="b2moninput1" disabled="true"></span>
+                                                <span ><input id="b2moninput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b2tueinput1" disabled="true"></span>
+                                                <span><input id="b2tueinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b2wedinput1" disabled="true"></span>
+                                                <span><input id="b2wedinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span ><input id="b2thurinput1" disabled="true"></span>
+                                                <span ><input id="b2thurinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b2friinput1" disabled="true"></span>
+                                                <span><input id="b2friinput2" disabled="true"></span>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <br>
+                                <table id="block3">
+                                    <tr>
+                                    </tr>
+                                    <tr>
+                                        <td>開始時間 結束時間
+                                                <span ><input id="b3moninput1" disabled="true"></span>
+                                                <span ><input id="b3moninput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b3tueinput1" disabled="true"></span>
+                                                <span><input id="b3tueinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b3wedinput1" disabled="true"></span>
+                                                <span><input id="b3wedinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span ><input id="b3thurinput1" disabled="true"></span>
+                                                <span ><input id="b3thurinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b3friinput1" disabled="true"></span>
+                                                <span><input id="b3friinput2" disabled="true"></span>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <br>
+                                <table id="block4">
+                                    <tr>
+                                    </tr>
+                                    <tr>
+                                        <td>開始時間 結束時間
+                                                <span ><input id="b4moninput1" disabled="true"></span>
+                                                <span ><input id="b4moninput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b4tueinput1" disabled="true"></span>
+                                                <span><input id="b4tueinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b4wedinput1" disabled="true"></span>
+                                                <span><input id="b4wedinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span ><input id="b4thurinput1" disabled="true"></span>
+                                                <span ><input id="b4thurinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b4friinput1" disabled="true"></span>
+                                                <span><input id="b4friinput2" disabled="true"></span>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <br>
+                                <table id="block5">
+                                    <tr>
+                                    </tr>
+                                    <tr>
+                                        <td>開始時間 結束時間
+                                                <span ><input id="b5moninput1" disabled="true"></span>
+                                                <span ><input id="b5moninput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b5tueinput1" disabled="true"></span>
+                                                <span><input id="b5tueinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b5wedinput1" disabled="true"></span>
+                                                <span><input id="b5wedinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span ><input id="b5thurinput1" disabled="true"></span>
+                                                <span ><input id="b5thurinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b5friinput1" disabled="true"></span>
+                                                <span><input id="b5friinput2" disabled="true"></span>
+                                        </td>
+                                    </tr>
+                                </table>
+                        </div>
+                        <div id="C" class="tab-pane fade">
+                                <table id="block1">
+                                    <tr>
+                                        <form>
+                                                <td class="form">
+                                                        星期一<select id="mon"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+                                                </td>
+                                                <td class="form">
+                                                        星期二<select id="tue"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+                                                </td>
+                                                <td class="form">
+                                                        星期三<select id="wed"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+                                                </td>
+                                                <td class="form">
+                                                        星期四<select id="thur"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+                                                </td>
+                                                <td class="form">
+                                                        星期五<select id="fri"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+                                                </td>
+                                        </form>
+                                    </tr>
+                                    <tr>
+                                        <td>開始時間 結束時間
+                                                <span ><input id="b1moninput1"></span>
+                                                <span ><input id="b1moninput2"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b1tueinput1"></span>
+                                                <span><input id="b1tueinput2"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b1wedinput1"></span>
+                                                <span><input id="b1wedinput2"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span ><input id="b1thurinput1"></span>
+                                                <span ><input id="b1thurinput2"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b1friinput1"></span>
+                                                <span><input id="b1friinput2"></span>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <br>
+                                <table id="block2">
+                                    <tr>
+                                    </tr>
+                                    <tr>
+                                        <td>開始時間 結束時間
+                                                <span ><input id="b2moninput1" disabled="true"></span>
+                                                <span ><input id="b2moninput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b2tueinput1" disabled="true"></span>
+                                                <span><input id="b2tueinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b2wedinput1" disabled="true"></span>
+                                                <span><input id="b2wedinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span ><input id="b2thurinput1" disabled="true"></span>
+                                                <span ><input id="b2thurinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b2friinput1" disabled="true"></span>
+                                                <span><input id="b2friinput2" disabled="true"></span>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <br>
+                                <table id="block3">
+                                    <tr>
+                                    </tr>
+                                    <tr>
+                                        <td>開始時間 結束時間
+                                                <span ><input id="b3moninput1" disabled="true"></span>
+                                                <span ><input id="b3moninput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b3tueinput1" disabled="true"></span>
+                                                <span><input id="b3tueinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b3wedinput1" disabled="true"></span>
+                                                <span><input id="b3wedinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span ><input id="b3thurinput1" disabled="true"></span>
+                                                <span ><input id="b3thurinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b3friinput1" disabled="true"></span>
+                                                <span><input id="b3friinput2" disabled="true"></span>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <br>
+                                <table id="block4">
+                                    <tr>
+                                    </tr>
+                                    <tr>
+                                        <td>開始時間 結束時間
+                                                <span ><input id="b4moninput1" disabled="true"></span>
+                                                <span ><input id="b4moninput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b4tueinput1" disabled="true"></span>
+                                                <span><input id="b4tueinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b4wedinput1" disabled="true"></span>
+                                                <span><input id="b4wedinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span ><input id="b4thurinput1" disabled="true"></span>
+                                                <span ><input id="b4thurinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b4friinput1" disabled="true"></span>
+                                                <span><input id="b4friinput2" disabled="true"></span>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <br>
+                                <table id="block5">
+                                    <tr>
+                                    </tr>
+                                    <tr>
+                                        <td>開始時間 結束時間
+                                                <span ><input id="b5moninput1" disabled="true"></span>
+                                                <span ><input id="b5moninput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b5tueinput1" disabled="true"></span>
+                                                <span><input id="b5tueinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b5wedinput1" disabled="true"></span>
+                                                <span><input id="b5wedinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span ><input id="b5thurinput1" disabled="true"></span>
+                                                <span ><input id="b5thurinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b5friinput1" disabled="true"></span>
+                                                <span><input id="b5friinput2" disabled="true"></span>
+                                        </td>
+                                    </tr>
+                                </table>
+                        </div>
+                        <div id="D" class="tab-pane fade">
+                                <table id="block1">
+                                    <tr>
+                                        <form>
+                                                <td class="form">
+                                                        星期一<select id="mon"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+                                                </td>
+                                                <td class="form">
+                                                        星期二<select id="tue"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+                                                </td>
+                                                <td class="form">
+                                                        星期三<select id="wed"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+                                                </td>
+                                                <td class="form">
+                                                        星期四<select id="thur"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+                                                </td>
+                                                <td class="form">
+                                                        星期五<select id="fri"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+                                                </td>
+                                        </form>
+                                    </tr>
+                                    <tr>
+                                        <td>開始時間 結束時間
+                                                <span ><input id="b1moninput1"></span>
+                                                <span ><input id="b1moninput2"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b1tueinput1"></span>
+                                                <span><input id="b1tueinput2"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b1wedinput1"></span>
+                                                <span><input id="b1wedinput2"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span ><input id="b1thurinput1"></span>
+                                                <span ><input id="b1thurinput2"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b1friinput1"></span>
+                                                <span><input id="b1friinput2"></span>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <br>
+                                <table id="block2">
+                                    <tr>
+                                    </tr>
+                                    <tr>
+                                        <td>開始時間 結束時間
+                                                <span ><input id="b2moninput1" disabled="true"></span>
+                                                <span ><input id="b2moninput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b2tueinput1" disabled="true"></span>
+                                                <span><input id="b2tueinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b2wedinput1" disabled="true"></span>
+                                                <span><input id="b2wedinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span ><input id="b2thurinput1" disabled="true"></span>
+                                                <span ><input id="b2thurinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b2friinput1" disabled="true"></span>
+                                                <span><input id="b2friinput2" disabled="true"></span>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <br>
+                                <table id="block3">
+                                    <tr>
+                                    </tr>
+                                    <tr>
+                                        <td>開始時間 結束時間
+                                                <span ><input id="b3moninput1" disabled="true"></span>
+                                                <span ><input id="b3moninput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b3tueinput1" disabled="true"></span>
+                                                <span><input id="b3tueinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b3wedinput1" disabled="true"></span>
+                                                <span><input id="b3wedinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span ><input id="b3thurinput1" disabled="true"></span>
+                                                <span ><input id="b3thurinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b3friinput1" disabled="true"></span>
+                                                <span><input id="b3friinput2" disabled="true"></span>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <br>
+                                <table id="block4">
+                                    <tr>
+                                    </tr>
+                                    <tr>
+                                        <td>開始時間 結束時間
+                                                <span ><input id="b4moninput1" disabled="true"></span>
+                                                <span ><input id="b4moninput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b4tueinput1" disabled="true"></span>
+                                                <span><input id="b4tueinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b4wedinput1" disabled="true"></span>
+                                                <span><input id="b4wedinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span ><input id="b4thurinput1" disabled="true"></span>
+                                                <span ><input id="b4thurinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b4friinput1" disabled="true"></span>
+                                                <span><input id="b4friinput2" disabled="true"></span>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <br>
+                                <table id="block5">
+                                    <tr>
+                                    </tr>
+                                    <tr>
+                                        <td>開始時間 結束時間
+                                                <span ><input id="b5moninput1" disabled="true"></span>
+                                                <span ><input id="b5moninput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b5tueinput1" disabled="true"></span>
+                                                <span><input id="b5tueinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b5wedinput1" disabled="true"></span>
+                                                <span><input id="b5wedinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span ><input id="b5thurinput1" disabled="true"></span>
+                                                <span ><input id="b5thurinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b5friinput1" disabled="true"></span>
+                                                <span><input id="b5friinput2" disabled="true"></span>
+                                        </td>
+                                    </tr>
+                                </table>
+                        </div>
+                        <div id="E" class="tab-pane fade">
+                                <table id="block1">
+                                    <tr>
+                                        <form>
+                                                <td class="form">
+                                                        星期一<select id="mon"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+                                                </td>
+                                                <td class="form">
+                                                        星期二<select id="tue"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+                                                </td>
+                                                <td class="form">
+                                                        星期三<select id="wed"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+                                                </td>
+                                                <td class="form">
+                                                        星期四<select id="thur"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+                                                </td>
+                                                <td class="form">
+                                                        星期五<select id="fri"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+                                                </td>
+                                        </form>
+                                    </tr>
+                                    <tr>
+                                        <td>開始時間 結束時間
+                                                <span ><input id="b1moninput1"></span>
+                                                <span ><input id="b1moninput2"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b1tueinput1"></span>
+                                                <span><input id="b1tueinput2"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b1wedinput1"></span>
+                                                <span><input id="b1wedinput2"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span ><input id="b1thurinput1"></span>
+                                                <span ><input id="b1thurinput2"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b1friinput1"></span>
+                                                <span><input id="b1friinput2"></span>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <br>
+                                <table id="block2">
+                                    <tr>
+                                    </tr>
+                                    <tr>
+                                        <td>開始時間 結束時間
+                                                <span ><input id="b2moninput1" disabled="true"></span>
+                                                <span ><input id="b2moninput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b2tueinput1" disabled="true"></span>
+                                                <span><input id="b2tueinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b2wedinput1" disabled="true"></span>
+                                                <span><input id="b2wedinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span ><input id="b2thurinput1" disabled="true"></span>
+                                                <span ><input id="b2thurinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b2friinput1" disabled="true"></span>
+                                                <span><input id="b2friinput2" disabled="true"></span>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <br>
+                                <table id="block3">
+                                    <tr>
+                                    </tr>
+                                    <tr>
+                                        <td>開始時間 結束時間
+                                                <span ><input id="b3moninput1" disabled="true"></span>
+                                                <span ><input id="b3moninput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b3tueinput1" disabled="true"></span>
+                                                <span><input id="b3tueinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b3wedinput1" disabled="true"></span>
+                                                <span><input id="b3wedinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span ><input id="b3thurinput1" disabled="true"></span>
+                                                <span ><input id="b3thurinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b3friinput1" disabled="true"></span>
+                                                <span><input id="b3friinput2" disabled="true"></span>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <br>
+                                <table id="block4">
+                                    <tr>
+                                    </tr>
+                                    <tr>
+                                        <td>開始時間 結束時間
+                                                <span ><input id="b4moninput1" disabled="true"></span>
+                                                <span ><input id="b4moninput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b4tueinput1" disabled="true"></span>
+                                                <span><input id="b4tueinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b4wedinput1" disabled="true"></span>
+                                                <span><input id="b4wedinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span ><input id="b4thurinput1" disabled="true"></span>
+                                                <span ><input id="b4thurinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b4friinput1" disabled="true"></span>
+                                                <span><input id="b4friinput2" disabled="true"></span>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <br>
+                                <table id="block5">
+                                    <tr>
+                                    </tr>
+                                    <tr>
+                                        <td>開始時間 結束時間
+                                                <span ><input id="b5moninput1" disabled="true"></span>
+                                                <span ><input id="b5moninput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b5tueinput1" disabled="true"></span>
+                                                <span><input id="b5tueinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b5wedinput1" disabled="true"></span>
+                                                <span><input id="b5wedinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span ><input id="b5thurinput1" disabled="true"></span>
+                                                <span ><input id="b5thurinput2" disabled="true"></span>
+                                        </td>
+                                        <td>開始時間 結束時間
+                                                <span><input id="b5friinput1" disabled="true"></span>
+                                                <span><input id="b5friinput2" disabled="true"></span>
+                                        </td>
+                                    </tr>
+                                </table>
+                        </div>
+                </div>
+
         </div>
         <div class="col-md-offset-8">
-        <button class="btn">存入</button>
-        <button class="btn">快速導覽</button>
+        <button class="btn btn-success">存入</button>
+        <button class="btn btn-success" onclick="test()">快速導覽</button>
         </div>
 
 
 <script>
         $( "#mon" ).change(function() {
-                console.log();
-                $("#moninput1").html("");
-                $("#moninput2").html("");
-                for (var i = 0; i < document.getElementById('mon').value; i++) {
-                        $( "#moninput1" ).append("<input>");
-                        $( "#moninput2" ).append("<input>");
-                };
+            for (var i = 1; i <= 5; i++) {
+                    $('#b'+i+"moninput1").attr('disabled', true);
+                    $('#b'+i+"moninput2").attr('disabled', true);
+            };
+            for (var i = 1; i <= document.getElementById('mon').value; i++) {
+                    $('#b'+i+"moninput1").attr('disabled', false);
+                    $('#b'+i+"moninput2").attr('disabled', false);
+            };
         });
         $( "#tue" ).change(function() {
-                console.log();
-                $("#tueinput1").html("");
-                $("#tueinput2").html("");
-                for (var i = 0; i < document.getElementById('tue').value; i++) {
-                        $( "#tueinput1" ).append("<input>");
-                        $( "#tueinput2" ).append("<input>");
+                for (var i = 1; i <= 5; i++) {
+                    $('#b'+i+"tueinput1").attr('disabled', true);
+                    $('#b'+i+"tueinput2").attr('disabled', true);
+                };
+                for (var i = 1; i <= document.getElementById('tue').value; i++) {
+                        $('#b'+i+"tueinput1").attr('disabled', false);
+                        $('#b'+i+"tueinput2").attr('disabled', false);
                 };
         });
         $( "#wed" ).change(function() {
-                console.log();
-                $("#wedinput1").html("");
-                $("#wedinput2").html("");
-                for (var i = 0; i < document.getElementById('wed').value; i++) {
-                        $( "#wedinput1" ).append("<input>");
-                        $( "#wedinput2" ).append("<input>");
+                for (var i = 1; i <= 5; i++) {
+                    $('#b'+i+"wedinput1").attr('disabled', true);
+                    $('#b'+i+"wedinput2").attr('disabled', true);
+                };
+                for (var i = 1; i <= document.getElementById('wed').value; i++) {
+                        $('#b'+i+"wedinput1").attr('disabled', false);
+                        $('#b'+i+"wedinput2").attr('disabled', false);
                 };
         });
         $( "#thur" ).change(function() {
-                console.log();
-                $("#thurinput1").html("");
-                $("#thurinput2").html("");
-                for (var i = 0; i < document.getElementById('thur').value; i++) {
-                        $( "#thurinput1" ).append("<input>");
-                        $( "#thurinput2" ).append("<input>");
+                for (var i = 1; i <= 5; i++) {
+                    $('#b'+i+"thurinput1").attr('disabled', true);
+                    $('#b'+i+"thurinput2").attr('disabled', true);
+                };
+                for (var i = 1; i <= document.getElementById('thur').value; i++) {
+                        $('#b'+i+"thurinput1").attr('disabled', false);
+                        $('#b'+i+"thurinput2").attr('disabled', false);
                 };
         });
         $( "#fri" ).change(function() {
-                console.log();
-                $("#friinput1").html("");
-                $("#friinput2").html("");
-                for (var i = 0; i < document.getElementById('fri').value; i++) {
-                        $( "#friinput1" ).append("<input>");
-                        $( "#friinput2" ).append("<input>");
+                for (var i = 1; i <= 5; i++) {
+                    $('#b'+i+"friinput1").attr('disabled', true);
+                    $('#b'+i+"friinput2").attr('disabled', true);
+                };
+                for (var i = 1; i <= document.getElementById('fri').value; i++) {
+                        $('#b'+i+"friinput1").attr('disabled', false);
+                        $('#b'+i+"friinput2").attr('disabled', false);
                 };
         });
 </script>

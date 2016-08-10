@@ -14,16 +14,14 @@
     <script type="text/javascript" src="../js/write/identity.js"></script>
     <script src="../js/write/b_allResult.js"></script>
     <style type="text/css">
-    #rcorners2 {
-        position: absolute;
-        top: 50px;
-        left:100px;
-        border-radius: 25px;
-        border: 2px solid #73AD21;
-        padding: 80px;
-        margin: 0 auto;
-        width: 80%;
-        height: 650px;
+    body {
+        background-attachment: fixed;
+        background-image: url("../img/sportman.png");
+        background-size: 400px;
+        background-repeat: no-repeat;
+        background-position: 90% 90%;
+        position: relative;
+        background-color: #E4D8FB;
     }
     </style>
 </head>
@@ -34,22 +32,21 @@
             <button type="button" class="btn btn-info">全部結果</button>
         </div>
         <div class="btn-group" role="group">
-            <button type="button" class="btn btn-default" onclick="location.href='backWorkPlaceManagement.html'">場地開放&時間</button>
+            <button type="button" class="btn btn-primary" onclick="location.href='backWorkPlaceManagement.html'">場地管理</button>
         </div>
         <div class="btn-group" role="group">
-            <button type="button" class="btn btn-default">管理場地使用者</button>
+            <button type="button" class="btn btn-primary">管理場地使用者</button>
         </div>
         <div class="btn-group" role="group">
-            <button type="button" class="btn btn-default" onclick="location.href='backWorkManagement.html'">管理帳號/密碼</button>
+            <button type="button" class="btn btn-primary" onclick="location.href='backWorkManagement.html'">管理帳號/密碼</button>
         </div>
     </div>
-    <div class="col-md-offset-2" id="rcorners2">
+    <div class="col-md-offset-2">
         <div class="container">
             <div class="col-md-2">
                 <span id="account" name="title"></span>
             </div>
         </div>
-        <br>
     </div>
     <div class="container" id="back">
         <div class="row">
@@ -71,9 +68,6 @@
             </div>
         </div>
     </div>
-        <br>
-        <br>
-        <hr>
         <font color="blue">
     </div>
 </body>

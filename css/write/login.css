@@ -25,10 +25,9 @@ body{
 
 
 #f{
-    clear: both; 
+    clear: both;
     background: rgba(100%,1000%,100%,0.3);
     position:relative;
     padding: 0px 30px 20px 10px;
     border-radius:10px;
-
 }
