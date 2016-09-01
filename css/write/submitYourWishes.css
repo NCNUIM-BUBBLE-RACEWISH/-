@@ -13,7 +13,7 @@ legend {
 }
 
 h1 {
-    color: #9999FF;
+    color: #34407E;
     font-family: "Yu Gothic ", simhei;
     font-weight: bold;
 }
@@ -24,4 +24,10 @@ h1 {
     height: 400px;
     margin: 0 left
 }
+body{
 
+    background: url("../../img/123.gif");
+}
+#r{
+    right:200px;
+}
