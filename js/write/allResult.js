@@ -1,21 +1,33 @@
 $(document).ready(function() {
-    var cookie;
-    if (parseInt(sessionStorage["account"].substring(2, 3) == 0) ||
-        (parseInt(sessionStorage["account"].substring(2, 3) == 1))) {
-        cookie = parseInt(sessionStorage["account"].substring(2, 3)) * 2;
-    } else {
-        cookie = parseInt(sessionStorage["account"].substring(2, 3))
-    }
-    //搜尋的預設值
-    var user = sessionStorage['cname']
-    document.getElementById('userSearch').setAttribute("placeholder", user)
+    var what;
+    //隊長查詢
+    if (sessionStorage["account"]!="999"){ 
+        console.log(sessionStorage["account"])
+        if (parseInt(sessionStorage["account"].substring(2, 3) == 0) ||
+            (parseInt(sessionStorage["account"].substring(2, 3) == 1))) {
+            what = parseInt(sessionStorage["account"].substring(2, 3)) * 2;
+        } else {
+            what = parseInt(sessionStorage["account"].substring(2, 3))
+        }
+        //搜尋的預設值
+        var user = sessionStorage['cname']
+        document.getElementById('userSearch').setAttribute("placeholder", user)
         //取所有資料
-    var data = getAll();
-    //塞入
-    pushIn(data, cookie);
-    //一進入頁面(mark所屬系球種)
-    search(user, data)
-        //點擊搜尋
+        var data = getAll(what);
+        //塞入
+        pushIn(data, what);
+        //一進入頁面(mark所屬系球種)
+        search(user, data)
+    //訪客查詢
+    } else {
+        what = sessionStorage["what"];
+        //取所有資料
+        var data = getAll(what);
+        //塞入
+        pushIn(data, what);
+    }
+    console.log("我現在在查",what)
+    //點擊搜尋
     $(function() {
         $("#lookFor").click(function() {
             //先將有mark的地方擦掉
@@ -25,20 +37,22 @@ $(document).ready(function() {
         });
     });
 
+
 });
 
-function getAll() {
-	var nowDate = new Date();
+function getAll(what) {
+    var nowDate = new Date();
     if (nowDate.getMonth() < 9 || nowDate.getMonth() > 2)
         nowDate = (nowDate.getFullYear() - 1912) * 10 + 2;
     else
         nowDate = (nowDate.getFullYear() - 1911) * 10 + 1;
-    console.log(sessionStorage["account"],nowDate)
     var object = []
     $.ajax({
         url: "http://163.22.17.184:8080/bubble/Search/result",
-        data: { "what": 0, "term": 1031  },
-        //data: { "what": sessionStorage["account"], "term": nowDate  },
+        data: { "what": what, "term": 1031 },
+        /*  
+        data: { "what": what, "term": nowDate },
+        */
         type: "GET",
         //↓天辣辣辣辣這行太神了!!!!傳回值終於可以存惹感動
         async: false,
