@@ -15,17 +15,23 @@
     <script src="../js/write/allResult.js"></script>
     <style>
     body {
-        background-image: url("");
         background-attachment: fixed;
+        background-image: url("../img/sportman.png");
+        background-size: 400px;
         background-repeat: no-repeat;
-        background-position: 20% 40%;
-        background-size: cover;
+        background-position: 90% 90%;
+        position: relative;
+        background-color: #B4D8FB;
     }
-    
+
     h1 {
         color: #D13109;
         font-family: "Yu Gothic ", simhei;
         font-weight: bold;
+    }
+
+    .guide{
+       cursor: pointer;
     }
     </style>
 </head>
@@ -74,38 +80,8 @@
     <br>
     <br>
     <hr>
-    <font color="blue">
-        <h1><center>場地圖</center></h1></font>
-    <div id="content">
-        <div id="left-dorm">男生宿舍</div>
-        <div id="middle">
-            <div id="gym">
-                <button id="table">桌球室</button>
-                <button id="pool">游泳池</button>
-            </div>
-            <div id="l">
-                <input type="button" value="排球場A" id="option">
-                <input type="button" value="排球場B" id="option">
-                <input type="button" value="排球場C" id="option">
-                <input type="button" value="排球場D" id="option">
-                <br>
-                <br>
-                <input type="button" value="籃球場A" id="option">
-                <input type="button" value="籃球場B" id="option">
-                <input type="button" value="籃球場C" id="option">
-                <input type="button" value="籃球場D" id="option">
-            </div>
-            <div id="r">
-                <input type="button" value="籃球場E" id="option">
-                <input type="button" value="籃球場F" id="option">
-                <br>
-                <br>
-                <input type="button" value="網球場A" id="option">
-                <input type="button" value="網球場B" id="option">
-            </div>
-        </div>
-        <div id="right-playground">操場</div>
-    </div>
+    <p>點擊本大人看場地圖(´・ω・`)</p>
+    <img class="guide" src="../img/guide.png" onclick="window.open('place2.html', '可愛場地圖', config='height=800,width=1500,location=no');">
 </body>
 
 </html>
