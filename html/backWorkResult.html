@@ -11,8 +11,8 @@
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <!-- 加入身分認證 -->
-    <script type="text/javascript" src="../js/write/identity.js"></script>
-    <script src="../js/write/b_allResult.js"></script>
+    <script type="text/javascript" src="../js/write/identity_b.js"></script>
+    <script src="../js/write/allResult.js"></script>
     <style type="text/css">
     body {
         background-attachment: fixed;
@@ -26,7 +26,7 @@
     </style>
 </head>
 
-<body>
+<body onload="showAccount()">
     <div class="btn-group btn-group-justified" role="group" aria-label="...">
         <div class="btn-group" role="group">
             <button type="button" class="btn btn-info">全部結果</button>
@@ -41,16 +41,34 @@
             <button type="button" class="btn btn-primary" onclick="location.href='backWorkManagement.html'">管理帳號/密碼</button>
         </div>
     </div>
-    <div class="col-md-offset-2">
-        <div class="container">
-            <div class="col-md-2">
-                <span id="account" name="title"></span>
+    <div class="container">
+        <div class="col-md-2">
+            <span class="glyphicon glyphicon-user" aria-hidden="true"></span><span id="account" name="title"></span><a href="backLogin.html"> 返回登入</a>
+        </div>
+
+
+
+
+
+        <div class="col-md-8">
+            <h1><center>所有結果</center></h1>
+            <br>
+            <br>
+        </div>
+        <div class="col-md-2 ">
+            <br>
+            <div class="input-group">
+                <input type="text" class="form-control" id="userSearch" aria-label="...">
+                <div class="input-group-btn">
+                    <button type="button" class="btn btn-default" id="lookFor" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
     <div class="container" id="back">
         <div class="row">
-            <br><br><br><br><br>
             <!-- 星期一 -->
             <div class="col-md-2 col-md-offset-1" id="Monday">
             </div>
@@ -68,8 +86,6 @@
             </div>
         </div>
     </div>
-        <font color="blue">
-    </div>
-</body>
 
+</body>
 </html>
