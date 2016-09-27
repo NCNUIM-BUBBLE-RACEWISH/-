@@ -1,8 +1,8 @@
 $(document).ready(function() {
+    console.log("sessionStorage['account']",sessionStorage["account"])
     var what;
     //隊長查詢
     if (sessionStorage["account"]!="999"){ 
-        console.log(sessionStorage["account"])
         if (parseInt(sessionStorage["account"].substring(2, 3) == 0) ||
             (parseInt(sessionStorage["account"].substring(2, 3) == 1))) {
             what = parseInt(sessionStorage["account"].substring(2, 3)) * 2;

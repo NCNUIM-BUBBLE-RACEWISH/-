@@ -1,7 +1,8 @@
 function showAccount(){
+        console.log("sessionStorage['account']",sessionStorage["account"])
         if(sessionStorage['kind'].substring(0,2)=='00'){
-                $("#account").append("男籃管理員");
-                sessionStorage["account"]="010B";
+                $("#account").append("體育組");
+                sessionStorage["account"]="0000";
                 sessionStorage['cname']="無";
         }else if(sessionStorage['kind'].substring(0,2)=='0B'){
                 $("#account").append("男籃管理員");
@@ -32,4 +33,5 @@ function showAccount(){
                 sessionStorage["account"]="014";
                 sessionStorage['cname']="無";
         }
+        console.log("sessionStorage['account']",sessionStorage["account"])
 }
