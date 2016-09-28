@@ -4,18 +4,32 @@ fieldset {
     margin-bottom: 10px;
     background: #EEE;
 }
-
 legend {
     padding: 5px 10px;
     background-color: #4F709F;
     color: #FFF;
     font-size: 17px;
 }
+#left{
+    position:relative;
+    right:20px;
 
+}
+#right{
+    position:relative;
+    left:50px;
+    top:40px;   
+    
+}
+#word{
+     left:150px;   
+}
 h1 {
-    color: #9999FF;
+    color: #34407E;
     font-family: "Yu Gothic ", simhei;
     font-weight: bold;
+    text-align: center;
+
 }
 
 #container {
@@ -24,4 +38,9 @@ h1 {
     height: 400px;
     margin: 0 left
 }
-
+body{
+    background: url("../../img/123.gif");
+}
+#r{
+    right:200px;
+}

@@ -8,6 +8,8 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 <script type="text/javascript" src="../js/jquery-1.4.4.min.js"></script>
 <script type="text/javascript" src="../js/write/adduser.js"></script>
+    <!-- 加入身分認證 -->
+    <script type="text/javascript" src="../js/write/identity_b.js"></script>
 <style type="text/css">
     body {
         background-attachment: fixed;
@@ -29,7 +31,7 @@
 
 </style>
 
-<body>
+<body onload="showAccount()">
     <div class="btn-group btn-group-justified" role="group" aria-label="...">
         <div class="btn-group" role="group">
             <button type="button" class="btn btn-primary" onclick="location.href='backWorkResult.html'">全部結果</button>
@@ -44,6 +46,11 @@
             <button type="button" class="btn btn-info">管理帳號/密碼</button>
         </div>
     </div>
+            <div class="container">
+        <div class="col-md-2">
+            <span class="glyphicon glyphicon-user" aria-hidden="true"></span><span id="account" name="title"></span><a href="backLogin.html"> 返回登入</a>
+        </div>
+        </div>
     <div class="col-md-offset-2">
         <!--內容-->
         <div class="col-md-4 col-md-offset-3">

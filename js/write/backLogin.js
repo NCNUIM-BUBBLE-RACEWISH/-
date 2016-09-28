@@ -19,9 +19,6 @@ $(document).ready(function(){
                                 // 成功時將帳號,狀態碼,存入session
                                 if(result.statuscode==200){
                                         sessionStorage["kind"]=kind;
-                                        sessionStorage["account"]=result.account;
-                                        sessionStorage["statuscode"]=result.statuscode;
-                                        sessionStorage['pwd']=passwd;
                                         document.location.href="backWorkManagement.html";
                                 }
                                 else if(result.statuscode==401){

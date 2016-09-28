@@ -10,7 +10,8 @@
 <link rel="stylesheet" type="text/css" href="../css/buttonstyles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
+    <!-- 加入身分認證 -->
+    <script type="text/javascript" src="../js/write/identity_b.js"></script>
 <style type="text/css">
         body {
         background-attachment: fixed;
@@ -45,7 +46,7 @@ input:disabled {
 </style>
 
 
-<body>
+<body onload="showAccount()">
         <div class="btn-group btn-group-justified" role="group" aria-label="...">
                 <div class="btn-group" role="group">
                 <button type="button" class="btn btn-primary" onclick="location.href='backWorkResult.html'">全部結果</button>
@@ -59,6 +60,11 @@ input:disabled {
                 <div class="btn-group" role="group">
                          <button type="button" class="btn btn-primary" onclick="location.href='backWorkManagement.html'">管理帳號/密碼</button>
                 </div>
+        </div>
+            <div class="container">
+        <div class="col-md-2">
+            <span class="glyphicon glyphicon-user" aria-hidden="true"></span><span id="account" name="title"></span><a href="backLogin.html"> 返回登入</a>
+        </div>
         </div>
 
         <div class="container">
