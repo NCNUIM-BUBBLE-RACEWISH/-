@@ -6,7 +6,246 @@ $(document).ready(function() {
     } else {
         cookie = parseInt(sessionStorage["account"].substring(2, 3))
     }
-    console.log(cookie)
+    console.log(cookie);
+    //抓學期
+    var nowDate = new Date();
+        if (nowDate.getMonth() < 9 || nowDate.getMonth() > 2)
+            nowDate = (nowDate.getFullYear() - 1912) * 10 + 2;
+        else
+            nowDate = (nowDate.getFullYear() - 1911) * 10 + 1;
+    //抓球種
+    var kind = sessionStorage["account"].substring(2, 4);
+    //學期暫用測試1031 測試完請改回
+    var termkind = {"term":'1031',"kind":kind};
+    console.log(JSON.stringify(termkind));
+    $.ajax({
+        url:'http://163.22.17.184:8080/bubble/management/apply/choose',
+        contentType:"application/json",
+        data:JSON.stringify(termkind),
+        dataType: 'json',
+        type: 'POST',
+        success: function(result) {
+                console.log('woohoo!');
+                console.log(result);
+                // 成功時將帳號,狀態碼,存入session
+                if(result[0].statuscode==200){
+                    //看星期塞時間
+                    $("#YourWeek1").change(function() {
+                        $("#YourTime1").html("<option value='-1' selected></option>");
+                        $("#YourTime1").removeAttr("disabled");
+                        $("#YourBall1").html("<option value='-1' selected></option>");
+                        $("#YourBall1").removeAttr("disabled");
+                        //列出有此日期的所有場地 時段
+                        var timearray = [-1];
+                        for(var i=2; i<result.length; i++){
+                            tmp=1;
+                            for(var j=0; j<timearray.length; j++){
+                                if(result[i].時間代碼==timearray[j]){
+                                    tmp=0;
+                                    break;
+                                }
+                            }
+                            if(tmp==1&&$("#YourWeek1").val()==result[i].星期){
+                                timearray.push(result[i].時間代碼);
+                                $("#YourTime1").append("<option value=" + result[i].時間代碼 + ">" + result[i].時間代碼.substring(0, 4) + "~" + result[i].時間代碼.substring(4, 8) + "</option>");
+                            }
+                        }
+                    });
+                    //看時間塞場地
+                    $("#YourTime1").change(function() {
+                        $("#YourBall1").html("<option value='-1' selected></option>");
+                        $("#YourBall1").removeAttr("disabled");
+                        var timearray = [-1];
+                        for(var i=2; i<result.length; i++){
+                            tmp=1;
+                            for(var j=0; j<timearray.length; j++){
+                                if(result[i].場地代碼==timearray[j]){
+                                    tmp=0;
+                                    break;
+                                }
+                            }
+                            if(tmp==1&&$("#YourWeek1").val()==result[i].星期){
+                                timearray.push(result[i].場地代碼);
+                                $("#YourBall1").append("<option value=" + result[i].場地代碼 + ">" + result[i].場地代碼 +"</option>");
+                            }
+                        }
+                    });
+                    $("#YourWeek2").change(function() {
+                        $("#YourTime2").html("<option value='-1' selected></option>");
+                        $("#YourTime2").removeAttr("disabled");
+                        $("#YourBall2").html("<option value='-1' selected></option>");
+                        $("#YourBall2").removeAttr("disabled");
+                        //列出有此日期的所有場地 時段
+                        var timearray = [-1];
+                        for(var i=2; i<result.length; i++){
+                            tmp=1;
+                            for(var j=0; j<timearray.length; j++){
+                                if(result[i].時間代碼==timearray[j]){
+                                    tmp=0;
+                                    break;
+                                }
+                            }
+                            if(tmp==1&&$("#YourWeek2").val()==result[i].星期){
+                                timearray.push(result[i].時間代碼);
+                                $("#YourTime2").append("<option value=" + result[i].時間代碼 + ">" + result[i].時間代碼.substring(0, 4) + "~" + result[i].時間代碼.substring(4, 8) + "</option>");
+                            }
+                        }
+                    });
+                    //看時間塞場地
+                    $("#YourTime2").change(function() {
+                        $("#YourBall2").html("<option value='-1' selected></option>");
+                        $("#YourBall2").removeAttr("disabled");
+                        var timearray = [-1];
+                        for(var i=2; i<result.length; i++){
+                            tmp=1;
+                            for(var j=0; j<timearray.length; j++){
+                                if(result[i].場地代碼==timearray[j]){
+                                    tmp=0;
+                                    break;
+                                }
+                            }
+                            if(tmp==1&&$("#YourWeek2").val()==result[i].星期){
+                                timearray.push(result[i].場地代碼);
+                                $("#YourBall2").append("<option value=" + result[i].場地代碼 + ">" + result[i].場地代碼 +"</option>");
+                            }
+                        }
+                    });
+                    $("#YourWeek3").change(function() {
+                        $("#YourTime3").html("<option value='-1' selected></option>");
+                        $("#YourTime3").removeAttr("disabled");
+                        $("#YourBall3").html("<option value='-1' selected></option>");
+                        $("#YourBall3").removeAttr("disabled");
+                        //列出有此日期的所有場地 時段
+                        var timearray = [-1];
+                        for(var i=2; i<result.length; i++){
+                            tmp=1;
+                            for(var j=0; j<timearray.length; j++){
+                                if(result[i].時間代碼==timearray[j]){
+                                    tmp=0;
+                                    break;
+                                }
+                            }
+                            if(tmp==1&&$("#YourWeek3").val()==result[i].星期){
+                                timearray.push(result[i].時間代碼);
+                                $("#YourTime3").append("<option value=" + result[i].時間代碼 + ">" + result[i].時間代碼.substring(0, 4) + "~" + result[i].時間代碼.substring(4, 8) + "</option>");
+                            }
+                        }
+                    });
+                    //看時間塞場地
+                    $("#YourTime3").change(function() {
+                        $("#YourBall3").html("<option value='-1' selected></option>");
+                        $("#YourBall3").removeAttr("disabled");
+                        var timearray = [-1];
+                        for(var i=2; i<result.length; i++){
+                            tmp=1;
+                            for(var j=0; j<timearray.length; j++){
+                                if(result[i].場地代碼==timearray[j]){
+                                    tmp=0;
+                                    break;
+                                }
+                            }
+                            if(tmp==1&&$("#YourWeek3").val()==result[i].星期){
+                                timearray.push(result[i].場地代碼);
+                                $("#YourBall3").append("<option value=" + result[i].場地代碼 + ">" + result[i].場地代碼 +"</option>");
+                            }
+                        }
+                    });
+                    $("#YourWeek4").change(function() {
+                        $("#YourTime4").html("<option value='-1' selected></option>");
+                        $("#YourTime4").removeAttr("disabled");
+                        $("#YourBall4").html("<option value='-1' selected></option>");
+                        $("#YourBall4").removeAttr("disabled");
+                        //列出有此日期的所有場地 時段
+                        var timearray = [-1];
+                        for(var i=2; i<result.length; i++){
+                            tmp=1;
+                            for(var j=0; j<timearray.length; j++){
+                                if(result[i].時間代碼==timearray[j]){
+                                    tmp=0;
+                                    break;
+                                }
+                            }
+                            if(tmp==1&&$("#YourWeek4").val()==result[i].星期){
+                                timearray.push(result[i].時間代碼);
+                                $("#YourTime4").append("<option value=" + result[i].時間代碼 + ">" + result[i].時間代碼.substring(0, 4) + "~" + result[i].時間代碼.substring(4, 8) + "</option>");
+                            }
+                        }
+                    });
+                    //看時間塞場地
+                    $("#YourTime4").change(function() {
+                        $("#YourBall4").html("<option value='-1' selected></option>");
+                        $("#YourBall4").removeAttr("disabled");
+                        var timearray = [-1];
+                        for(var i=2; i<result.length; i++){
+                            tmp=1;
+                            for(var j=0; j<timearray.length; j++){
+                                if(result[i].場地代碼==timearray[j]){
+                                    tmp=0;
+                                    break;
+                                }
+                            }
+                            if(tmp==1&&$("#YourWeek4").val()==result[i].星期){
+                                timearray.push(result[i].場地代碼);
+                                $("#YourBall4").append("<option value=" + result[i].場地代碼 + ">" + result[i].場地代碼 +"</option>");
+                            }
+                        }
+                    });
+                    $("#YourWeek5").change(function() {
+                        $("#YourTime5").html("<option value='-1' selected></option>");
+                        $("#YourTime5").removeAttr("disabled");
+                        $("#YourBall5").html("<option value='-1' selected></option>");
+                        $("#YourBall5").removeAttr("disabled");
+                        //列出有此日期的所有場地 時段
+                        var timearray = [-1];
+                        for(var i=2; i<result.length; i++){
+                            tmp=1;
+                            for(var j=0; j<timearray.length; j++){
+                                if(result[i].時間代碼==timearray[j]){
+                                    tmp=0;
+                                    break;
+                                }
+                            }
+                            if(tmp==1&&$("#YourWeek5").val()==result[i].星期){
+                                timearray.push(result[i].時間代碼);
+                                $("#YourTime5").append("<option value=" + result[i].時間代碼 + ">" + result[i].時間代碼.substring(0, 4) + "~" + result[i].時間代碼.substring(4, 8) + "</option>");
+                            }
+                        }
+                    });
+                    //看時間塞場地
+                    $("#YourTime5").change(function() {
+                        $("#YourBall5").html("<option value='-1' selected></option>");
+                        $("#YourBall5").removeAttr("disabled");
+                        var timearray = [-1];
+                        for(var i=2; i<result.length; i++){
+                            tmp=1;
+                            for(var j=0; j<timearray.length; j++){
+                                if(result[i].場地代碼==timearray[j]){
+                                    tmp=0;
+                                    break;
+                                }
+                            }
+                            if(tmp==1&&$("#YourWeek5").val()==result[i].星期){
+                                timearray.push(result[i].場地代碼);
+                                $("#YourBall5").append("<option value=" + result[i].場地代碼 + ">" + result[i].場地代碼 +"</option>");
+                            }
+                        }
+                    });
+                }
+                else if(result.statuscode==401){
+                        document.getElementById("status").innerHTML=result.message;
+                }
+                else if(result.statuscode==500){
+                        document.getElementById("status").innerHTML=result.message;
+                }
+                else{
+                        document.getElementById("status").innerHTML="發生不明原因錯誤 請稍後再試";
+                }
+        },
+        error: function(err) {
+                console.log('shit!');
+                console.log(err);
+        }
+    });
         //0->籃球  1->排球  2->羽球  3->桌球  4->壘球
     var json = [{
                 "球類": "籃球",
@@ -153,83 +392,6 @@ $(document).ready(function() {
             },
             //壘球另外弄
         ]
-        //塞場地
-    for (var i = 0; i < json[cookie].總時間.length; i++) {
-        $(".Time").append("<option value=" + json[cookie].總時間[i] + ">" + json[cookie].總開始時間[i] + "00~" + (json[cookie].總開始時間[i] + json[cookie].時段差) + "00</option>");
-    }
-    //選時段，塞入場地
-    $("#YourTime1").change(function() {
-        $("#YourBall1").html("<option value='-1' selected></option>");
-        $("#YourBall1").removeAttr("disabled");
-        var timecode = $("#YourTime1").val(); //所選時段
-        //列出有此時段的所有場地
-        var count;
-        for (var i = 0; i < json[cookie].場地數; i++) {
-            for (var h = 0; h < json[cookie].場地資料[i].時段數; h++) {
-                if (json[cookie].場地資料[i].時段代碼[h] == timecode) {
-                    $("#YourBall1").append("<option value=" + cookie + json[cookie].場地資料[i].場地代碼 + ">" + json[cookie].場地資料[i].場地名 + "</option>");
-                }
-            }
-        }
-    });
-    $("#YourTime2").change(function() {
-        $("#YourBall2").html("<option value='-1' selected></option>");
-        $("#YourBall2").removeAttr("disabled");
-        var timecode = $("#YourTime2").val(); //所選時段
-        //列出有此時段的所有場地
-        var count;
-        for (var i = 0; i < json[cookie].場地數; i++) {
-            for (var h = 0; h < json[cookie].場地資料[i].時段數; h++) {
-                if (json[cookie].場地資料[i].時段代碼[h] == timecode) {
-                    $("#YourBall2").append("<option value=" + cookie + json[cookie].場地資料[i].場地代碼 + ">" + json[cookie].場地資料[i].場地名 + "</option>");
-                }
-            }
-        }
-    });
-    $("#YourTime3").change(function() {
-        $("#YourBall3").html("<option value='-1' selected></option>");
-        $("#YourBall3").removeAttr("disabled");
-        var timecode = $("#YourTime3").val(); //所選時段
-        //列出有此時段的所有場地
-        var count;
-        for (var i = 0; i < json[cookie].場地數; i++) {
-            for (var h = 0; h < json[cookie].場地資料[i].時段數; h++) {
-                if (json[cookie].場地資料[i].時段代碼[h] == timecode) {
-                    $("#YourBall3").append("<option value=" + cookie + json[cookie].場地資料[i].場地代碼 + ">" + json[cookie].場地資料[i].場地名 + "</option>");
-                }
-            }
-        }
-    });
-    $("#YourTime4").change(function() {
-        $("#YourBall4").html("<option value='-1' selected></option>");
-        $("#YourBall4").removeAttr("disabled");
-        var timecode = $("#YourTime4").val(); //所選時段
-        //列出有此時段的所有場地
-        var count;
-        for (var i = 0; i < json[cookie].場地數; i++) {
-            for (var h = 0; h < json[cookie].場地資料[i].時段數; h++) {
-                if (json[cookie].場地資料[i].時段代碼[h] == timecode) {
-                    $("#YourBall4").append("<option value=" + cookie + json[cookie].場地資料[i].場地代碼 + ">" + json[cookie].場地資料[i].場地名 + "</option>");
-                }
-            }
-        }
-    });
-    $("#YourTime5").change(function() {
-        $("#YourBall5").html("<option value='-1' selected></option>");
-        $("#YourBall5").removeAttr("disabled");
-        var timecode = $("#YourTime5").val(); //所選時段
-        //列出有此時段的所有場地
-        var count;
-        for (var i = 0; i < json[cookie].場地數; i++) {
-            for (var h = 0; h < json[cookie].場地資料[i].時段數; h++) {
-                if (json[cookie].場地資料[i].時段代碼[h] == timecode) {
-                    $("#YourBall5").append("<option value=" + cookie + json[cookie].場地資料[i].場地代碼 + ">" + json[cookie].場地資料[i].場地名 + "</option>");
-                }
-            }
-        }
-    });
-
-
     /*      左邊的長條圖~~~~~~~~~~~~~~~~~   */
     //進入頁面時預設顯示星期一
     weekFun("一", json[cookie], cookie);
@@ -460,7 +622,7 @@ $(document).ready(function() {
                 }, ]
             });
         } else if (ball_type == 2){
-        
+
             //羽球
             $('#container').highcharts({
                 chart: {
@@ -538,6 +700,7 @@ $("#wish1").change(function() {
     var week = $("#YourWeek1").val();
     var ball = $("#YourBall1").val();
     var time = $("#YourTime1").val();
+    console.log(week+ball+time);
     if ((week != -1) && (ball != -1) && (time != -1)) {
         $.ajax({
             //http://163.22.17.184:8080/bubble/apply_count2/json? time=a & place=0A &week=五
