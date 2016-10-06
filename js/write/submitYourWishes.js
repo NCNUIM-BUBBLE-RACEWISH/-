@@ -334,10 +334,10 @@ $(document).ready(function() {
     function longchart(day, ball_type, num,courtarr,longchartdata) {
         $('#container').highcharts({
             chart: {
-                type: 'bar'
+                type: 'column'
             },
             title: {
-                text: "星期" + day + '的申請人數'
+                text: "星期" + day + '的申請隊伍數'
             },
             subtitle: {
                 text: ': <a href=""></a>'
@@ -353,7 +353,7 @@ $(document).ready(function() {
                 min: 0,
                 allowDecimals: false,
                 title: {
-                    text: 'Population',
+                    text: '申請隊伍數',
                     align: 'middle'
                 },
                 labels: {
@@ -403,7 +403,7 @@ $("#wish1").change(function() {
                 $("#num1").val(data.申請次數).show();
             }
         });
-        console.log("week", week, "ball", ball, "time", time);
+        console.log("week:", week, " ball:", ball, " time:", time);
     }
 }); $("#wish2").change(function() {
     var week = $("#YourWeek2").val();
