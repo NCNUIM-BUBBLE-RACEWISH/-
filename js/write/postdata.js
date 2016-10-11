@@ -59,7 +59,6 @@ $(document).ready(function() {
                 }
             }
         }
-        console.log(goback, wishes[0], wishes[1])
         if (count == 5) {
             alert("請填寫志願")
         } else if (goback == true) {
@@ -69,8 +68,10 @@ $(document).ready(function() {
         } else {
             if (confirm(check)) {
                 postData(alldata);
+
             }
         }
+        //提醒不要執行默認動作(ex:submit直接提交表單)
         event.preventDefault();
     });
 
