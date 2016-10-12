@@ -10,9 +10,8 @@ h1 {
     color: red;
 }
 body{
-    background: url("../../img/indexBackground.png");
+    background: url("../../img/123.gif");
     background-attachment: fixed;
-    background-repeat: no-repeat;
     background-position: 20% 40%;
     background-size: cover;
     position:relative;
@@ -21,7 +20,7 @@ body{
 }
 
 #f{
-    clear: both; 
+    clear: both;
     background: rgba(100%,1000%,100%,0.3);
     position:relative;
     padding: 0px 50px 20px 10px;
