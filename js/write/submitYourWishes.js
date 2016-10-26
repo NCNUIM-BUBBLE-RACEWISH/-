@@ -262,6 +262,7 @@ $(document).ready(function() {
                 //↓天辣辣辣辣這行太神了!!!!傳回值終於可以存惹感動
                 async: false,
                 success: function(data) {
+                    console.log(data);
                     //抓有幾個時段
                     var timearray = [];
                     for(var i=1; i<data.length; i++){

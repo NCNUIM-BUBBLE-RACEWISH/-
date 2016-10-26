@@ -64,7 +64,7 @@ function get_cname(account){
                 full="國比";
         else if(account.substring(0,2)=='03')
                 full="社工";
-        else if(saccount.substring(0,2)=='04')
+        else if(account.substring(0,2)=='04')
                 full="外文";
         else if(account.substring(0,2)=='05')
                 full="歷史";
