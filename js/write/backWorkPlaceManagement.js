@@ -411,7 +411,7 @@ $(document).ready(function() {
                 console.log(data);
                 if (data.statuscode == 200) {
                     alert("已送出申請");
-                    //window.location.href = 'reroute.html';
+                    window.location.href = 'backWorkManagement.html';
                 } else
                     alert("送出失敗");
             },
